@@ -8,7 +8,7 @@ Build a small virtualized network environment using Hyper-V.
 
 ## Environment
 
-Host Machine
+<u>Host Machine</u>
 
 Windows PC
 <br><br>
