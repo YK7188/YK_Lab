@@ -10,10 +10,10 @@ Build a small virtualized network environment using Hyper-V.
 
 Host Machine
 - Windows PC
-
+<br><br>
 Virtualization Platform
 - Hyper-V
-
+<br><br>
 Server Machines
 
 SRV1 – Domain Controller, DNS Server
