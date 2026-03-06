@@ -9,9 +9,11 @@ Build a small virtualized network environment using Hyper-V.
 ## Environment
 
 Host Machine
+
 Windows PC
 <br><br>
 Virtualization Platform
+
 Hyper-V
 <br><br>
 Server Machines
