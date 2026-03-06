@@ -16,5 +16,5 @@ Virtualization Platform
 
 Server Machines
 
-SRV1 – Domain Controller, DNS Server
+SRV1 – Domain Controller, DNS Server 
 SRV2 – RRAS Router / NAT Gateway, DHCP Server
