@@ -8,16 +8,16 @@ Build a small virtualized network environment using Hyper-V.
 
 ## Environment
 
-<u>Host Machine</u>
+Host Machine
 
-Windows PC
+ Windows PC
 <br><br>
 Virtualization Platform
 
-Hyper-V
+ Hyper-V
 <br><br>
 Server Machines
 
-SRV1 – Domain Controller, DNS Server
+ SRV1 – Domain Controller, DNS Server
 
-SRV2 – RRAS Router / NAT Gateway, DHCP Server
+ SRV2 – RRAS Router / NAT Gateway, DHCP Server
