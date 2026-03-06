@@ -2,9 +2,7 @@
 
 ## Objective
 
-Build a small virtualized network environment using Hyper-V to understand basic routing and NAT behavior.
-
-This lab was created using Microsoft virtualization technology.
+Build a small virtualized network environment using Hyper-V.
 
 ---
 
@@ -18,5 +16,5 @@ Virtualization Platform
 
 Server Machines
 
-SRV1 – Internal Network Server  
-SRV2 – RRAS Router / NAT Gateway 
+SRV1 – Domain Controller, DNS Server
+SRV2 – RRAS Router / NAT Gateway, DHCP Server
