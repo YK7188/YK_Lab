@@ -1,4 +1,4 @@
-# Lab1
+# About YK_Lab1
 Hands-on labs for learning:
 
 - Microsoft Intune
