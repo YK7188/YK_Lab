@@ -5,9 +5,14 @@ Hands-on labs for learning:
 - Microsoft Entra ID
 - Windows Server
 - Hyper-V virtualization
-- Enterprise networking fundamentals
  
 This repository documents practical lab environments built to develop skills for endpoint management and cloud identity administration roles.
+
+---
+
+# Environment
+
+
 
 ---
 
