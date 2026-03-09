@@ -2,7 +2,9 @@
 
 ## Objective
 
+
 Simulate a conditional access troubleshoot for a AAD-manual-joined device.
+
 ---
 
 ## Step1
