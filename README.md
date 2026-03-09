@@ -20,6 +20,8 @@ This repository documents practical lab environments built to develop skills for
 
 ### Infrastructure
 
+1. [Lab 01 – Conditional access troubleshoot simulation](01-ConditionalAccess-troubleshoot)
+
 1. [Lab 01 – Hyper-V Setup](01-hyperv-setup)
 
 ### Identity (Planned)
