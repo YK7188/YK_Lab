@@ -22,8 +22,7 @@ Simulate a conditional access troubleshoot for a AAD-manual-joined device.
 ![3 proofonPC](https://github.com/user-attachments/assets/fd64bc9b-8b26-4bb0-be66-19802f216db7)
 
 5. It appears on Intune too, as Auto Enrollment is on. 
-![4 proofoncloud](https://github.com/user-attachments/assets/a02f1ba8-ee8b-4ddb-a363-6d9c7d0f8c05)
-
+![6 Autoenrollment](https://github.com/user-attachments/assets/a76d5272-d43e-4c39-ac3e-cac5759de7ba)
 
 
 ## Step2
