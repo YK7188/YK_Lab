@@ -14,8 +14,9 @@ Simulate a conditional access troubleshoot for a AAD-manual-joined device.
 
 2. Manually join the device to Entra ID as shown in the image.
 ![2 joinAAD](https://github.com/user-attachments/assets/3cb7b4bb-821c-4d13-8e9d-7b616a485d7b)
-The user has to be allowed to join devices.
-![5 devicesettings](https://github.com/user-attachments/assets/f692023b-d5be-413d-b115-09c5fd03b1dd)
+
+3. The user has to be allowed to join devices.
+![5 devicesettings](https://github.com/user-attachments/assets/c4653ca0-5b17-4f75-b85f-993990edb296)
 
 4. Confirm that the device has joined to Entra ID.
    ![3 proofonPC](https://github.com/user-attachments/assets/7e4a337f-eeb3-4dd9-b097-a9d938a7be46)
