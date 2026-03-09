@@ -1,4 +1,3 @@
-![8 conditional](https://github.com/user-attachments/assets/05ed2371-4781-468f-baba-0db4909854d4)# Lab 01 – Conditional access troubleshoot simulation
 
 ## Objective
 
