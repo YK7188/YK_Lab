@@ -19,10 +19,11 @@ Simulate a conditional access troubleshoot for a AAD-manual-joined device.
 ![5 devicesettings](https://github.com/user-attachments/assets/c4653ca0-5b17-4f75-b85f-993990edb296)
 
 4. Confirm that the device has joined to Entra ID.
-![Uploading 3.proofonPC.jpg…]()
+![3 proofonPC](https://github.com/user-attachments/assets/fd64bc9b-8b26-4bb0-be66-19802f216db7)
 
 5. It appears on Intune too, as Auto Enrollment is on. 
-![Uploading 4.proofoncloud.jpg…]()
+![4 proofoncloud](https://github.com/user-attachments/assets/a02f1ba8-ee8b-4ddb-a363-6d9c7d0f8c05)
+
 
 
 ## Step2
