@@ -27,10 +27,12 @@ Simulate a conditional access troubleshoot for a AAD-manual-joined device.
 ## Step2
 
 1. Configure compliance policy to require the device to have Antivirus turned on.
+   
    Antivirus > Require
 ![7 antivirus](https://github.com/user-attachments/assets/05826fa9-e267-447c-9cfb-ea8f329838e0)
 
-2. Configure Conditional access for Office365.
+3. Configure Conditional access for Office365.
+   
    Grant access > Require device to be marked as compliant
 ![8 conditional](https://github.com/user-attachments/assets/4e71beb5-8eb1-47c0-87ac-f71e65719f6a)
 
