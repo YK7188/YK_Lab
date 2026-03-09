@@ -26,7 +26,7 @@ Simulate a conditional access troubleshoot for a AAD-manual-joined device.
 
 ## Step2
 
-1. Configure compliance policy to require Antivirus turned on.
+1. Configure compliance policy to require the device to have Antivirus turned on.
    Antivirus > Require
 ![7 antivirus](https://github.com/user-attachments/assets/05826fa9-e267-447c-9cfb-ea8f329838e0)
 
