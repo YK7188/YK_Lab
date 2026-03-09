@@ -1,4 +1,4 @@
-# Lab 01 – Conditional access troubleshoot simulation
+![8 conditional](https://github.com/user-attachments/assets/05ed2371-4781-468f-baba-0db4909854d4)# Lab 01 – Conditional access troubleshoot simulation
 
 ## Objective
 
@@ -27,6 +27,13 @@ Simulate a conditional access troubleshoot for a AAD-manual-joined device.
 
 ## Step2
 
+1. Configure compliance policy.
+   Microsoft Defender Antivirus > Require
+![7 antivirus](https://github.com/user-attachments/assets/05826fa9-e267-447c-9cfb-ea8f329838e0)
+
+2. Configure Conditional access for Office365.
+   Grant access > Require device to be marked as compliant
+![8 conditional](https://github.com/user-attachments/assets/4e71beb5-8eb1-47c0-87ac-f71e65719f6a)
 
 
 ## Step3
