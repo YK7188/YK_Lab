@@ -22,8 +22,7 @@ Simulate a conditional access troubleshoot for a AAD-manual-joined device.
 ![Uploading 3.proofonPC.jpg…]()
 
 5. It appears on Intune too, as Auto Enrollment is on. 
-![4 proofoncloud](https://github.com/user-attachments/assets/486f0204-f6f1-48d0-99fa-b04ef38625fe)
-
+![Uploading 4.proofoncloud.jpg…]()
 
 
 ## Step2
