@@ -9,10 +9,11 @@ Simulate a conditional access troubleshoot for a AAD-manual-joined device.
 
 ## Step1
 
-Start up AADPC1. As in the image it has not joined AAD yet.
+1. Start up a Windows 10 PC - AADPC1. As shown in the image it has not joined AAD yet.
 ![1 dsregcmd](https://github.com/user-attachments/assets/a1505543-8c00-4289-bdac-3dbca5d52337)
 
-
+2. Manually join the device to Entra ID as shown in the image.
+![2 joinAAD](https://github.com/user-attachments/assets/3cb7b4bb-821c-4d13-8e9d-7b616a485d7b)
 
 ## Step2
 
