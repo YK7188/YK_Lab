@@ -1,4 +1,4 @@
-
+![10 loginfailure](https://github.com/user-attachments/assets/c73d705b-02fd-4e2e-8224-844139edc0af)
 ## Objective
 
 
@@ -38,3 +38,12 @@ Simulate a conditional access troubleshoot for a AAD-manual-joined device.
 
 
 ## Step3
+
+1. Test to log into office.com on the device with Antivirus turned off and confirm the policy is effective.
+![10 loginfailure](https://github.com/user-attachments/assets/d1dcefa6-d1c1-4bef-b2a7-0aa314525d2a)
+
+2. The device is shown as non-compliant in the report.
+![Uploading 9.noncompliant.jpg…]()
+
+3. Turn Antivirus on or turn the policy off and confirm login is now successfull.
+   
