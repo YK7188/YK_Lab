@@ -42,7 +42,7 @@ Simulate a conditional access troubleshoot for a AAD-manual-joined device.
 ![10 loginfailure](https://github.com/user-attachments/assets/d1dcefa6-d1c1-4bef-b2a7-0aa314525d2a)
 
 2. The device is shown as non-compliant in the report.
-![Uploading 9.noncompliant.jpg…]()
+![9 noncompliant](https://github.com/user-attachments/assets/ee494e51-c59b-4847-84f6-f6dde3d21d0b)
 
-3. Turn Antivirus on or turn the policy off and confirm login is now successfull.
+3. Turn Antivirus on or turn the policy off and confirm login is successfull this time.
    
