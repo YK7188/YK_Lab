@@ -1,11 +1,14 @@
-## Objective
+## Scenario
 
+A corporate device is joined to Entra ID and automatically enrolled into Intune.
+Access to Office 365 applications is restricted using Conditional Access policies
+that require devices to report a compliant state.
 
-Simulate a conditional access troubleshoot for a AAD-manual-joined device.
-
+This lab simulates a troubleshooting scenario where a device fails compliance
+evaluation due to antivirus protection being disabled.
 ---
 
-## Step1
+## Test device setup
 
 1. Start up a Windows 10 PC - AADPC1. As shown in the image it has not joined AAD yet.
 ![1 dsregcmd](https://github.com/user-attachments/assets/a1505543-8c00-4289-bdac-3dbca5d52337)
@@ -19,11 +22,11 @@ Simulate a conditional access troubleshoot for a AAD-manual-joined device.
 4. Confirm that the device has joined to Entra ID.
 ![3 proofonPC](https://github.com/user-attachments/assets/fd64bc9b-8b26-4bb0-be66-19802f216db7)
 
-5. It appears on Intune too, as Auto Enrollment is on. 
+5. The device is automatically enrolled into Intune because MDM automatic enrollment is enabled for all users.
 ![6 Autoenrollment](https://github.com/user-attachments/assets/a76d5272-d43e-4c39-ac3e-cac5759de7ba)
 
 
-## Step2
+## Policy Configuration
 
 1. Configure compliance policy to require the device to have Antivirus turned on.
    
@@ -36,7 +39,7 @@ Simulate a conditional access troubleshoot for a AAD-manual-joined device.
 ![8 conditional](https://github.com/user-attachments/assets/4e71beb5-8eb1-47c0-87ac-f71e65719f6a)
 
 
-## Step3
+## Policy Enforcement Test
 
 1. Test to log into office.com on the device with Antivirus turned off and confirm the policy is effective.
 ![10 loginfailure](https://github.com/user-attachments/assets/d1dcefa6-d1c1-4bef-b2a7-0aa314525d2a)
