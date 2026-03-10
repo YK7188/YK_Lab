@@ -22,7 +22,7 @@ evaluation due to antivirus protection being disabled.
 ![3 proofonPC](https://github.com/user-attachments/assets/fd64bc9b-8b26-4bb0-be66-19802f216db7)
 
 5. The device is automatically enrolled into Intune because MDM automatic enrollment is enabled for all users.
-![6 Autoenrollment](https://github.com/user-attachments/assets/a76d5272-d43e-4c39-ac3e-cac5759de7ba)
+![6 Autoenrollment](https://github.com/user-attachments/assets/eae2e088-76ac-490e-938f-161b8b97a19c)
 
 
 ## Policy Configuration
@@ -44,7 +44,7 @@ evaluation due to antivirus protection being disabled.
 ![10 loginfailure](https://github.com/user-attachments/assets/d1dcefa6-d1c1-4bef-b2a7-0aa314525d2a)
 
 2. The device is shown as non-compliant in the report.
-![9 noncompliant](https://github.com/user-attachments/assets/ee494e51-c59b-4847-84f6-f6dde3d21d0b)
+![9 noncompliant](https://github.com/user-attachments/assets/b37c532b-bbf4-4b4e-844d-58da550d9ea7)
 
 3. Turn Antivirus on or turn the policy off and confirm login is successfull this time.
    
