@@ -2,9 +2,7 @@
 
 A corporate device is joined to Entra ID and automatically enrolled into Intune.
 Access to Office 365 applications is restricted using Conditional Access policies
-that require devices to report a compliant state.
-
-This lab simulates a troubleshooting scenario where a device fails compliance
+that require devices to report a compliant state. This lab simulates a troubleshooting scenario where a device fails compliance
 evaluation due to antivirus protection being disabled.
 ---
 
