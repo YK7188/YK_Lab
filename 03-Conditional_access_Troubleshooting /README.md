@@ -1,6 +1,6 @@
 ## Scenario
 
-A Conditional Access policy was created in Microsoft Entra ID as shown below to restrict Microsoft 365 access to Windows devices marked as compliant by Microsoft Intune.
+A Conditional Access policy was created in Microsoft Entra ID to restrict Microsoft 365 access to Windows devices marked as compliant by Microsoft Intune.
 ![Image](https://github.com/user-attachments/assets/098f900b-ca7f-4c46-adcc-9fb3e3a166f3)
 
 
@@ -29,9 +29,17 @@ Desktop apps worked because they automatically authenticate using the Windows se
 
 ---
 
+## Troubleshooting note
+
+During testing, the blocked browser attempts did not appear in the Sign-in logs at all.
+This suggests that the request may be rejected before a full authentication event is recorded.
+
+
+---
+
 ## Important limitation
 
-Private browsing sessions do not work.
+Private browsing sessions do not work because they do not provide the device identity required by Conditional Access.
 
 Browser Mode	| Result
 
