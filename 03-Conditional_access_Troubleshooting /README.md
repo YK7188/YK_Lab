@@ -37,3 +37,11 @@ Edge (signed-in profile)	| Works
 Chrome + Windows | Accounts extension	Works
 Chrome Incognito	| Blocked
 Edge InPrivate	| Blocked
+
+This may appear as inconvenient to some users.
+
+---
+
+## Alternative approach used in many enterprises
+Instead of verifying the device directly with Microsoft Intune, some organizations restrict SaaS access based on trusted network egress IPs like Netskope.
+
