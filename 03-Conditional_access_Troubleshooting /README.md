@@ -10,9 +10,9 @@ A Conditional Access policy was created in Microsoft Entra ID as shown below to 
 
 The user attempted to access office.com and web applications from a Windows device that appears compliant in Intune.
 
-Desktop apps (Outlook, Teams, Excel)	> Access granted
+- Desktop apps (Outlook, Teams, Excel)	> Access granted
 
-Browser access (Edge, Chrome, Firefox)	> Access blocked as shown below
+- Browser access (Edge, Chrome, Firefox)	> Access blocked as shown below
 
 ![Image](https://github.com/user-attachments/assets/f3107ac0-846f-4123-ab06-b94051e79000)
 
@@ -34,10 +34,11 @@ Desktop apps worked because they automatically authenticate using the Windows se
 Private browsing sessions do not work.
 
 Browser Mode	| Result
-Edge (signed-in profile)	| Works
-Chrome + Windows | Accounts extension	Works
-Chrome Incognito	| Blocked
-Edge InPrivate	| Blocked
+
+- Edge (signed-in profile)	| Works
+- Chrome + Windows Accounts extension	| Works
+- Chrome Incognito	| Blocked
+- Edge InPrivate	| Blocked
 
 This may appear as inconvenient to some users.
 
