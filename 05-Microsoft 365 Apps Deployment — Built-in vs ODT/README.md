@@ -73,7 +73,7 @@ Step 2 Prepare the xml files.
 
 </Configuration>
 ```
-
+*It's always O365ProPlusRetail otherwise the installed apps cannot be managed by Intune.
 
 --xml for removal
 ```
@@ -95,5 +95,11 @@ Configure Win32 app on Intune
 
 - Install behavior > Choose System over User as Office apps are business critical, necessary tools.
 - Device restart behavior > Choose No specific action as Office installation does not require rebooting the machine.
+- Detection rules as in the image below.
+  ![04 detection rule](https://github.com/user-attachments/assets/e261fd3e-4853-4bcc-ab0d-2f79b4bd69fa)
 
 
+
+
+-- What I found during lab work
+“Unlike most applications, Microsoft 365 Apps (Click-to-Run) can be removed regardless of how they were originally installed, as the uninstall process targets the product configuration rather than the deployment source.”
