@@ -138,8 +138,8 @@ Configure detection to validate installation of O365ProPlusRetail
 - Microsoft 365 Apps (Click-to-Run) can be removed regardless of how they were originally installed. The uninstall process targets the product configuration rather than the deployment source.
 
 - OneDriveForBusiness behavior differed between methods:
-- Installed when using ODT (Win32 app)
-- Not installed when using built-in Intune deployment
+  - Installed when using ODT (Win32 app)
+  - Not installed when using built-in Intune deployment
 
 ## Final Note
 
