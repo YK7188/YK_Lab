@@ -102,8 +102,10 @@ Configure Win32 app on Intune
 
 
 -- What I found during lab work
+
 “Unlike most applications, Microsoft 365 Apps (Click-to-Run) can be removed regardless of how they were originally installed, as the uninstall process targets the product configuration rather than the deployment source.”
 
+During testing, OneDrive was installed when deploying Microsoft 365 Apps using the Office Deployment Tool (ODT) packaged as a Win32 app, but not when using the built-in Intune deployment method.
 
 ## Final Note
 
