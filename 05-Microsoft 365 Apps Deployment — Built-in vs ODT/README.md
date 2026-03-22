@@ -95,7 +95,7 @@ Configure Win32 app on Intune
 
 - Install behavior > Choose System over User as Office apps are business critical, necessary tools.
 - Device restart behavior > Choose No specific action as Office installation does not require rebooting the machine.
-- Detection rules as in the image below.
+- Detection rules as in the image below so it will not install the app if O365ProPlusRetail has already been installed.
   ![04 detection rule](https://github.com/user-attachments/assets/e261fd3e-4853-4bcc-ab0d-2f79b4bd69fa)
 
 
@@ -103,3 +103,14 @@ Configure Win32 app on Intune
 
 -- What I found during lab work
 “Unlike most applications, Microsoft 365 Apps (Click-to-Run) can be removed regardless of how they were originally installed, as the uninstall process targets the product configuration rather than the deployment source.”
+
+
+## Final Note
+
+In this lab, I simulated a simplified scenario in which any existing Click-to-Run Office installations were removed prior to deploying Microsoft 365 Apps.
+
+However, real-world environments often require more granular control, such as:
+
+Avoiding unintended removal of related products (e.g., Visio or Project)
+
+Correcting only the update channel for devices that already have Microsoft 365 Apps installed but are configured with an incorrect channel
