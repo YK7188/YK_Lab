@@ -1,15 +1,6 @@
 ## Objective
 
-This lab demonstrates how to manage user experience, privacy settings, and update behavior of Microsoft 365 Apps for enterprise after deployment using the Microsoft 365 Apps admin center and Intune.
-
----
-
-## Background
-
-In enterprise environments:
-
-- Deployment is typically handled via Microsoft Intune or ODT
-- Post-deployment configuration is handled via Cloud Policy and Device Configuration.
+This lab demonstrates how to centrally manage user experience, privacy controls, and update behavior for Microsoft 365 Apps after deployment using Cloud Policy and Intune.
 
 ---
 
@@ -18,38 +9,36 @@ In enterprise environments:
 In Office 365 admin portal, navigate Customization > Policy Management as shown in the image below.
 ![01-allow_feedback](https://github.com/user-attachments/assets/38971332-2545-4bff-bb61-36d4a351c7de)
 
-- Things commonly disabled in the real-world.
-  - Disable "Allow users to submit feedback to Microsoft"
-  - Disable "Allow the use of connected experiences in Office"
-  - Disable "Configure the level of client software diagnostic data sent by Office to Microsoft"
-  - Disable "Show LinkedIn features in Office applications"
-  - Disable "Block macros from running in Office files from the Internet"
+- Commonly configured settings include:
+  - Disable “Allow users to submit feedback to Microsoft”
+  - Restrict “Connected experiences” (depending on organizational requirements)
+  - Configure diagnostic data level (e.g., Required only)
+  - Disable “Show LinkedIn features in Office applications”
+  - Block macros from running in Office files from the Internet
 
 ---
 
 ## Example Settings to Configure Device Configuration
 
-In Intune, navigate Devices > Windows > Configuration.
+In Intune, navigate Device > Configuration.
 ![02-DeviceConfig](https://github.com/user-attachments/assets/2427b5c8-b598-414e-9445-378d09f931ab)
 
 - Things enabled in the example configuration.
-  - Enable Automatic Updates
-  - Hide Update Notifications
-  - Update Channel
-  - Update Deadline
-
-
-To stagger update channels (i.g., Current for IT, Montly for end users), an enterprise typically creates multiple configuration profiles.
-
+  - Enable Automatic Updates (required for update enforcement)
+  - Hide Update Notifications (optional, improves user experience)
+  - Update Channel (controls when updates become available)
+  - Update Deadline (controls how long users can defer updates)
 
 - Point to notice
   
-No dependency on device enrollment in Intune
+Cloud Policy does not require device enrollment in Intune, as it applies user-based settings when users sign in to Office applications.
 
 ⚠️ Common Misconceptions > “App Protection / App Config can manage desktop Office”
 
-Desktop Office apps do not use Intune MAM/App Config on Windows.
+Desktop Office applications on Windows do not support Intune App Protection (MAM) or App Configuration policies, which are primarily designed for mobile platforms.
+
+---
 
 ## Final Note
 
-While deployment tools such as Intune and ODT ensure applications are installed correctly, Cloud Policy and Device Configuration provide an additional layer of control to manage user experience, security, and update behavior at scale.
+While deployment tools such as Intune and ODT ensure applications are installed, Cloud Policy and Intune configuration profiles provide centralized control over user experience, security posture, and update behavior across the organization.
