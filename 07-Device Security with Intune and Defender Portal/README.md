@@ -1,3 +1,52 @@
+
+
+
+
+-----
+
+## Configure endpoint policies
+
+🔹 Step 1 — Create Antivirus Policy
+Endpoint Security > Antivirus > Create Policy
+
+
+Commonly set up configurations include:
+1. Allow Behavior Monitoring
+
+Detects threats not only by known malware signatures, but also by analyzing process behavior. It can block new malware by detecting suspicious actions such as mass file modification (ransomware-like activity), abnormal PowerShell usage, or attempts to disable security features. 
+
+Disabling it is generally not recommended, except for troubleshooting or compatibility scenarios.
+
+
+2. Allow Cloud Protection
+
+Without cloud protection, malware detection relies solely on locally stored malware signatures. With it turned on, suspicious files can be inspected by Microsoft's cloud intelligence for unknown malware.
+
+3. Submit Samples Consent > Send safe samples automatically
+   
+Allows Defender to upload suspicious files to Microsoft for deeper analysis when local and cloud checks are inconclusive.
+
+4. Allow Archive Scanning
+
+Scan inside conpressed files such as .zip, .rar.
+
+5. Scan Parameter > Quick Scan
+
+If Real-time protection, Behavior monitoring, Cloud protection is all enabled, most threats are caught before full scan is required.
+
+
+
+--lab article idea 
+1. how to configure endpoint policies. showcase what companies typically configure and why?
+2. how to install defender on Mac (smartphones are out of scope here right?)
+3. how to monitor events with the defender portal
+4. cause a security event and examine
+5. what if using device config instead compared to endpoint policies.
+
+
+
+---------------
+
 wip
 
 
