@@ -30,11 +30,26 @@ Allows Defender to upload suspicious files to Microsoft for deeper analysis when
 
 Scan inside conpressed files such as .zip, .rar.
 
-5. Scan Parameter > Quick Scan
+5. Scanning
+- Scan Parameter > Quick Scan
+- Schedule Quick Scan Time > 180 (3:00 daily)
+- Schedule Scan Day > Every day
+
 
 If Real-time protection, Behavior monitoring, Cloud protection is all enabled, most threats are caught before full scan is required.
 
+![01  configuring policies](https://github.com/user-attachments/assets/4e52f421-1e6c-4806-aace-6984aba0b2f7)
 
+A policy can be targeted at users but for a consistent protection, tageting at devices is usually recommended.
+
+## Configure endpoint policies
+
+
+
+
+
+
+---
 
 --lab article idea 
 1. how to configure endpoint policies. showcase what companies typically configure and why?
