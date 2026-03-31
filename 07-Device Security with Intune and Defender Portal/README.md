@@ -1,22 +1,19 @@
+## Object
 
 
 
 
 -----
 
-## Configure endpoint policies
+## Configure Antivirus policy
 
-🔹 Step 1 — Create Antivirus Policy
-Endpoint Security > Antivirus > Create Policy
+🔹 Endpoint Security > Antivirus > Create Policy
 
 
 Commonly set up configurations include:
 1. Allow Behavior Monitoring
 
 Detects threats not only by known malware signatures, but also by analyzing process behavior. It can block new malware by detecting suspicious actions such as mass file modification (ransomware-like activity), abnormal PowerShell usage, or attempts to disable security features. 
-
-Disabling it is generally not recommended, except for troubleshooting or compatibility scenarios.
-
 
 2. Allow Cloud Protection
 
@@ -35,17 +32,46 @@ Scan inside conpressed files such as .zip, .rar.
 - Schedule Quick Scan Time > 180 (3:00 daily)
 - Schedule Scan Day > Every day
 
-
-If Real-time protection, Behavior monitoring, Cloud protection is all enabled, most threats are caught before full scan is required.
-
 ![01  configuring policies](https://github.com/user-attachments/assets/4e52f421-1e6c-4806-aace-6984aba0b2f7)
 
-A policy can be targeted at users but for a consistent protection, tageting at devices is usually recommended.
+---
 
-## Configure endpoint policies
+## Configure Firewall policy
+
+🔹1. Endpoint Security > Windows Firewall > Create Policy
+
+Typical configurations include:
+- Enable firewall on all profiles
+  - Domain → ON
+  - Private → ON
+  - Public → ON
+
+- Default traffic behavior
+  - Inbound → Block
+  - Outbound → Allow
+ 
+- Enable Log Dropped Packets
+- Open a paticular TCP port
+  - i.e., TCP 8443 for an internal app access
+    
+![02  FWPolicies](https://github.com/user-attachments/assets/4a57cd3d-83d8-445c-88a7-af41f6a3b4cc)
 
 
+🔹2. Endpoint Security > Weindows Firewall Rules > Create Policy
 
+- Rule 1 (Allow TCP port 8080 to access a web application)
+  - Direction: Inbound
+  - Protocol: TCP (integar 6)
+  - Local Port Ranges: 8080
+  - Remote Address Ranges: *
+  - Network types: All networks (Doamin, Private, Public)
+
+- Rule 2 (Block TCP port 445 to block network share on Public)
+  - Direction: Outbound
+  - Protocol: TCP (integar 6)
+  - Remote Port Ranges: 445
+  - Remote Address Ranges: *
+  - Network types: Public
 
 
 
