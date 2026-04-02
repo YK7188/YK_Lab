@@ -1,6 +1,6 @@
 
 ## Issue
-Rule Allow-8080-inbound is not shown in outbound rules of wf.msc.
+Rule Allow-8080-inbound is configured via Firewall rules policy in Intune's Endpoint Security but is not shown in outbound rules of wf.msc.
 
 ![03  FW rule in intune](https://github.com/user-attachments/assets/f225aabc-548a-46fb-adab-3a7920324aee)
 
