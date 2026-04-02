@@ -2,23 +2,21 @@
 ## Issue
 Rule Allow-8080-inbound is configured via Firewall rules policy in Intune's Endpoint Security but is not shown in outbound rules of wf.msc.
 
-![03  FW rule in intune](https://github.com/user-attachments/assets/f225aabc-548a-46fb-adab-3a7920324aee)
-
-![02  rule not shown](https://github.com/user-attachments/assets/f74d2c4e-7679-4701-b158-ee0cb36a2363)
+<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/08-FW%20rules%20policy%20TS/03.%20FW%20rule%20in%20intune.jpg" width="600">
+<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/08-FW%20rules%20policy%20TS/02.%20rule%20not%20shown.jpg" width="600">
 
 ---
 
 ## Details
 - Intune record indicates that the policy is applied to the device.
 
-![01  policy_succeed](https://github.com/user-attachments/assets/c684383e-5532-4e31-acdf-fa3e3b0b3bc3)
-<img src="https://github.com/user-attachments/assets/c684383e-5532-4e31-acdf-fa3e3b0b3bc3" width="600">
+<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/08-FW%20rules%20policy%20TS/01.%20policy_succeed.jpg" width="600">
 
 
 - Powershell command below shows that no rules are applied via MDM.
 Get-NetFirewallRule | Select DisplayName, PolicyStoreSource
 
-![04  nothing from MDM](https://github.com/user-attachments/assets/75c2a4b8-de79-4b0f-8609-667954709e06)
+<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/08-FW%20rules%20policy%20TS/04.%20nothing%20from%20MDM.jpg" width="600">
 
 ---
 
@@ -29,9 +27,10 @@ Get-NetFirewallRule | Select DisplayName, PolicyStoreSource
   - wf.msc: Monitoring > Firewall
   - Get-NetFirewallRule -PolicyStore ActiveStore
  
-![05  shown in regedit](https://github.com/user-attachments/assets/1c768dae-6cde-4b6a-853f-179fe6d985fa)
-![06  shown in wf msc](https://github.com/user-attachments/assets/85aae04c-e231-4380-9268-9a1bd98e06aa)
-![07  shown via Powershell](https://github.com/user-attachments/assets/53f5a39d-cb4e-4390-879d-395284ffc580)
+
+<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/08-FW%20rules%20policy%20TS/05.%20shown%20in%20regedit.jpg" width="600">
+<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/08-FW%20rules%20policy%20TS/06.%20shown%20in%20wf.msc.jpg" width="600">
+<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/08-FW%20rules%20policy%20TS/07.%20shown%20via%20Powershell.jpg" width="600">
 
 
 
