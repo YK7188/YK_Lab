@@ -74,6 +74,9 @@ Typical configurations include:
   - Network types: Public
 
 
+🔹3. For an issue where the configured rule cannot be seen on the endpoint.
+
+- [FW rules policy does not apply on endpoint](/08-FW%20rules%20policy%20does%20not%20applied%20on%20endpoint/)
 
 ---
 
