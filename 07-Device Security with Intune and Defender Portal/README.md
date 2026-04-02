@@ -32,7 +32,7 @@ Scan inside conpressed files such as .zip, .rar.
 - Schedule Quick Scan Time > 180 (3:00 daily)
 - Schedule Scan Day > Every day
 
-![01  configuring policies](https://github.com/user-attachments/assets/4e52f421-1e6c-4806-aace-6984aba0b2f7)
+<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/07-Device%20Security%20Config/01.%20configuring%20policies.jpg" width="600">
 
 ---
 
@@ -54,8 +54,7 @@ Typical configurations include:
 - Open a paticular TCP port
   - i.e., TCP 8443 for an internal app access
     
-![02  FWPolicies](https://github.com/user-attachments/assets/4a57cd3d-83d8-445c-88a7-af41f6a3b4cc)
-
+<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/07-Device%20Security%20Config/02.%20FWPolicies.jpg" width="600">
 
 🔹2. Endpoint Security > Weindows Firewall Rules > Create Policy
 
@@ -73,10 +72,25 @@ Typical configurations include:
   - Remote Address Ranges: *
   - Network types: Public
 
+<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/07-Device%20Security%20Config/05.%20FW_Rules_Policy.jpg" width="600">
 
-🔹3. For an issue where the configured rule cannot be seen on the endpoint.
 
-- [FW rules policy does not apply on endpoint](/08-FW%20rules%20policy%20does%20not%20applied%20on%20endpoint/)
+## Verify the applied policies on the endpoint.
+
+- Antivirus Policy
+<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/07-Device%20Security%20Config/03.%20AVApplied.jpg" width="600">
+
+- Windows Firewall Policy
+<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/07-Device%20Security%20Config/04.%20FW%20policy%20applied.jpg" width="600">
+
+- Windows Firewall Rules Policy
+<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/07-Device%20Security%20Config/06.%20FW_rules_policy_shown.jpg" width="600">
+
+
+
+- For an issue where the configured Firewall policy rules are not seen on the endpoint:
+  - [08-FW rules policy do not appear on endpoint](/08-FW%20rules%20policy%20do%20not%20appear%20on%20endpoint/)
+
 
 ---
 
