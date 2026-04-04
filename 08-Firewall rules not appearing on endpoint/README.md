@@ -14,7 +14,6 @@ Rule Allow-8080-inbound is configured via Firewall rules policy in Intune's Endp
 
 
 - Powershell command below shows that no rules are applied via MDM.
-- 
 Get-NetFirewallRule | Select DisplayName, PolicyStoreSource
 
 <img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/08-FW%20rules%20policy%20TS/04.%20nothing%20from%20MDM.jpg" width="600">
