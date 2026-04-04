@@ -136,6 +136,8 @@ Steps:
 To validate the security controls, a macro-based attack scenario is simulated:
 
 A macro attempts to launch cmd.exe from an excel file but the ASR rule blocks the action
+<br>
+
 <img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/07-Device%20Security%20Config/10.%20action_blocked.jpg" width="600">
 
 
@@ -146,7 +148,7 @@ A macro attempts to launch cmd.exe from an excel file but the ASR rule blocks th
 
 Although the attack was blocked, the activity is still recorded in:
 
-Microsoft Defender Portal → Device → Timeline
+`Microsoft Defender Portal → Device → Timeline`
 
 Observed the event "EXCEL.EXE was blocked by the attack surface reduction (ASR) rule".
 <img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/07-Device%20Security%20Config/13.Timeline.jpg" width="600">
