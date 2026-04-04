@@ -1,4 +1,4 @@
-## Object
+## Objective
 
 This lab simulates a real-world endpoint security baseline using:
 - Microsoft Intune
