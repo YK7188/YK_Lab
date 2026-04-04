@@ -114,7 +114,7 @@ After deployment, policies are validated on the endpoint:
 
 - Troubleshooting reference:
   
-    → [08-FW rules policy do not appear on endpoint](/08-FW%20rules%20policy%20do%20not%20appear%20on%20endpoint/)
+    → [08-Firewall rules not appearing on endpoint](/08-Firewall%20rules%20not%20appearing%20on%20endpoint/)
 
 ---
 
