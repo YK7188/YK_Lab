@@ -9,7 +9,7 @@ This lab simulates a real-world endpoint security baseline using:
 ## 1. Configuring Endpoint Protection Policies
 
 🔹 Antivirus Policy
-
+<br>
 Path: `Endpoint Security → Antivirus → Create Policy`
 
 <br>
@@ -41,7 +41,7 @@ Path: `Endpoint Security → Antivirus → Create Policy`
 ---
 
 🔹 Firewall Policy
-
+<br>
 Path: `Endpoint Security → Firewall → Create Policy`
 
 Configured to enforce strict inbound control while allowing outbound traffic:
