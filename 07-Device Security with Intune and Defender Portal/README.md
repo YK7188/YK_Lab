@@ -17,19 +17,19 @@ Path: `Endpoint Security → Antivirus → Create Policy`
 
 - Behavior Monitoring
 
-Detects suspicious activity such as ransomware-like file changes or abnormal script execution.
+&nbsp;&nbsp;&nbsp;&nbsp;Detects suspicious activity such as ransomware-like file changes or abnormal script execution.
 
 - Cloud Protection
 
-Extends detection using Microsoft’s cloud intelligence for unknown threats.
+&nbsp;&nbsp;&nbsp;&nbsp;Extends detection using Microsoft’s cloud intelligence for unknown threats.
 
 - Automatic Sample Submission
 
-Allows suspicious files to be uploaded for deeper analysis.
+&nbsp;&nbsp;&nbsp;&nbsp;Allows suspicious files to be uploaded for deeper analysis.
 
 - Archive Scanning
 
-Enables scanning inside compressed files (.zip, .rar).
+&nbsp;&nbsp;&nbsp;&nbsp;Enables scanning inside compressed files (.zip, .rar).
 
 - Scheduled Scanning
   - Scan type: Quick Scan
