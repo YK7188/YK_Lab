@@ -40,8 +40,6 @@ Path: `Endpoint Security → Antivirus → Create Policy`
 
 ---
 
-## Configure Firewall policy
-
 🔹 Firewall Policy
 
 Path: `Endpoint Security → Firewall → Create Policy`
