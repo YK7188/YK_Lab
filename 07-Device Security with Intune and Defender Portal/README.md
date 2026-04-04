@@ -10,6 +10,7 @@ This lab simulates a real-world endpoint security baseline using:
 
 🔹 Antivirus Policy
 <br>
+<br>
 Path: `Endpoint Security → Antivirus → Create Policy`
 
 <br>
@@ -41,6 +42,7 @@ Path: `Endpoint Security → Antivirus → Create Policy`
 ---
 
 🔹 Firewall Policy
+<br>
 <br>
 Path: `Endpoint Security → Firewall → Create Policy`
 
