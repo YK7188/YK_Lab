@@ -1,7 +1,7 @@
 ## Object
 
-
-
+Simulate a real-world security baseline by utilizing Intune and Defender Portal.
+Configure AV policy, Firewall policy and Attack surface reduction policy, followed up by observing an security event in Defender Portal. 
 
 -----
 
@@ -74,130 +74,54 @@ Typical configurations include:
 
 <img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/07-Device%20Security%20Config/05.%20FW_Rules_Policy.jpg" width="600">
 
+---
 
-## Verify the applied policies on the endpoint.
+## Configure Attack Surface Reduction Policy
 
-- Antivirus Policy
-<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/07-Device%20Security%20Config/03.%20AVApplied.jpg" width="600">
+🔹 Endpoint Security > Attack surface reduction > Create Policy
 
-- Windows Firewall Policy
-<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/07-Device%20Security%20Config/04.%20FW%20policy%20applied.jpg" width="600">
+- Block all Office applications from creating child processes
 
-- Windows Firewall Rules Policy
-<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/07-Device%20Security%20Config/06.%20FW_rules_policy_shown.jpg" width="600">
-
-
-
-- For an issue where the configured Firewall policy rules are not seen on the endpoint:
-  - [08-FW rules policy do not appear on endpoint](/08-FW%20rules%20policy%20do%20not%20appear%20on%20endpoint/)
-
+<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/07-Device%20Security%20Config/07.%20ASR_Creation1.jpg" width="600">
 
 ---
 
---lab article idea 
-1. how to configure endpoint policies. showcase what companies typically configure and why?
-2. how to install defender on Mac (smartphones are out of scope here right?)
-3. how to monitor events with the defender portal
-4. cause a security event and examine
-5. what if using device config instead compared to endpoint policies.
+## Verify the applied policies on the endpoint.
 
+- Antivirus Policy: "setting is managed by administrator" message appears
+<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/07-Device%20Security%20Config/03.%20AVApplied.jpg" width="600">
 
+- Windows Firewall Policy: "setting is managed by administrator" message appears
+<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/07-Device%20Security%20Config/04.%20FW%20policy%20applied.jpg" width="600">
 
----------------
+- Windows Firewall Rules Policy: wf.msc > Monitoring > Firewall
+<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/07-Device%20Security%20Config/06.%20FW_rules_policy_shown.jpg" width="600">
 
-wip
+  - For an issue where the configured Firewall policy rules are not seen on the endpoint:
+    - [08-FW rules policy do not appear on endpoint](/08-FW%20rules%20policy%20do%20not%20appear%20on%20endpoint/)
 
+- Attack Surface Reduction Policy: "Get-MpPreference" command
+<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/07-Device%20Security%20Config/08.%20ASR_applied.jpg" width="600">
 
-| Feature              | Intune | Defender portal |
-| -------------------- | ------ | --------------- |
-| Policy config        | ✅      | ❌             |
-| Policy status        | ✅      | ⚠️ Limited     |
-| Malware alerts       | ❌      | ✅               |
-| Attack investigation | ❌      | ✅               |
-| Device risk          | ❌      | ✅               |
+---
 
+## Onboard endpoint to Defender Portal
 
+- Navigate Settings > Endpoints and download the onboard script.
+<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/07-Device%20Security%20Config/11.%20DefenderOnboardingScript.jpg" width="600">
 
-🔹 1. Endpoint Security Configuration (FOUNDATION)
+- Run the script on the target endpoint and it will appear in Device Inventory
+<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/07-Device%20Security%20Config/12.deviceshown.jpg" width="600">
 
-Goal: Show how companies secure devices
+---
 
-Use Microsoft Intune
+## Simulate a security event
 
-Include:
+- Run a macro to launch cmd.exe and the "Action Blocked" pop up appears.
+<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/07-Device%20Security%20Config/10.%20action_blocked.jpg" width="600">
 
-Antivirus policy
-Firewall policy
-(Optional) Attack Surface Reduction
+- Check Timeline of the test endpoint and the message "EXCEL.EXE was blocked by the attack surface reduction (ASR) rule" appears.
+<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/07-Device%20Security%20Config/13.Timeline.jpg" width="600">
 
-💡 Explain:
-
-Why Endpoint Security > Config Profiles
-Real-world use (ransomware, compliance)
-
-
-🔹 2. Defender Deployment (Mac focus 👍)
-
-Use:
-
-👉 Microsoft Defender for Endpoint
-
-Include:
-
-Why Mac still needs enterprise protection
-Deployment via Intune
-macOS permissions (system extension, full disk)
-
-💡 Good call:
-
-Smartphones → out of scope ✅ (keeps it clean)
-
-
-🔹 3. Monitoring (THIS IS WHERE IT GETS INTERESTING)
-
-Show:
-
-Device appears in Defender portal
-Security dashboard
-Device timeline
-
-
-🔹 4. Simulate an attack (🔥 key differentiator)
-
-Do:
-
-Use EICAR test file
-Trigger detection
-
-Then show:
-
-File detected
-   ↓
-Alert generated
-   ↓
-Incident created
-
-Explain:
-
-What Defender is actually seeing
-Why this matters for security teams
-
-
-🔹 5. Compare with Configuration Profiles (VERY SMART)
-
-This is where you stand out.
-
-Show:
-
-Same AV setting via:
-Endpoint Security
-Settings Catalog
-
-Then explain:
-
-Aspect	Endpoint Security	Config Profile
-Ease	✅ Easy	❌ Complex
-Coverage	⚠️ Limited	✅ Full
-Use case	Security baseline	Advanced config
 
 
