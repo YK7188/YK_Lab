@@ -62,7 +62,8 @@ Configured to enforce strict inbound control while allowing outbound traffic:
 
 <br>
 🔸 Firewall Rules
-
+<br>
+<br>
 Path: `Endpoint Security → Firewall Rules → Create Policy`
 <br>
 
@@ -75,8 +76,9 @@ Example rules:
 
 ---
 
-## 🔹 Attack Surface Reduction (ASR)
-
+🔹 Attack Surface Reduction (ASR)
+<br>
+<br>
 Path: `Endpoint Security → Attack Surface Reduction → Create Policy`
 
 <br>
