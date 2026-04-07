@@ -30,6 +30,7 @@ Then: `The configuration for your iPhone could not be downloaded`
 ## Analysis
 
 ✔ Remote Management was triggered but not enrollment profile was returned.
+
 ✔ It appears that without Apple Business Manager, the device cannot be recognized by Intune.
 
 
