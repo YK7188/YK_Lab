@@ -27,6 +27,18 @@ Then: `The configuration for your iPhone could not be downloaded`
 
 > Enrollment failed before any user sign-in prompt.
 
+## Additional Testing — Enrollment Profile Assignment
+
+1. To rule out missing enrollment configuration, an Apple Configurator profile was created in Intune.
+
+2. The device serial number was imported and associated with the profile.
+
+3. The enrollment URL exported from Intune was also tested in Apple Configurator.
+
+-> The same error occurred: `The configuration for your iPhone could not be downloaded`
+
+
+
 ## Analysis
 
 ✔ Remote Management was triggered but not enrollment profile was returned.
