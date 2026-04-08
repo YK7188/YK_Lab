@@ -29,6 +29,9 @@ Then: `The configuration for your iPhone could not be downloaded`
 
 > Enrollment failed before any user sign-in prompt.
 
+<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/09-ios-configurator-intune/06%20error.jpg" width="600">
+
+
 ## Additional Testing — Enrollment Profile Assignment
 
 1. To rule out missing enrollment configuration, an Apple Configurator profile was created in Intune.
@@ -54,11 +57,8 @@ Then: `The configuration for your iPhone could not be downloaded`
 
 ## Conclusion
 
-Apple Configurator can successfully place an iOS device into a supervised state and trigger the Remote Management screen.
+Even after assigning a Configurator enrollment profile and importing the device serial number, the iPhone failed to download any enrollment configuration during Setup Assistant.
 
-However, without Apple Business Manager, Intune is unable to complete device-driven enrollment, 
-even when a profile is created and the device serial number is assigned.
-
-This suggests that Apple Business Manager is required for Intune to recognize the device
-during Setup Assistant and deliver enrollment configuration.
+This suggests that without Apple Business Manager, Intune cannot fully recognize the device
+for device-driven enrollment, and no configuration is delivered before user authentication.
 
