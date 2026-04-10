@@ -3,7 +3,7 @@
 
 ## Create Update ring
 
-Path: `Devices > Windows Update > Update rings > Create Profile`
+Path: `Devices > Windows Updates > Update rings > Create Profile`
 
 
 - Update settings
@@ -27,3 +27,31 @@ Path: `Devices > Windows Update > Update rings > Create Profile`
    such as Lenovo Vantage, deployed and controlled via Intune
 
 ✔ This allows testing and staged rollout instead of automatic updates
+
+## Create Feature update policy
+
+Path: `Devices > Windows Updates > Feature updates > Create Profile`
+
+       image
+
+## Create Device configuration
+
+Path: `Devices > Windows > Configuration > Create New Policy > Settings catalog > `
+
+
+
+
+## Verification
+
+
+
+## Key points
+
+✔ Feature Update Policy overrides Update Ring for version
+✔ Feature Update Policy adopts what are set in update ring 
+i.e.) Deadline cannot be set with Feature update policy and what is set with Update ring will apply.
+
+✔ Update ring configs overrides device configs
+
+
+
