@@ -96,13 +96,17 @@ Path: `Devices > Windows > Configuration > Create New Policy > Settings catalog 
 
 ## Troubleshoot Note
 
-A while after the device configuration is created and assigned, the policy-assigned devices' check-in status showed Conflict in the report.
+A while after the device configuration had been created and assigned, the policy-assigned devices' check-in status showed as Conflict in the report.
 
-As the Conflict status appeared for the update ring the devices are assigned too, which indicated that it clashed with the configuration policy. I 
+<br>
+<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/10-Lab%3A%20Windows%20Update%20Management%20with%20Intune/17.%20conflict_deviceconfig.jpg" width="600">
 
-   conflict status image
+The Conflict status appeared for the update ring the devices are assigned too. It indicated that the ring clashed with the configuration policy.
+I Corrected the conflicted settings referring to Per setting status in the report.
 
-Corrected conflicted settings referring to Per setting status in the report.
+<br>
+<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/10-Lab%3A%20Windows%20Update%20Management%20with%20Intune/15.%20conflict%20list.jpg" width="600">
+
 
     per setting status image
 
