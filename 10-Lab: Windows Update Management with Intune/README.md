@@ -20,6 +20,7 @@ Path: `Devices > Windows Updates > Update rings > Create Profile`
   - Deadline for quality updates: 4
   - Grace period: 2 days
 
+<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/10-Lab%3A%20Windows%20Update%20Management%20with%20Intune/01.%20updatering.jpg" width="600">
 
 ✔ Windows Update driver delivery may introduce instability
 
