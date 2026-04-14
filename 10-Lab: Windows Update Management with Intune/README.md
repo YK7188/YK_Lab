@@ -107,18 +107,15 @@ I Corrected the conflicted settings referring to Per setting status in the repor
 <br>
 <img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/10-Lab%3A%20Windows%20Update%20Management%20with%20Intune/15.%20conflict%20list.jpg" width="600">
 
+Later, the status changed to Succeeded.
 
-    per setting status image
-
-The status changed to Succeeded.
-
-    succeeded image
+---
 
 ## Key points
 
 ✔ Feature Update Policy overrides Update Ring for version.
 
-✔ When there is conflict between Update ring configs and override device configs, the settings will not apply properly.
+✔ When there is conflict between Update ring and device config, the settings will not apply properly.
 
 
 
