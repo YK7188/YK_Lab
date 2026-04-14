@@ -26,7 +26,7 @@ Path: `Devices > Windows Updates > Update rings > Create Profile`
 ✔ Enterprises often block driver updates and rely on OEM tools
    such as Lenovo Vantage, deployed and controlled via Intune
 
-✔ This allows testing and staged rollout instead of automatic updates
+✔ Enterprises create multiple rings for testing and staged rollout instead of automatic, all at once updates
 
 ## Create Feature update policy
 
