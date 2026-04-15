@@ -47,23 +47,35 @@ Path: `Devices > Windows Updates > Feature updates > Create Profile`
 ✔ Observation 1: About "Pending restart" showing unexepected version
   
 After assigning a Feature Update Policy for 24H2, the test device
-(Windows 10 22H2) showed: `Pending restart for Windows 11 23H2`
+(Windows 10 22H2) showed: 
+
+`Pending restart for Windows 11 23H2`
 
 <br>
 <img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/10-Lab%3A%20Windows%20Update%20Management%20with%20Intune/04.%2023H2_Downloaded.jpg" width="600">
 
-
-✔ Analysis 1
+<br>
+✔ Analysis
   
-I confirmed that an existing feature update policy for 23H2 had been assigned to the test machine. It appeared that this policy had let it download the 23H2 update before the new policy for 24H2 was applied. Even after I had unassigned the machine from the 23H2 policy, the machine showed "Pending restart 23H2"
+An existing Feature Update Policy for 23H2 had previously been assigned.
 
-> Once an update is set to the "Pending restart" state, the machine can no longer skip the update. In this case, 22H2 cannot skip 23H2 to update to 24H2.
+- The device had already downloaded 23H2
+- Even after unassignment, it remained in Pending restart
 
-✔ Observation 2: About "some settings are managed by your organization" message
+> Key behaviour: `Once an update reaches “Pending restart,” it cannot be skipped.`
+
+<br>
+✔ Observation 2: About "Managed by your organization" not shown
   
-I let it install 23H2 to further observe its behaviour. As opposued to the expectation, it did not show "some settings are managed by your organization". When clicking Check updates, it started downloading 24H2 instead of the current latest 25H2 that was a good indicator that the policy had been successfully applied.
+After upgrading to 23H2:
 
-✔ Analysis 2
+- The message “Some settings are managed by your organization” did NOT appear
+- However, selecting Check for updates triggered download of 24H2 (instead of latest public version 25H2)
+
+> This indicated the Feature Update Policy was active
+
+<br>
+✔ Analysis
   
 Confirmed that the policy was applied by Registry value.
 
