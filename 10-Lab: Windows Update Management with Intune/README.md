@@ -55,6 +55,7 @@ After assigning a Feature Update Policy for 24H2, the test device
 <img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/10-Lab%3A%20Windows%20Update%20Management%20with%20Intune/04.%2023H2_Downloaded.jpg" width="600">
 
 <br>
+
 ✔ Analysis
   
 An existing Feature Update Policy for 23H2 had previously been assigned.
@@ -65,6 +66,7 @@ An existing Feature Update Policy for 23H2 had previously been assigned.
 > Key behaviour: `Once an update reaches “Pending restart,” it cannot be skipped.`
 
 <br>
+
 ✔ Observation 2: About "Managed by your organization" not shown
   
 After upgrading to 23H2:
@@ -75,20 +77,31 @@ After upgrading to 23H2:
 > This indicated the Feature Update Policy was active
 
 <br>
+
 ✔ Analysis
   
-Confirmed that the policy was applied by Registry value.
-
+Policy application was confirmed via registry:
 Path: `Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\current\device\Update`
 
-- Values below matched what were configured in the policy
+- Values matched configured policy 
   - DeferFeatureUpdatesPeriodInDays
   - DeferQualityUpdatesPeriodInDays
 
-Later, when "Option to check for Windows updates" was disabled in the policy, the "settings are managed by your organization" message appeared.
+<br>
+
+✔ Additional observation
+
+When the setting `"Option to check for Windows updates" = disabled` was applied,
+
+the "settings are managed by your organization" message appeared.
 
 <br>
 <img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/10-Lab%3A%20Windows%20Update%20Management%20with%20Intune/14.%20managed%20by%20org%20appears.jpg" width="600">
+
+<br>
+
+> Conclusion: The presence of the message depends on UX-impacting restrictions,
+not simply whether policies are applied.
 
 ---
 
@@ -98,7 +111,7 @@ Path: `Devices > Windows > Configuration > Create New Policy > Settings catalog 
 
 - Allow Auto Update > Auto install the update and then notify the user to schedule a device restart. Updates are downloaded automatically
 - Allow Optional Content > Don't receive optional updates
-- Disable WFfB Safeguards > Safeguards are enabled
+- Disable WFfB Safeguards > Disabled (safeguards enabled)
 - Manage Preview Builds > Disable Preview builds
 
 
@@ -107,28 +120,48 @@ Path: `Devices > Windows > Configuration > Create New Policy > Settings catalog 
 
 ---
 
-## Troubleshoot Note
+## Troubleshooting - Conflict State
 
-A while after the device configuration had been created and assigned, the policy-assigned devices' check-in status showed as Conflict in the report.
+After assigning the device configuration:
+- Devices reported Conflict in check-in status
 
 <br>
 <img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/10-Lab%3A%20Windows%20Update%20Management%20with%20Intune/17.%20conflict_deviceconfig.jpg" width="600">
 
-The Conflict status appeared for the update ring the devices are assigned too. It indicated that the ring clashed with the configuration policy.
-I Corrected the conflicted settings referring to Per setting status in the report.
+<br>
+
+✔ Cause 
+
+The conflict also appeared on the assigned Update Ring:
+> Overlapping settings between Update Ring and Device Configuration
+
+<br>
+
+✔ Resolution
+
+- Reviewed Per-setting status
+- Identified overlapping configurations
+- Adjusted settings to remove duplication
 
 <br>
 <img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/10-Lab%3A%20Windows%20Update%20Management%20with%20Intune/15.%20conflict%20list.jpg" width="600">
 
-Later, the status changed to Succeeded.
+<br>
+
+✔ Result
+> Status changed from Conflict → Succeeded
 
 ---
 
 ## Key points
 
-✔ Feature Update Policy overrides Update Ring for version.
+✔ Feature Update Policy overrides Update Ring for OS version control
 
-✔ When there is conflict between Update ring and device config, the settings will not apply properly.
+✔ Once an update reaches “Pending restart,” it cannot be skipped
 
+✔ Update Ring and Device Configuration must not define overlapping settings
 
+✔ “Managed by your organization” is NOT a reliable indicator of policy application
+
+✔ Registry (PolicyManager) provides the most accurate validation
 
