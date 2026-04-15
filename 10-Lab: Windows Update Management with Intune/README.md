@@ -23,12 +23,12 @@ Path: `Devices > Windows Updates > Update rings > Create Profile`
 <br>
 <img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/10-Lab%3A%20Windows%20Update%20Management%20with%20Intune/01.%20updatering.jpg" width="600">
 
-✔ Windows Update driver delivery may introduce instability
+✔ Windows Update driver delivery may introduce instability depending on hardware and driver quality
 
 ✔ Enterprises often block driver updates and instead rely on OEM tools
    such as Lenovo Vantage, managed via Intune
 
-✔ Multiple update are typically used to implement staged rollout (e.g., Pilot -> Broad -> Production)
+✔ Multiple update rings are typically used to implement staged rollout (e.g., Pilot -> Broad -> Production)
 
 ---
 
@@ -44,7 +44,7 @@ Path: `Devices > Windows Updates > Feature updates > Create Profile`
 
 ## Troubleshooting notes
 
-✔ Observation 1: About "Pending restart" showing unexepected version
+✔ Observation 1: About "Pending restart" showing unexepected OS version
   
 After assigning a Feature Update Policy for 24H2, the test device
 (Windows 10 22H2) showed: 
@@ -74,7 +74,7 @@ After upgrading to 23H2:
 - The message “Some settings are managed by your organization” did NOT appear
 - However, selecting Check for updates triggered download of 24H2 (instead of latest public version 25H2)
 
-> This indicated the Feature Update Policy was active
+> This indicates the Feature Update Policy is active
 
 <br>
 
