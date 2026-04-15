@@ -16,8 +16,8 @@ Path: `Devices > Windows Updates > Update rings > Create Profile`
 - User experience settings
   - Automatic update behavior: Auto install and restart at maintenance time
   - Active hours: 8 AM – 6 PM
-  - Deadline for feature updates: 30
-  - Deadline for quality updates: 4
+  - Deadline for feature updates: 30 days
+  - Deadline for quality updates: 4 days
   - Grace period: 2 days
 
 <br>
@@ -25,10 +25,10 @@ Path: `Devices > Windows Updates > Update rings > Create Profile`
 
 ✔ Windows Update driver delivery may introduce instability
 
-✔ Enterprises often block driver updates and rely on OEM tools
-   such as Lenovo Vantage, deployed and controlled via Intune
+✔ Enterprises often block driver updates and instead rely on OEM tools
+   such as Lenovo Vantage, managed via Intune
 
-✔ Enterprises create multiple rings for testing and staged rollout instead of automatic, all at once updates
+✔ Multiple update are typically used to implement staged rollout (e.g., Pilot -> Broad -> Production)
 
 ---
 
@@ -42,11 +42,12 @@ Path: `Devices > Windows Updates > Feature updates > Create Profile`
 
 ---
 
-## Troubleshoot note
+## Troubleshooting notes
 
-✔ Observation 1: About "Pending restart" state
+✔ Observation 1: About "Pending restart" showing unexepected version
   
-After I created the feature update policy for version 24H2, the test machine (Windows 10 22H2) was ready to install 23H2 instead of 24H2, showing "Pending restart".
+After assigning a Feature Update Policy for 24H2, the test device
+(Windows 10 22H2) showed: `Pending restart for Windows 11 23H2`
 
 <br>
 <img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/10-Lab%3A%20Windows%20Update%20Management%20with%20Intune/04.%2023H2_Downloaded.jpg" width="600">
