@@ -1,7 +1,7 @@
 ## Objective
 Test how a custom policy is configured.
 
-<br>
+
 ---
 
 ## Add Script to collect Bios version in Intune
@@ -33,8 +33,8 @@ else {
 
 <br>
 <img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/12-custom%20compliance/01.%20add_Bios_script.jpg" width="600">
-
 <br>
+
 ---
 
 ## Create compliance policy
@@ -77,8 +77,8 @@ This JSON file is to decide a device's compliance depending on the integer value
 
 YAS-LAB (Bios version 1.42) appears as compliant and the other test devices appear as non-compliant as expected.
 
-<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/12-custom%20compliance/05.%20hostcompliant.jpg" width="600">
-
+<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/12-custom%20compliance/06.%20hostcompliant.jpg" width="600">
+<br>
 
 ---
 
@@ -87,3 +87,6 @@ YAS-LAB (Bios version 1.42) appears as compliant and the other test devices appe
 ✔ Compliance policy may take as long as 8 hours to be effective.
 
 ✔ Although Bios version is listed in Hardware blade of a device, it cannot be used for a compliance policy.
+
+✔ Logging on with a local account may delay policy enforcement.
+> The policy kept showing not applicable for the device while logged on with a local account. Right after logging with an AAD user to it, the device appeared as compliant.
