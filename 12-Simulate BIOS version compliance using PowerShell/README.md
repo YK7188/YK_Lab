@@ -2,7 +2,7 @@
 
 Path: `Devices → Compliance → Scripts > Add > Windows 10 and later`
 
-Add the script below to configure a compliance policy.
+Add the script below, which will be used to configure a compliance policy.
 
 <pre>
 $raw = (Get-CimInstance Win32_BIOS).SMBIOSBIOSVersion
@@ -22,13 +22,17 @@ else {
 } | ConvertTo-Json -Compress
 </pre> 
 
+<br>
+<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/12-custom%20compliance/01.%20add_Bios_script.jpg" width="600">
+
+<br>
 ---
 
 ## Create compliance policy
 
 Path: `Devices → Compliance > Policies > Create Policy > Windows 10 and later`
 
-- JSON file
+Upload the JSON file below in compliance creation.
 
 <pre>
 {
@@ -50,6 +54,17 @@ Path: `Devices → Compliance > Policies > Create Policy > Windows 10 and later`
   ]
 }
 </pre>
+
+<br>
+
+<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/12-custom%20compliance/02.%20compliance%20policy.jpg" width="600">
+
+
+<br>
+---
+
+## Validation
+
 
 ---
 
