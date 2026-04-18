@@ -1,16 +1,13 @@
 ## Objective
-Test how a custom policy is configured.
-
+Validate how a custom compliance policy is configured and evaluated in Intune using a BIOS version check.
 
 ---
 
-## Add Script to collect Bios version in Intune
+## Add script to collect BIOS version
 
 Path: `Devices → Compliance → Scripts > Add > Windows 10 and later`
 
-Add the script below, which will be used to configure a compliance policy.
-
-This script will gather Bios version of a device; xx.yy.zz and convert it to integar xxyyzz.
+Add the script below. It collects the BIOS version (format: xx.yy.zz) and converts it into a comparable integer (xxyyzz).
 
 <pre>
 $raw = (Get-CimInstance Win32_BIOS).SMBIOSBIOSVersion
@@ -18,16 +15,20 @@ $raw = (Get-CimInstance Win32_BIOS).SMBIOSBIOSVersion
 if ($raw -match '^\d+(\.\d+)+$') {
     $version = [version]$raw
 
-    # Convert to comparable integer: 01.42.00 → 014200
+    # Convert to comparable integer: 1.42.0 → 14200
     $normalized = ($version.Major * 10000) + ($version.Minor * 100) + $version.Build
 }
 else {
+    # Fallback for non-standard values (e.g. VM)
     $normalized = 0
 }
 
-@{
+$result = @{
     BIOSVersion = $normalized
-} | ConvertTo-Json -Compress
+}
+
+# Important: Explicit output for Intune
+Write-Output ($result | ConvertTo-Json -Compress)
 </pre> 
 
 
@@ -41,9 +42,9 @@ else {
 
 Path: `Devices → Compliance > Policies > Create Policy > Windows 10 and later`
 
-Upload the JSON file below in compliance creation.
+Upload the JSON file below during policy creation.
 
-This JSON file is to decide a device's compliance depending on the integer value obtained from it.
+This rule evaluates compliance based on the integer value returned by the script.
 
 <pre>
 {
@@ -75,7 +76,10 @@ This JSON file is to decide a device's compliance depending on the integer value
 
 ## Validation
 
-YAS-LAB (Bios version 1.42) appears as compliant and the other test devices appear as non-compliant as expected.
+- YAS-LAB (BIOS 1.42.0 → 14200) → Compliant
+- Other test devices → Non-compliant
+
+Results matched expectations after policy evaluation completed.
 
 <img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/12-custom%20compliance/06.%20hostcompliant.jpg" width="600">
 <br>
@@ -84,9 +88,16 @@ YAS-LAB (Bios version 1.42) appears as compliant and the other test devices appe
 
 ## Key points
 
-✔ Compliance policy may take as long as 8 hours to be effective.
+✔ Compliance evaluation can be delayed
 
-✔ Although Bios version is listed in Hardware blade of a device, it cannot be used for a compliance policy.
+Custom compliance may take several hours (up to ~8 hours in this lab even after the device synced with intune) before results appear.
 
-✔ Logging on with a local account may delay policy enforcement.
-> The policy kept showing not applicable for the device while logged on with a local account. Right after logging with an AAD user to it, the device appeared as compliant.
+✔ Hardware inventory cannot be used directly
+
+Although BIOS version is visible under the Hardware blade, it cannot be referenced in compliance policies.
+
+✔ User sign-in affects evaluation timing
+
+Devices signed in with only a local account may remain in a “Not applicable” state longer.
+
+In this lab, the device remained Not applicable under a local account and became Compliant immediately after Azure AD sign-in.
