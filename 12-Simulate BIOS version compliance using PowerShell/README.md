@@ -84,6 +84,12 @@ Results matched expectations after policy evaluation completed.
 <img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/12-custom%20compliance/06.%20hostcompliant.jpg" width="600">
 <br>
 
+
+- The Company Portal displays the remediation information configured in the JSON file.
+
+<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/12-custom%20compliance/07.%20companyportal.jpg" width="600">
+<br>
+
 ---
 
 ## Key points
