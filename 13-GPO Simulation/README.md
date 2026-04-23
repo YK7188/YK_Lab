@@ -8,11 +8,10 @@ Simulate real-world Group Policy configurations and validate their application o
 
 ## Part 1 — RDP Security
 
-Policy Name: GPO-RDP-Hardening
+- Policy Name: GPO-RDP-Hardening
+- Target OU: HQ > Computers
 
-OU: HQ > Computers
-
-1. Enforce Network Level Authentication (NLA)
+### 1. Enforce Network Level Authentication (NLA)
    
 Require user authentication for remote connections by using Network Level Authentication > Enabled
 
@@ -29,7 +28,7 @@ Path:
 
 <br>
 
-2. Disable Clipboard Redirection
+### 2. Disable Clipboard Redirection
 
 Do not allow clipboard redirection > Enabled
 
@@ -65,9 +64,8 @@ Path:
 
 ## Part 3 - Windows update policy
 
-Policy Name: GPO-WindowsUpdate
-
-OU: HQ > Computers
+- Policy Name: GPO-WindowsUpdate
+- Target OU: HQ > Computers
 
 Path:
 `Computer Configuration
@@ -87,20 +85,22 @@ Path:
 
  ## Verification
 
-1. Group Policy Results Wizard
+Validation was performed from both the server side and the client side.
+
+### 1. Group Policy Results Wizard
 
 Using Group Policy Results in Group Policy Management Console:
 
-The test policies apper under Applied GPOs.
+The configured GPOs apper under Applied GPOs.
 
 <img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/13-GPO%20simulation/04.%20validation%20on%20server.jpg" width="600">
 
-2. Client-side validation
+### 2. Client-side validation
 
-Power shell commnad:
+Commnad:
 `gpresult /r /scope computer`
 
-The test policies appear under Applied Group Policy Objects.
+The configured GPOs appear under Applied Group Policy Objects.
 
 <img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/13-GPO%20simulation/05.%20validation%20on%20endpoint.jpg" width="600">
 
