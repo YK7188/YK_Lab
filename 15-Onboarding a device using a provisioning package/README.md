@@ -33,7 +33,7 @@ Enter a project name and proceed through the wizard.
 
 ### 1. Configure device name
 
-Path: Set up deice > Device name
+Path: Set up device > Device name
 
 Example:  PC-%SERIAL%
 
@@ -44,24 +44,26 @@ Example:  PC-%SERIAL%
 Path (Entra ID Enrollment):
 
 Account management > Manage organization/school accounts
+- Select Enroll in Azure AD (Entra ID)
+- Generate a bulk token
 
-Path (Entra ID Enrollment):
+Path (Local admin):
 
 Account management > Optional: Create a local administrator account
 
 ## Step 4 — Apply the provisioning package
 
 Execute the .ppkg file on the target device.
-
-Confirm the prompt and the device will automatically restart.
+- Confirm the prompt
+- The device will automatically restart
 
 ## Step 5 — Verification
 
 ### 1. Confirm Entra ID join
    
-   dsregcmd /status
+Command: dsregcmd /status
 
-   AzureAdJoined appears YES
+AzureAdJoined appears YES
 
 ### 2. Confirm device name
 
@@ -73,7 +75,7 @@ Run lusrmgr.msc and verify the created account is a member of Administrators
 
 ### 4. Confirm Intune enrollment
 
-The device's managed by status shows Intune.
+The device's "managed by" status shows Intune.
 
 ### 5. Confirm data integrity
 
