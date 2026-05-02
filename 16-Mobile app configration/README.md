@@ -1,16 +1,24 @@
 > Tested: May 2026
 
-## Objective
+# Objective
 
 ---
 
-## App Protection Policy (MAM only)
+# App Protection Policy (MAM only)
 
 Path: `Apps → protection → Create`
 
 Choose: `iOS/iPadOS`
 
-### 1️⃣ Data Protection
+Selected apps:
+   
+- Microsoft Outlook
+- Microsoft Teams
+- Microsoft OneDrive
+
+image
+
+## 1️⃣ Data Protection
 
 image
 
@@ -39,7 +47,7 @@ image
    Block
    
 
-### 2️⃣ Access requirements
+## 2️⃣ Access requirements
 
 image
 
@@ -71,17 +79,33 @@ image
 
    Not required
 
+## 3️⃣ Data protection
 
+### App conditions
 
+image
 
+1. Max PIN attempts
 
+   5
 
+2. Offline grace period
 
+   10080 (7days) > Block access (minutes)
 
-Select apps to target:
+3. Offline grace period
 
-- Microsoft Outlook
-- Microsoft Teams (optional)
-- OneDrive
+   90 (days) > Wipe data (days)
 
-### 3️⃣ Data protection
+### Device conditions
+
+image
+
+1. Jailbroken/rooted devices
+
+   Block access
+
+2. Min OS version
+
+   16.0 > Block access
+
