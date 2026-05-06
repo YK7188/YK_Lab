@@ -109,3 +109,55 @@ image
 
    16.0 > Block access
 
+# App Protection Policy (MAM only) Validation
+
+Validate wether the app protection is on effect for the test user.
+
+When signing in, the notice below appears.
+
+`Your organization is now protecting its data in this app.`
+
+<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/%20%20%20%2016-Mobile%20app%20configration/08.Initial_notice_protection.jpgg" width="600">
+
+
+## 1️⃣ Data Protection
+
+1. Send org data to other apps
+   
+
+
+    
+Images
+
+
+
+“Why can’t I AirDrop this?”
+“Why doesn’t Messages show up?”
+
+And the answer is:
+
+App Protection Policy → Send org data restriction
+
+
+
+
+
+2. Receive data from other apps
+
+   All apps with incoming org data
+
+3. Restrict cut, copy, and paste between other apps
+
+   Policy managed apps only
+
+4. Save copies of org data
+
+   Block
+
+5. Allow user to save copies to selected services
+
+   OneDrive for Business, SharePoint
+
+6. Screen capture
+
+   Block
