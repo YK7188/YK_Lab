@@ -165,30 +165,35 @@ As shown in the image below, what each option does is not really clear so I test
 <img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/%20%20%20%2016-Mobile%20app%20configration/12.receive_data_from_other_apps.jpg" width="600">
 
 - All Apps
-  - Files, Freeform, notes are blocked the same way for Send org data to other apps config.
-    > Send org data to other apps config affects.
-  - Outlook, OneDrive, OneNote successfully receive the data.
+  - A image is shared from Teams to Files, Freeform, notes. Sharing to all these apps is the same way for Send org data to other apps config.
+    > Files, Freeform, and Notes were blocked by the “Send org data to other apps” configuration rather than the “Receive data from other apps” configuration.
+  - A image is shared from Teams to Outlook, OneDrive, OneNote. All successfully receive the data.
 
 - None
-  - Files, Freeform, notes are blocked the same way for Send org data to other apps config.
+  - A image is shared from Teams to Files, Freeform, notes. All is blocked the same way for Send org data to other apps configuration.
     > Send org data to other apps config affects.
-  - Outlook fail to be shared with the error in the image below "Security Notice Your organisation doesn't allow the use of external libraries and files".
+  - Outlook fail to be shared from Teams with the error in the image below "Security Notice Your organisation doesn't allow the use of external libraries and files".
     
     <img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/%20%20%20%2016-Mobile%20app%20configration/13.Outlook_Blocked_OrgData.jpg" width="300">
 
-  - OneDrive fail to be shared with the error in the image below "Sign in to Personal OneDrive".
+  - OneDrive fail to be shared from Teams with the error in the image below "Sign in to Personal OneDrive".
     
     <img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/%20%20%20%2016-Mobile%20app%20configration/14.OneDrive_Blocked_OrgData.jpg" width="300">
 
   - OneNote
-    > Successfully receive the data.
+    > Successfully receive the data shared from Teams.
 
-> There is no consistency in how each Microsoft office apps behave.
+> Behavior may differ between Microsoft apps even when the same Intune App Protection Policy is applied.
 
-- Policy Managed Apps
+- Policy managed apps
+  - Files, Freeform, notes are blocked the same way for Send org data to other apps config.
+    > Send org data to other apps config affects.
+  - Outlook, OneDrive, OneNote successfully receive the data.
 
-All Apps with incoming org Data
-
+- All Apps with incoming org Data
+  - Files, Freeform, notes are blocked the same way for Send org data to other apps config.
+    > Send org data to other apps config affects.
+  - Outlook, OneDrive, OneNote successfully receive the data.
 
 
 
