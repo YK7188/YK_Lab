@@ -16,11 +16,11 @@ Selected apps:
 - Microsoft Teams
 - Microsoft OneDrive
 
-image
+<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/%20%20%20%2016-Mobile%20app%20configration/01.add_apps.jpg" width="600">
 
 ## 1️⃣ Data Protection
 
-image
+<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/%20%20%20%2016-Mobile%20app%20configration/02.data_protection.jpg" width="600">
 
 1. Send org data to other apps
 
@@ -49,7 +49,7 @@ image
 
 ## 2️⃣ Access requirements
 
-image
+<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/%20%20%20%2016-Mobile%20app%20configration/03.access_reqirements.jpg" width="600">
 
 1. PIN for access
 
@@ -79,11 +79,11 @@ image
 
    Not required
 
-## 3️⃣ Data protection
+## 3️⃣ Conditional launch
+
+<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/%20%20%20%2016-Mobile%20app%20configration/04.conditional_launch.jpg" width="600">
 
 ### App conditions
-
-image
 
 1. Max PIN attempts
 
@@ -99,8 +99,6 @@ image
 
 ### Device conditions
 
-image
-
 1. Jailbroken/rooted devices
 
    Block access
@@ -109,55 +107,107 @@ image
 
    16.0 > Block access
 
+---
+
 # App Protection Policy (MAM only) Validation
 
-Validate wether the app protection is on effect for the test user.
+Validate wether the app protection is in effect for the test user.
 
 When signing in, the notice below appears.
 
 `Your organization is now protecting its data in this app.`
 
-<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/%20%20%20%2016-Mobile%20app%20configration/08.Initial_notice_protection.jpgg" width="600">
+<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/%20%20%20%2016-Mobile%20app%20configration/08.Initial_notice_protection.jpg" width="400">
 
 
 ## 1️⃣ Data Protection
 
-1. Send org data to other apps
+### 1. Send org data to other apps (Policy managed apps)
+
+Send a copy of a test image both when the configuration is in effect and not.
+
+   - Files:
+     - When the configuration is in effect, sharing not allowed message appears.
+
+       <img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/%20%20%20%2016-Mobile%20app%20configration/05.Files_blocked.jpg" width="400">
+
+     - When the configuration is not in effect, the image is successfully shared.
    
+   - Freeform:
+     - When the configuration is in effect, sharing appears completed but when accessing the shared image, it appears encrypted (the image on the left). 
+     - When the configuration is not in effect, the image appears properly (the image on the right).
+
+     <img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/%20%20%20%2016-Mobile%20app%20configration/07.Image_FreeForm.jpg" width="400">
 
 
-    
-Images
+   - Notes:
+     - When the configuration is in effect, sharing appears completed but when accessing the shared image, it appears encrypted (the 17:32 image). 
+     - When the configuration is not in effect, the image appears properly (the 18:45 image).
+
+     <img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/%20%20%20%2016-Mobile%20app%20configration/06.Image_Notes.jpg" width="300">
+
+   - Outlook, OneDrive, OneNote: Sharing is completed successfully regardless of the configuration.
+
+> The behaviour above indicates that the restriction is successfully in effect.
+
+> In addition to that, now AirDrop, Messages and Mail apps are displayed in the share sheet.
+
+`Key points:`
+
+- How apps are restriced in sharing veries.
+- Some apps (AirDrop, Messages and Mail in this test) are not shown in the share sheet at all.
+- Some apps (Freeform and Notes in this test) can be shared the data but it appears encrypted.
+- Some apps (Files in this test) are blocked sharing with the message "Sharing not allowed".
+
+### 2. Receive data from other apps (All apps with incoming org data)
+
+As shown in the image below, what each option does is not really clear so I tested it one by one.
+<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/%20%20%20%2016-Mobile%20app%20configration/12.receive_data_from_other_apps.jpg" width="600">
+
+- All Apps
+  - Files, Freeform, notes are blocked the same way for Send org data to other apps config.
+    > Send org data to other apps config affects.
+  - Outlook, OneDrive, OneNote successfully receive the data.
+
+- None
+  - Files, Freeform, notes are blocked the same way for Send org data to other apps config.
+    > Send org data to other apps config affects.
+  - Outlook failed with the error below "Security Notice Your organisation doesn't allow the use of external libraries and files."
+    <img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/%20%20%20%2016-Mobile%20app%20configration/13.Outlook_Blocked_OrgData.jpg" width="300">
+
+  - OneDrive
+  - OneNote 
+
+Policy Managed Apps
+
+All Apps with incoming org Data
 
 
 
-“Why can’t I AirDrop this?”
-“Why doesn’t Messages show up?”
-
-And the answer is:
-
-App Protection Policy → Send org data restriction
 
 
 
+This is not to protect against incoming data but more like opt to maintain the protection that has been applied to incoming corporate data.
+
+For example, Purview sensitivity labeling maintains while copying between applilcation that the configuration applies to.
 
 
-2. Receive data from other apps
 
-   All apps with incoming org data
 
-3. Restrict cut, copy, and paste between other apps
+
+
+4. Restrict cut, copy, and paste between other apps
 
    Policy managed apps only
 
-4. Save copies of org data
+5. Save copies of org data
 
    Block
 
-5. Allow user to save copies to selected services
+6. Allow user to save copies to selected services
 
    OneDrive for Business, SharePoint
 
-6. Screen capture
+7. Screen capture
 
    Block
