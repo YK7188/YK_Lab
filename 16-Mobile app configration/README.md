@@ -172,13 +172,20 @@ As shown in the image below, what each option does is not really clear so I test
 - None
   - Files, Freeform, notes are blocked the same way for Send org data to other apps config.
     > Send org data to other apps config affects.
-  - Outlook failed with the error below "Security Notice Your organisation doesn't allow the use of external libraries and files."
+  - Outlook fail to be shared with the error in the image below "Security Notice Your organisation doesn't allow the use of external libraries and files".
+    
     <img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/%20%20%20%2016-Mobile%20app%20configration/13.Outlook_Blocked_OrgData.jpg" width="300">
 
-  - OneDrive
-  - OneNote 
+  - OneDrive fail to be shared with the error in the image below "Sign in to Personal OneDrive".
+    
+    <img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/%20%20%20%2016-Mobile%20app%20configration/14.OneDrive_Blocked_OrgData.jpg" width="300">
 
-Policy Managed Apps
+  - OneNote
+    > Successfully receive the data.
+
+> There is no consistency in how each Microsoft office apps behave.
+
+- Policy Managed Apps
 
 All Apps with incoming org Data
 
