@@ -165,35 +165,90 @@ As shown in the image below, what each option does is not really clear so I test
 <img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/%20%20%20%2016-Mobile%20app%20configration/12.receive_data_from_other_apps.jpg" width="600">
 
 - All Apps
-  - A image is shared from Teams to Files, Freeform, notes. Sharing to all these apps is the same way for Send org data to other apps config.
+  - A image is shared from Teams to Files, Freeform, Notes. Sharing to all these apps is the same way for Send org data to other apps config.
     > Files, Freeform, and Notes were blocked by the “Send org data to other apps” configuration rather than the “Receive data from other apps” configuration.
   - A image is shared from Teams to Outlook, OneDrive, OneNote. All successfully receive the data.
+  - A image is shared from Files, Freeform, Notes to Outlook, OneDrive, OneNote. All successfully receive the data.
+
 
 - None
   - A image is shared from Teams to Files, Freeform, notes. All is blocked the same way for Send org data to other apps configuration.
     > Send org data to other apps config affects.
   - Outlook fail to be shared from Teams with the error in the image below "Security Notice Your organisation doesn't allow the use of external libraries and files".
     
-    <img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/%20%20%20%2016-Mobile%20app%20configration/13.Outlook_Blocked_OrgData.jpg" width="300">
+    <img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/%20%20%20%2016-Mobile%20app%20configration/13.OutlookBlocked_OrgData.jpg" width="300">
 
   - OneDrive fail to be shared from Teams with the error in the image below "Sign in to Personal OneDrive".
     
     <img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/%20%20%20%2016-Mobile%20app%20configration/14.OneDrive_Blocked_OrgData.jpg" width="300">
 
-  - OneNote
-    > Successfully receive the data shared from Teams.
+  - OneNote successfully receive the data shared from Teams.
+  - A image is shared from Files, Freeform, Notes to Outlook, OneDrive, OneNote. None of the combination works for sharing the data.
 
 > Behavior may differ between Microsoft apps even when the same Intune App Protection Policy is applied.
 
 - Policy managed apps
-  - Files, Freeform, notes are blocked the same way for Send org data to other apps config.
+  - Files, Freeform, notes are blocked to be shared by Teams the same way for Send org data to other apps config.
     > Send org data to other apps config affects.
-  - Outlook, OneDrive, OneNote successfully receive the data.
+  - Outlook, OneDrive, OneNote successfully receive the data from Teams.
+  - 
 
 - All Apps with incoming org Data
   - Files, Freeform, notes are blocked the same way for Send org data to other apps config.
     > Send org data to other apps config affects.
   - Outlook, OneDrive, OneNote successfully receive the data.
+  - A image is shared from Files, Freeform, Notes to Outlook, OneDrive, OneNote. All successfully receive the data.
+
+#### Further testing about Any app with incoming org data option
+
+Quote from the App Protection Policy wizard (typo untouched):
+
+`Any app with incoming org data: Allow receiving data in org documents or accounts from from any app and treat all incoming data without an user account as org data`
+
+The wording appears to suggest that:
+
+- data can be received regardless of whether the originating app is managed, and
+- if the originating app is unmanaged, the received data may be treated as organizational data once imported into a managed app.
+
+Based on this interpretation, the following behavior was expected.
+
+#### Scenario 1 — “All apps” selected for “Receive data from other apps”
+
+Configuration:
+
+- Receive data from other apps: All apps
+- Send org data to other apps: Policy managed apps
+
+Expected behavior:
+
+- Data from an unmanaged app can be received by a managed app.
+- The imported data can then be shared from the managed app to an unmanaged app because the data is not treated as organizational data.
+
+#### Scenario 2 — “Any app with incoming org data” selected
+
+Configuration:
+
+Receive data from other apps: Any app with incoming org data
+Send org data to other apps: Policy managed apps
+
+Expected behavior:
+
+Data from an unmanaged app can be received by a managed app.
+The imported data cannot be shared from the managed app to an unmanaged app because the data is treated as organizational data.
+
+#### Results
+
+The behavior did not match the hypothesis.
+
+In both configurations:
+
+- data from unmanaged apps could be received by managed apps, but
+- the imported data still could not be shared from managed apps to unmanaged apps.
+
+As a result, the practical effect of “treat as org data” remains unclear based on this testing alone.
+
+ 
+
 
 
 
