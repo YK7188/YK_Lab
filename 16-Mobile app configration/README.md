@@ -2,6 +2,8 @@
 
 # Objective
 
+Configure an app protection policy and observe how each configuration works.
+
 ---
 
 # App Protection Policy (MAM only)
@@ -28,7 +30,7 @@ Selected apps:
 
 2. Receive data from other apps
 
-   All apps with incoming org data
+   All apps
 
 3. Restrict cut, copy, and paste between other apps
 
@@ -191,7 +193,7 @@ As shown in the image below, what each option does is not really clear so I test
   - Files, Freeform, notes are blocked to be shared by Teams the same way for Send org data to other apps config.
     > Send org data to other apps config affects.
   - Outlook, OneDrive, OneNote successfully receive the data from Teams.
-  - 
+    
 
 - All Apps with incoming org Data
   - Files, Freeform, notes are blocked the same way for Send org data to other apps config.
@@ -247,34 +249,135 @@ In both configurations:
 
 As a result, the practical effect of “treat as org data” remains unclear based on this testing alone.
 
- 
+
+### 3. Restrict cut, copy, and paste between other apps (Policy managed apps only)
+
+#### Managed app → unmanaged app
+
+Copying/cutting text from a managed app and pasting it into an unmanaged app fails.
+
+Tested:
+
+- From: Outlook, OneDrive, Teams
+- To: Notes, Freeform, Files
+
+Observed behavior:
+
+- A message appears: `Your organization's data cannot be pasted here`
+
+<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/%20%20%20%2016-Mobile%20app%20configration/15.CannotBe_Pasted.jpg" width="400">
+
+
+#### Unmanaged app → managed app
+
+Copying/cutting text from an unmanaged app and pasting it into a managed app also fails.
+
+Tested:
+
+- From: Notes, Freeform, Files
+- To: Outlook, OneDrive, Teams
+
+Observed behavior:
+
+- A message appears: `Your organization's data cannot be pasted here`
+- or the Paste option does not appear.
+
+#### Managed app → managed app
+
+Copying/cutting and pasting between managed apps is allowed.
+
+Tested between:
+
+- Outlook
+- OneDrive
+- Teams
+
+#### OneNote behavior
+
+Microsoft OneNote behaved differently from the other Microsoft apps during testing.
+
+Observed behavior:
+
+- Copying text from OneNote to Notes, Freeform, or Files was blocked.
+- Copying text from Notes, Freeform, or Files into OneNote succeeded.
+
+#### Key points
+
+- The method used to block pasting may differ depending on the destination app.
+  - Some apps display an error message.
+  - Others simply hide the Paste option.
+- Microsoft apps excluded from the App Protection Policy may behave differently from protected apps, as observed with OneNote during testing.
+
+### 4. Save copies of org data (Block, with OneDrive for Business and SharePoint allowed)
+
+#### Initial testing
+
+Observed behavior:
+
+- Saving an attachment from Microsoft Outlook to Dropbox failed with: `Save not allowed`
+
+<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/%20%20%20%2016-Mobile%20app%20configration/16.save_not_allowed.jpg" width="300">
+
+  
+- Microsoft OneDrive and Microsoft Teams were able to send a test image to Dropbox, but the image could not be previewed properly.
+
+<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/%20%20%20%2016-Mobile%20app%20configration/17.Dropbox_no_preview.jpg" width="300">
+  
+- Saving/sending data from Teams and Outlook to OneDrive succeeded.
+
+#### Additional validation
+
+To further isolate the behavior:
+
+- "Send org data to other apps" configuration was changed from Policy managed apps to All apps.
+- This automatically greyed out the Save copies of org data setting.
+
+Observed behavior:
+
+- Teams and Outlook could send a test image to Dropbox and the received image opened successfully.
+
+- Outlook attachment saving to Dropbox still failed with: `Unexpected error`
+  
+#### Result
+
+Teams and OneDrive behaved as expected once the restriction was relaxed, while Outlook continued to fail when saving attachments to Dropbox. 
+
+This suggests Outlook may handle attachment export differently from the other Microsoft apps tested.
+
+### 5. Screen capture (Block)
+
+Screen capture is blocked in Onedrive, Teams and Outlook with "Action Not Allowed" message.
+
+Screen capture is allowed in OneNote, Sharepoint.
+
+### 6. PIN for access (Require)
+
+The device PIN on the iPhone was removed for testing purposes.
+
+Observed behavior:
+
+- Microsoft Outlook, Microsoft OneDrive, and Microsoft Teams displayed the expected:
+
+> Device Passcode Required
+
+message and required a device PIN to continue.
+
+- Microsoft OneNote also required a device PIN despite not being included in the App Protection Policy testing scope.
+- Microsoft SharePoint did not require a device PIN during testing.
+
+#### Result
+
+Behavior differed between Microsoft apps even under similar conditions, consistent with the inconsistencies observed in previous tests.
+
+### 7. PIN requirements
+
+- During testing, device passcode enforcement consistently worked as expected. 
+
+<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/%20%20%20%2016-Mobile%20app%20configration/20.Passcode_required.jpg" width="300">
+
+- Also, when logging into any of the protected apps, prompt for an app PIN appears. 
+  - 6 numeric numbers, simple combination is rejected as configured with the policy.
+<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/%20%20%20%2016-Mobile%20app%20configration/19.AppPIN_required.jpg" width="300">
 
 
 
-
-
-
-This is not to protect against incoming data but more like opt to maintain the protection that has been applied to incoming corporate data.
-
-For example, Purview sensitivity labeling maintains while copying between applilcation that the configuration applies to.
-
-
-
-
-
-
-4. Restrict cut, copy, and paste between other apps
-
-   Policy managed apps only
-
-5. Save copies of org data
-
-   Block
-
-6. Allow user to save copies to selected services
-
-   OneDrive for Business, SharePoint
-
-7. Screen capture
-
-   Block
