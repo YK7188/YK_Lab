@@ -13,6 +13,27 @@ Configure an Intune App Protection Policy (MAM only) and observe how each config
 
 ---
 
+# Contents
+
+- [App Protection Policy (MAM only)](#app-protection-policy-mam-only)
+  - [1️⃣ Data Protection](#1️⃣-data-protection)
+  - [2️⃣ Access requirements](#2️⃣-access-requirements)
+  - [3️⃣ Conditional launch](#3️⃣-conditional-launch)
+
+- [App Protection Policy Validation](#app-protection-policy-validation)
+  - [1. Send org data to other apps](#1-send-org-data-to-other-apps-policy-managed-apps)
+  - [2. Receive data from other apps](#2-receive-data-from-other-apps-all-apps-with-incoming-org-data)
+  - [3. Restrict cut-copy-and-paste](#3-restrict-cut-copy-and-paste-between-other-apps-policy-managed-apps-only)
+  - [4. Save copies of org data](#4-save-copies-of-org-data-block)
+  - [5. Screen capture](#5-screen-capture-block)
+  - [6. PIN for access](#6-pin-for-access-require)
+  - [7. PIN requirements](#7-pin-requirements)
+
+- [Final Note](#final-note)
+
+
+---
+
 # App Protection Policy (MAM only)
 
 Path: `Apps → protection → Create`
@@ -440,7 +461,9 @@ Observed behavior:
 consistent with the configured policy.
 
 
+# Final Note
 
+Intune App Protection Policies successfully enforced core protections. However, behavior was not always consistent between Microsoft applications despite identical policy assignments. Administrators should validate behavior carefully across different Microsoft apps rather than assumption.
 
 
 
