@@ -2,7 +2,14 @@
 
 # Objective
 
-Configure an app protection policy and observe how each configuration works.
+Configure an Intune App Protection Policy (MAM only) and observe how each configuration behaves on unmanaged iOS devices.
+
+---
+
+# Notes about testing
+
+- Testing was performed on unmanaged iOS devices using Intune App Protection Policies (MAM only).
+- Behavior may differ between Microsoft apps even when the same App Protection Policy is applied.
 
 ---
 
@@ -20,146 +27,141 @@ Selected apps:
 
 <img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/%20%20%20%2016-Mobile%20app%20configration/01.add_apps.jpg" width="600">
 
+<br>
+
 ## 1️⃣ Data Protection
+
+Image from the policy wizard
 
 <img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/%20%20%20%2016-Mobile%20app%20configration/02.data_protection.jpg" width="600">
 
-1. Send org data to other apps
 
-   Policy managed apps
 
-2. Receive data from other apps
+|Setting | Value|
+|---|---|
+|Send org data to other apps | Policy managed apps|
+|Receive data from other apps | All apps|
+|Restrict cut, copy, and paste between other apps | Policy managed apps only|
+|Save copies of org data |	Block|
+|Allow user to save copies to selected services | OneDrive for Business, SharePoint|
+|Screen capture | Block|
 
-   All apps
-
-3. Restrict cut, copy, and paste between other apps
-
-   Policy managed apps only
-
-4. Save copies of org data
-
-   Block
-
-5. Allow user to save copies to selected services
-
-   OneDrive for Business, SharePoint
-
-6. Screen capture
-
-   Block
-   
+<br>
 
 ## 2️⃣ Access requirements
 
+Image from the policy wizard
+
 <img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/%20%20%20%2016-Mobile%20app%20configration/03.access_reqirements.jpg" width="600">
 
-1. PIN for access
 
-   Require
+|Setting|Value|
+|---|---|
+|PIN for access|Require|
+|PIN type|Numeric|
+|Simple PIN|Block|
+|Select Minimum PIN length|6|
+|Touch ID instead of PIN for access (iOS 8+/iPadOS)|allow|
+|Recheck the access requirements after (minutes of inactivity)|30 minutes|
+|Work or school account credentials for access|Not required|
 
-2. PIN type
 
-   Numeric
-
-3. Simple PIN
-
-   Allow
-
-4. Select minimum PIN length
-
-   6
-
-5. Touch ID instead of PIN for access (iOS 8+/iPadOS)
-
-   Allow
-
-6. Recheck the access requirements after (minutes of inactivity)
-
-   30 minutes
-
-7. Work or school account credentials for access
-
-   Not required
+<br>
 
 ## 3️⃣ Conditional launch
+
+Image from the policy wizard
 
 <img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/%20%20%20%2016-Mobile%20app%20configration/04.conditional_launch.jpg" width="600">
 
 ### App conditions
 
-1. Max PIN attempts
+|Setting|Value|
+|---|---|
+|Max PIN attempts|5|
+|Offline grace period|10080 (7days) > Block access (minutes)|
+|Offline grace period|90 (days) > Wipe data (days)|
 
-   5
-
-2. Offline grace period
-
-   10080 (7days) > Block access (minutes)
-
-3. Offline grace period
-
-   90 (days) > Wipe data (days)
+<br>
 
 ### Device conditions
 
-1. Jailbroken/rooted devices
 
-   Block access
+|Setting|Value|
+|---|---|
+|Jailbroken/rooted devices|Block access|
+|Min OS version|16.0 > Block access|
 
-2. Min OS version
-
-   16.0 > Block access
 
 ---
 
-# App Protection Policy (MAM only) Validation
+# App Protection Policy Validation
 
-Validate wether the app protection is in effect for the test user.
+Validation was performed using a test user account on unmanaged iOS devices.
 
-When signing in, the notice below appears.
+When signing in, the following message appeared:
 
-`Your organization is now protecting its data in this app.`
+> `Your organization is now protecting its data in this app.`
 
 <img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/%20%20%20%2016-Mobile%20app%20configration/08.Initial_notice_protection.jpg" width="400">
 
 
-## 1️⃣ Data Protection
+## 1️⃣ Data Protection Validation
 
 ### 1. Send org data to other apps (Policy managed apps)
 
-Send a copy of a test image both when the configuration is in effect and not.
+A test image was shared from managed apps to both managed and unmanaged apps.
 
-   - Files:
-     - When the configuration is in effect, sharing not allowed message appears.
+#### Unmanaged apps
 
-       <img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/%20%20%20%2016-Mobile%20app%20configration/05.Files_blocked.jpg" width="400">
+1. Files
 
-     - When the configuration is not in effect, the image is successfully shared.
-   
-   - Freeform:
-     - When the configuration is in effect, sharing appears completed but when accessing the shared image, it appears encrypted (the image on the left). 
-     - When the configuration is not in effect, the image appears properly (the image on the right).
+  - When the configuration was in effect, sharing was blocked with: `Sharing not allowed`
 
-     <img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/%20%20%20%2016-Mobile%20app%20configration/07.Image_FreeForm.jpg" width="400">
+    <img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/%20%20%20%2016-Mobile%20app%20configration/05.Files_blocked.jpg" width="400">
+
+  - When the configuration was removed, sharing succeeded.
+
+2. Freeform
+
+  - When the configuration was in effect, sharing appeared to complete, but the received image could not be properly rendered as in the image below.
+
+    <img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/%20%20%20%2016-Mobile%20app%20configration/07.Image_FreeForm.jpg" width="400">
+
+  - When the configuration was removed, the image displayed normally.
+
+3. Notes
+
+  - When the configuration was in effect, sharing appeared to complete, but the received image could not be properly rendered.
+
+  - When the configuration was removed, the image displayed normally.
 
 
-   - Notes:
-     - When the configuration is in effect, sharing appears completed but when accessing the shared image, it appears encrypted (the 17:32 image). 
-     - When the configuration is not in effect, the image appears properly (the 18:45 image).
+#### Managed apps
 
-     <img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/%20%20%20%2016-Mobile%20app%20configration/06.Image_Notes.jpg" width="300">
+Sharing between managed apps succeeded regardless of the configuration.
 
-   - Outlook, OneDrive, OneNote: Sharing is completed successfully regardless of the configuration.
+Tested:
 
-> The behaviour above indicates that the restriction is successfully in effect.
+- Outlook
+- OneDrive
+- OneNote
 
-> In addition to that, now AirDrop, Messages and Mail apps are displayed in the share sheet.
+#### Key observations
 
-`Key points:`
+- Sharing restrictions behaved differently depending on the destination app.
+- Some apps (AirDrop, Messages and Mail) were completely removed from the iOS share sheet.
+- Some apps displayed explicit blocking messages.
+- Some apps accepted the shared data but could not properly render it.
 
-- How apps are restriced in sharing veries.
-- Some apps (AirDrop, Messages and Mail in this test) are not shown in the share sheet at all.
-- Some apps (Freeform and Notes in this test) can be shared the data but it appears encrypted.
-- Some apps (Files in this test) are blocked sharing with the message "Sharing not allowed".
+
+
+
+-----------------------
+
+
+
+
 
 ### 2. Receive data from other apps (All apps with incoming org data)
 
