@@ -227,7 +227,7 @@ Observed behavior:
     
 <br>
 
-#### Further testing ^ Any app with incoming org data
+#### Further testing - Any app with incoming org data
 
 The following description appears in the App Protection Policy wizard:
 
@@ -250,7 +250,8 @@ Configuration:
 Expected behavior:
 
 - Data from an unmanaged app can be received by a managed app.
-- The imported data can then be shared from the managed app to an unmanaged app because the data is not treated as organizational data ("send org data to other apps" not applied).
+- The imported data can then be shared from the managed app to an unmanaged app because the data is not treated as organizational data.
+- Therefore, the Send org data to other apps restriction would not be applied to the imported data.
 
 #### Scenario 2 — “Any app with incoming org data” selected
 
@@ -262,7 +263,8 @@ Send org data to other apps: Policy managed apps
 Expected behavior:
 
 - Data from an unmanaged app can be received by a managed app.
-- The imported data cannot be shared from the managed app to an unmanaged app because the data is treated as organizational data. ("send org data to other apps" applied)
+- The imported data cannot later be shared from the managed app to an unmanaged app because the data is treated as organizational data.
+- Therefore, the Send org data to other apps restriction would apply to the imported data.
 
 #### Results
 
@@ -270,8 +272,10 @@ The behavior did not match the hypothesis.
 
 In both configurations:
 
-- data from unmanaged apps could be received by managed apps, `but`
-- the imported data could not be shared from managed apps to unmanaged apps. (the data was considered org data in both scenario)
+- data from unmanaged apps could be received by managed apps, but
+- the imported data could not later be shared from managed apps to unmanaged apps.
+
+This suggests that the imported data was effectively treated as organizational data in both scenarios.
 
 As a result, the practical effect of “treat as org data” remains unclear based on this testing alone.
 
@@ -343,76 +347,103 @@ Observed behavior:
 
 <br>
 
-### 4. Save copies of org data (Block, with OneDrive for Business and SharePoint allowed)
 
+### 4. Save copies of org data (Block)
 #### Initial testing
 
 Observed behavior:
 
-- Saving an attachment from Microsoft Outlook to Dropbox failed with: `Save not allowed`
+- Saving an attachment from Outlook to Dropbox failed with: `Save not allowed`
 
-<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/%20%20%20%2016-Mobile%20app%20configration/16.save_not_allowed.jpg" width="300">
+<br>
+  <img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/%20%20%20%2016-Mobile%20app%20configration/16.save_not_allowed.jpg" width="300">
 
-  
-- Microsoft OneDrive and Microsoft Teams were able to send a test image to Dropbox, but the image could not be previewed properly.
+- OneDrive and Teams could send a test image to Dropbox, but the image could not be previewed properly.
 
-<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/%20%20%20%2016-Mobile%20app%20configration/17.Dropbox_no_preview.jpg" width="300">
-  
+  <img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/%20%20%20%2016-Mobile%20app%20configration/17.Dropbox_no_preview.jpg" width="300">
+
+<br>
 - Saving/sending data from Teams and Outlook to OneDrive succeeded.
 
 #### Additional validation
 
 To further isolate the behavior:
 
-- "Send org data to other apps" configuration was changed from Policy managed apps to All apps.
+- Send org data to other apps was changed from Policy managed apps to All apps.
 - This automatically greyed out the Save copies of org data setting.
 
 Observed behavior:
 
-- Teams and Outlook could send a test image to Dropbox and the received image opened successfully.
-
+- Teams and Outlook could send a test image to Dropbox successfully.
+- The received image could be opened normally.
 - Outlook attachment saving to Dropbox still failed with: `Unexpected error`
-  
+
 #### Result
 
-Teams and OneDrive behaved as expected once the restriction was relaxed, while Outlook continued to fail when saving attachments to Dropbox. 
+Teams and OneDrive behaved as expected once the restriction was relaxed, while Outlook continued to fail when saving attachments directly to Dropbox.
 
 This suggests Outlook may handle attachment export differently from the other Microsoft apps tested.
 
+<br>
+
 ### 5. Screen capture (Block)
 
-Screen capture is blocked in Onedrive, Teams and Outlook with "Action Not Allowed" message.
+Screen capture was blocked in:
 
-Screen capture is allowed in OneNote, Sharepoint.
+- Outlook
+- OneDrive
+- Teams
+
+`with: Action Not Allowed`
+
+Screen capture remained allowed in:
+
+- OneNote
+- SharePoint
+
+
+<br>
 
 ### 6. PIN for access (Require)
 
-The device PIN on the iPhone was removed for testing purposes.
+The device passcode on the iPhone was removed for testing purposes.
 
 Observed behavior:
 
-- Microsoft Outlook, Microsoft OneDrive, and Microsoft Teams displayed the expected:
-
-> Device Passcode Required
-
-message and required a device PIN to continue.
-
-- Microsoft OneNote also required a device PIN despite not being included in the App Protection Policy testing scope.
-- Microsoft SharePoint did not require a device PIN during testing.
+- Outlook, OneDrive, and Teams displayed: Device Passcode Required
+- OneNote also required a device passcode despite not being included in the App Protection Policy testing scope.
+- SharePoint did not require a device passcode.
 
 #### Result
 
-Behavior differed between Microsoft apps even under similar conditions, consistent with the inconsistencies observed in previous tests.
+Behavior differed between Microsoft apps even under similar conditions.
+
+<br>
 
 ### 7. PIN requirements
 
-- During testing, device passcode enforcement consistently worked as expected. 
+Observed behavior:
 
-<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/%20%20%20%2016-Mobile%20app%20configration/20.Passcode_required.jpg" width="300">
+- Device passcode existence enforcement worked consistently.
 
-- Also, when logging into any of the protected apps, prompt for an app PIN appears. 
-  - 6 numeric numbers, simple combination is rejected as configured with the policy.
-<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/%20%20%20%2016-Mobile%20app%20configration/19.AppPIN_required.jpg" width="300">
+<br>
+  <img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/%20%20%20%2016-Mobile%20app%20configration/20.Passcode_required.jpg" width="300">
+ 
+- Protected apps also required an Intune App PIN.
+- The Intune App PIN:
+  - required 6 numeric digits
+  - rejected simple combinations
+    
+    <img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/%20%20%20%2016-Mobile%20app%20configration/19.AppPIN_required.jpg" width="300">
+
+<br>
+consistent with the configured policy.
+
+
+
+
+
+
 
 
 
