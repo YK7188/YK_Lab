@@ -154,58 +154,82 @@ Tested:
 - Some apps displayed explicit blocking messages.
 - Some apps accepted the shared data but could not properly render it.
 
-
-
-
------------------------
-
-
-
-
+<br>
 
 ### 2. Receive data from other apps (All apps with incoming org data)
 
-As shown in the image below, what each option does is not really clear so I tested it one by one.
+The behavior of this setting was unclear from the configuration description alone, so each option was tested individually.
+
 <img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/%20%20%20%2016-Mobile%20app%20configration/12.receive_data_from_other_apps.jpg" width="600">
 
-- All Apps
-  - A image is shared from Teams to Files, Freeform, Notes. Sharing to all these apps is the same way for Send org data to other apps config.
-    > Files, Freeform, and Notes were blocked by the “Send org data to other apps” configuration rather than the “Receive data from other apps” configuration.
-  - A image is shared from Teams to Outlook, OneDrive, OneNote. All successfully receive the data.
-  - A image is shared from Files, Freeform, Notes to Outlook, OneDrive, OneNote. All successfully receive the data.
+<br>
+
+### Common observation
+
+Across all tested configurations:
+
+- sharing from managed apps to Files, Freeform, and Notes was primarily affected by the "Send org data to other apps configuration" rather than the "Receive data from other apps" configuration.
+
+<br>
+
+1. All apps
+
+Observed behavior:
+
+- Outlook, OneDrive, and OneNote successfully received data from Teams.
+- Outlook, OneDrive, and OneNote also successfully received data from Files, Freeform, and Notes.
+
+<br>
+
+2. None
+
+Observed behavior:
+
+- Outlook failed to receive data from Teams with:
+
+  Security Notice: Your organization doesn't allow the use of external libraries and files
+
+<br>
+  
+  <img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/%20%20%20%2016-Mobile%20app%20configration/13.OutlookBlocked_OrgData.jpg" width="300">
 
 
-- None
-  - A image is shared from Teams to Files, Freeform, notes. All is blocked the same way for Send org data to other apps configuration.
-    > Send org data to other apps config affects.
-  - Outlook fail to be shared from Teams with the error in the image below "Security Notice Your organisation doesn't allow the use of external libraries and files".
+- OneDrive failed to receive data from Teams with:
+
+- Sign in to Personal OneDrive
+
+<br>
+
+  <img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/%20%20%20%2016-Mobile%20app%20configration/14.OneDrive_Blocked_OrgData.jpg" width="300">
+
+- OneNote successfully received data from Teams.
+- Data from Files, Freeform, and Notes could not be shared into Outlook, OneDrive, or OneNote.
+
+> Behavior differed between Microsoft apps even when the same Intune App Protection Policy was applied.
+
+<br>
+
+3. Policy managed apps
+
+Observed behavior:
+
+- Outlook, OneDrive, and OneNote successfully received data from Teams.
+- Data from Files, Freeform, and Notes could not be shared into Outlook, OneDrive, or OneNote. 
+
+<br>
+
+4. All apps with incoming org data
+
+Observed behavior:
+
+- Outlook, OneDrive, and OneNote successfully received data from Teams.
+- Outlook, OneDrive, and OneNote also successfully received data from Files, Freeform, and Notes.
     
-    <img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/%20%20%20%2016-Mobile%20app%20configration/13.OutlookBlocked_OrgData.jpg" width="300">
+<br>
 
-  - OneDrive fail to be shared from Teams with the error in the image below "Sign in to Personal OneDrive".
-    
-    <img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/%20%20%20%2016-Mobile%20app%20configration/14.OneDrive_Blocked_OrgData.jpg" width="300">
+#### Further testing ^ Any app with incoming org data
 
-  - OneNote successfully receive the data shared from Teams.
-  - A image is shared from Files, Freeform, Notes to Outlook, OneDrive, OneNote. None of the combination works for sharing the data.
-
-> Behavior may differ between Microsoft apps even when the same Intune App Protection Policy is applied.
-
-- Policy managed apps
-  - Files, Freeform, notes are blocked to be shared by Teams the same way for Send org data to other apps config.
-    > Send org data to other apps config affects.
-  - Outlook, OneDrive, OneNote successfully receive the data from Teams.
-    
-
-- All Apps with incoming org Data
-  - Files, Freeform, notes are blocked the same way for Send org data to other apps config.
-    > Send org data to other apps config affects.
-  - Outlook, OneDrive, OneNote successfully receive the data.
-  - A image is shared from Files, Freeform, Notes to Outlook, OneDrive, OneNote. All successfully receive the data.
-
-#### Further testing about Any app with incoming org data option
-
-Quote from the App Protection Policy wizard (typo untouched):
+The following description appears in the App Protection Policy wizard:
 
 `Any app with incoming org data: Allow receiving data in org documents or accounts from from any app and treat all incoming data without an user account as org data`
 
@@ -226,7 +250,7 @@ Configuration:
 Expected behavior:
 
 - Data from an unmanaged app can be received by a managed app.
-- The imported data can then be shared from the managed app to an unmanaged app because the data is not treated as organizational data.
+- The imported data can then be shared from the managed app to an unmanaged app because the data is not treated as organizational data ("send org data to other apps" not applied).
 
 #### Scenario 2 — “Any app with incoming org data” selected
 
@@ -237,8 +261,8 @@ Send org data to other apps: Policy managed apps
 
 Expected behavior:
 
-Data from an unmanaged app can be received by a managed app.
-The imported data cannot be shared from the managed app to an unmanaged app because the data is treated as organizational data.
+- Data from an unmanaged app can be received by a managed app.
+- The imported data cannot be shared from the managed app to an unmanaged app because the data is treated as organizational data. ("send org data to other apps" applied)
 
 #### Results
 
@@ -246,47 +270,54 @@ The behavior did not match the hypothesis.
 
 In both configurations:
 
-- data from unmanaged apps could be received by managed apps, but
-- the imported data still could not be shared from managed apps to unmanaged apps.
+- data from unmanaged apps could be received by managed apps, `but`
+- the imported data could not be shared from managed apps to unmanaged apps. (the data was considered org data in both scenario)
 
 As a result, the practical effect of “treat as org data” remains unclear based on this testing alone.
 
+<br>
 
 ### 3. Restrict cut, copy, and paste between other apps (Policy managed apps only)
 
 #### Managed app → unmanaged app
 
-Copying/cutting text from a managed app and pasting it into an unmanaged app fails.
+
+Copying/cutting text from managed apps into unmanaged apps failed.
 
 Tested:
 
 - From: Outlook, OneDrive, Teams
 - To: Notes, Freeform, Files
 
-Observed behavior:
-
-- A message appears: `Your organization's data cannot be pasted here`
+Observed behavior: `Your organization's data cannot be pasted here`
 
 <img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/%20%20%20%2016-Mobile%20app%20configration/15.CannotBe_Pasted.jpg" width="400">
+
+<br>
+
+
 
 
 #### Unmanaged app → managed app
 
-Copying/cutting text from an unmanaged app and pasting it into a managed app also fails.
+Copying/cutting text from an unmanaged app and pasting it into a managed app shows different behaviours.
 
 Tested:
 
 - From: Notes, Freeform, Files
-- To: Outlook, OneDrive, Teams
+- To: Outlook, OneDrive, Teams, OneNote
 
 Observed behavior:
 
-- A message appears: `Your organization's data cannot be pasted here`
-- or the Paste option does not appear.
+- From unmanaged apps to Teams, a message appears: `Your organization's data cannot be pasted here`
+- From unmanaged apps to Outlook, the Paste option fails to return any texts.
+- From unmanaged apps to OneNote, pasting succeeds
+- From unmanaged apps to OneDrive, past option does not appear.  
+
 
 #### Managed app → managed app
 
-Copying/cutting and pasting between managed apps is allowed.
+Copying/cutting and pasting between the protected apps is allowed.
 
 Tested between:
 
@@ -305,10 +336,12 @@ Observed behavior:
 
 #### Key points
 
-- The method used to block pasting may differ depending on the destination app.
-  - Some apps display an error message.
-  - Others simply hide the Paste option.
-- Microsoft apps excluded from the App Protection Policy may behave differently from protected apps, as observed with OneNote during testing.
+- Paste blocking behavior differed depending on the destination app.
+- Some apps displayed explicit errors.
+- Others simply hid the Paste option.
+- Microsoft apps excluded from App Protection Policy testing may behave differently from protected apps.
+
+<br>
 
 ### 4. Save copies of org data (Block, with OneDrive for Business and SharePoint allowed)
 
