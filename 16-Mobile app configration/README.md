@@ -463,7 +463,7 @@ consistent with the configured policy.
 
 # Final Note
 
-Intune App Protection Policies successfully enforced core protections. However, behavior was not always consistent between Microsoft applications despite identical policy assignments. Administrators should validate behavior carefully across different Microsoft apps rather than assumption.
+Intune App Protection Policies successfully enforced core protections. However, behavior was not always consistent between Microsoft applications despite identical policy assignments. Administrators should validate behavior carefully across different Microsoft apps rather than assuming identical enforcement behavior.
 
 
 
