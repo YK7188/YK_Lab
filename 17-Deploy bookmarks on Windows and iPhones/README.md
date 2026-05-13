@@ -106,10 +106,11 @@ Path: `Devices → Configuration → Import ADMX`
 All three admx files are uploaded as shown in the image.
 
 
-> # Key point
-> - Windows.admx and Google.admx need to be uploaded before Chrome.admx.
-> - When you open the Chrome.admx file, prefix="Google" and prefix="windows" are present.
-> - This means uploading chrome.admx depends on these two files.
+#### Key point
+
+- Windows.admx and Google.admx need to be uploaded before Chrome.admx.
+- When you open the Chrome.admx file, prefix="Google" and prefix="windows" are present.
+- This means uploading chrome.admx depends on these two files.
 
 ```
   <policyNamespaces>
