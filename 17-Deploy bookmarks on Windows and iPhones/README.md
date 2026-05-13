@@ -47,9 +47,9 @@ image
 
 ## Step 2 — Verify on Endpoint
 
-Bookmarks appeared as expected.
-
-As long as Window is logged on by the target user, which Edge profile to use does not matter.
+- Bookmarks appeared as expected.
+- As long as Window is logged on by the target user, which Edge profile to use does not matter.
+- They appear in an InPrivate window too.
 
 imag
 
@@ -122,5 +122,26 @@ All three admx files are uploaded as shown in the image.
 
 ## Step 3 — Create Configuration profile
 
-Path: Devices → `Windows > Configuration`
+Path: Devices → `Windows > Configuration > Create > Windows 10 and later > Templates > Imported Administrative templates`
+
+For Configuration settings, select Managed Bookmarks and enter the same JSON as used in PART 1 — Edge on Windows. 
+
+
+## Step 4 — Verify on Endpoint
+
+- Bookmarks appeared as expected.
+- As long as Window is logged on by the target user, which Edge profile to use does not matter.
+- They appear in an InPrivate window too.
+
+imag
+
+
+# PART 3 — Edge on iPhone
+
+## Step 1 — Create Edge app
+
+Apps > iOS/iPadOS > Create > iOS store app
+
+image 
+
 
