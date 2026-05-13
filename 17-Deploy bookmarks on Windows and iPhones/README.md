@@ -140,8 +140,17 @@ imag
 
 ## Step 1 — Create Edge app
 
-Apps > iOS/iPadOS > Create > iOS store app
+Path: `Apps > iOS/iPadOS > Create > iOS store app`
 
 image 
 
+## Step 2 — 
+
+Configure Edge as below.
+
+Path: `Apps > iOS/iPadOS > Configuration > Manage Devices`
+
+- Key: com.microsoft.intune.mam.managedbrowser.bookmarks
+- Type: String
+- Value: JSON
 
