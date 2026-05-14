@@ -144,13 +144,42 @@ Path: `Apps > iOS/iPadOS > Create > iOS store app`
 
 image 
 
-## Step 2 — 
+## Step 2 — Configure Edge
 
 Configure Edge as below.
 
-Path: `Apps > iOS/iPadOS > Configuration > Manage Devices`
+Path: `Apps > iOS/iPadOS > Configuration > Managed Devices`
 
-- Key: com.microsoft.intune.mam.managedbrowser.bookmarks
-- Type: String
-- Value: JSON
+Select Configuration settings format > Enter XML data
 
+The XML data is on a Miocrosoft article.
+https://learn.microsoft.com/en-us/deployedge/microsoft-edge-mobile-policies#managedfavorites
+
+-> ManagedFavorites
+
+## Step 3 — Verify on Endpoint
+
+- Bookmarks appeared as expected.
+- As long as Company Portal is logged on by the target user, which Edge profile to use does not matter.
+- They appear in an InPrivate window too.
+- Edge://policy can be useful in troubleshooting.
+
+image
+
+# PART 4 — Chrome on iPhone
+
+
+
+
+
+
+
+
+
+
+
+# Troubleshoot
+
+- app configuration for Edge appears not applicable for the test decive.
+- Edge app appears not installed on the test device.
+  > It can be assumed that Edge was installed before enrollment and the app is not managed. 
