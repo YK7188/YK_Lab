@@ -144,9 +144,7 @@ Path: `Apps > iOS/iPadOS > Create > iOS store app`
 
 image 
 
-## Step 2 — Configure Edge
-
-Configure Edge as below.
+## Step 2 — Create Edge configuration policy
 
 Path: `Apps > iOS/iPadOS > Configuration > Managed Devices`
 
@@ -168,8 +166,43 @@ image
 
 # PART 4 — Chrome on iPhone
 
+## Step 1 — Add Chrome app
 
+Path: `Apps > iOS/iPadOS > Create > iOS Store App`
 
+## Step 2 — Create App Configuration Policy
+
+Path: `Apps > iOS/iPadOS > Configuration > Managed Devices`
+
+Select Configuration settings format > Enter XML data
+
+XML
+```<dict>
+    <key>ManagedBookmarks</key>
+    <array>
+        <dict>
+            <key>toplevel_name</key>
+            <string>Company Resources</string>
+        </dict>
+
+        <dict>
+            <key>name</key>
+            <string>Helpdesk</string>
+
+            <key>url</key>
+            <string>https://helpdesk.contoso.com</string>
+        </dict>
+
+        <dict>
+            <key>name</key>
+            <string>HR Portal</string>
+
+            <key>url</key>
+            <string>https://hr.contoso.com</string>
+        </dict>
+    </array>
+</dict>
+```
 
 
 
