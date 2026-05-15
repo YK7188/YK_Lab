@@ -2,7 +2,7 @@ Tested: May 2026
 
 # LAB SCENARIO
 
-> IT wants standardized bookmarks deployed to managed browsers for faster onboarding of new employees.
+> IT wants standardized bookmarks deployed to managed browsers for Windows PCs and iPhones to achieve faster onboarding of new employees.
 
 ---
 
@@ -12,7 +12,7 @@ Tested: May 2026
 
 Path: `Devices > Windows > Configuration > Create > Windows 10 and later > Settings catalog`
 
-Set the script below in Configuration settings. 
+For Configuration settings, select Microsoft Edge > Configure favorites (User) and set the script below in Configuration settings. 
 
 ```json
 [
@@ -42,8 +42,10 @@ Set the script below in Configuration settings.
   }
 ]
 ```
+<br>
 
-image
+<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/17-Bookmarks%20on%20Windows%20and%20iPhone/01.config_settings.jpg" width="600">
+
 
 ## Step 2 — Verify on Endpoint
 
@@ -51,7 +53,7 @@ image
 - As long as Window is logged on by the target user, which Edge profile to use does not matter.
 - They appear in an InPrivate window too.
 
-imag
+<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/17-Bookmarks%20on%20Windows%20and%20iPhone/02.bookmarks_appeared.jpg" width="400">
 
 ---
 
@@ -59,7 +61,7 @@ imag
 
 ## Step 1 — Upload Windows admx and adml files in Intune
 
-1. Download an msi file from the page below and excute it.
+1. Download the msi file from the page below and excute it.
 
    https://www.microsoft.com/en-us/download/details.aspx?id=108394
 
@@ -75,7 +77,8 @@ imag
    Path: `Devices → Configuration → Import ADMX`
 
 
-Image
+<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/17-Bookmarks%20on%20Windows%20and%20iPhone/05.windows_admx_upload.jpg" width="600">
+
    
 
 ## Step 2 Upload Google admx and adml files in Intune
@@ -105,11 +108,14 @@ Path: `Devices → Configuration → Import ADMX`
 
 All three admx files are uploaded as shown in the image.
 
+<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/17-Bookmarks%20on%20Windows%20and%20iPhone/15.admx_appear.jpg" width="600">
+
+
 
 #### Key point
 
 - Windows.admx and Google.admx need to be uploaded before Chrome.admx.
-- When you open the Chrome.admx file, prefix="Google" and prefix="windows" are present.
+- When you open the Chrome.admx file, prefix="Google" and prefix="windows" are present under policyNamespaces.
 - This means uploading chrome.admx depends on these two files.
 
 ```
@@ -126,6 +132,8 @@ Path: Devices → `Windows > Configuration > Create > Windows 10 and later > Tem
 
 For Configuration settings, select Managed Bookmarks and enter the same JSON as used in PART 1 — Edge on Windows. 
 
+<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/17-Bookmarks%20on%20Windows%20and%20iPhone/07.managed_bookmarks.jpg" width="600">
+
 
 ## Step 4 — Verify on Endpoint
 
@@ -133,8 +141,7 @@ For Configuration settings, select Managed Bookmarks and enter the same JSON as 
 - As long as Window is logged on by the target user, which Edge profile to use does not matter.
 - They appear in an InPrivate window too.
 
-imag
-
+---
 
 # PART 3 — Edge on iPhone
 
@@ -142,7 +149,7 @@ imag
 
 Path: `Apps > iOS/iPadOS > Create > iOS store app`
 
-image 
+<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/17-Bookmarks%20on%20Windows%20and%20iPhone/08.Create_Edge_app.jpg" width="600">
 
 ## Step 2 — Create Edge configuration policy
 
@@ -154,6 +161,9 @@ The XML data is on a Miocrosoft article.
 https://learn.microsoft.com/en-us/deployedge/microsoft-edge-mobile-policies#managedfavorites
 
 -> ManagedFavorites
+
+<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/17-Bookmarks%20on%20Windows%20and%20iPhone/17.create_appconfig_edge.jpg" width="500">
+
 
 ## Step 3 — Verify on Endpoint
 
@@ -204,15 +214,12 @@ XML
 </dict>
 ```
 
+## Step 3 — Verify on Endpoint
+
+- Bookmarks appeared as expected.
+- As long as Company Portal is logged on by the target user, which Edge profile to use does not matter.
+- They appear in an InPrivate window too.
+- Edge://policy can be useful in troubleshooting.
 
 
 
-
-
-
-
-# Troubleshoot
-
-- app configuration for Edge appears not applicable for the test decive.
-- Edge app appears not installed on the test device.
-  > It can be assumed that Edge was installed before enrollment and the app is not managed. 
