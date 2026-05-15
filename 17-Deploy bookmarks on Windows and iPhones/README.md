@@ -185,7 +185,7 @@ https://learn.microsoft.com/en-us/deployedge/microsoft-edge-mobile-policies#mana
 
 Path: `Apps > iOS/iPadOS > Create > iOS Store App`
 
-<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/17-Bookmarks%20on%20Windows%20and%20iPhone/14.Create_Google_app.jpg" width=350">
+<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/17-Bookmarks%20on%20Windows%20and%20iPhone/14.Create_Google_app.jpg" width=300">
 
 
 ## Step 2 — Create App Configuration Policy
