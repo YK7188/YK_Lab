@@ -75,7 +75,7 @@ For Configuration settings, select Microsoft Edge > Configure favorites (User) a
   C:\Program Files (x86)\Microsoft Group Policy\Windows 11 Sep 2025 Update (25H2)\PolicyDefinitions\en-US
 
 3. Upload the files in Intune.
-   Path: `Devices → Configuration → Import ADMX`
+   Path: `Devices > Configuration > Import ADMX`
 
 
 <img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/17-Bookmarks%20on%20Windows%20and%20iPhone/05.windows_ADMX_upload.jpg" width="600">
@@ -89,7 +89,7 @@ Download the ADM/ADMX templates in the page below and extract the zip file.
 https://chromeenterprise.google/intl/en_us/download/
 
 
-Path: `Devices → Configuration → Import ADMX`
+Path: `Devices > Configuration > Import ADMX`
 
 - google.ADMX
   - In the download templates:
@@ -129,7 +129,7 @@ All three ADMX templates were uploaded successfully as shown in the image.
 
 ## Step 3 — Create Configuration profile
 
-Path: Devices → `Windows > Configuration > Create > Windows 10 and later > Templates > Imported Administrative templates`
+Path: Devices > `Windows > Configuration > Create > Windows 10 and later > Templates > Imported Administrative templates`
 
 For Configuration settings, select Managed Bookmarks and enter the same JSON as used in PART 1 — Edge on Windows. 
 
