@@ -60,18 +60,18 @@ For Configuration settings, select Microsoft Edge > Configure favorites (User) a
 
 # PART 2 — Chrome on Windows
 
-## Step 1 — Upload Windows ADMX and adml files in Intune
+## Step 1 — Upload Windows ADMX and ADML files in Intune
 
 1. Download the msi file from the page below and excute it.
 
    https://www.microsoft.com/en-us/download/details.aspx?id=108394
 
-2. ADMX and adml file is created in the paths below.
+2. ADMX and ADML file is created in the paths below.
 
 - Windows.ADMX
   C:\Program Files (x86)\Microsoft Group Policy\Windows 11 Sep 2025 Update (25H2)\PolicyDefinitions
 
-- Windows.adml
+- Windows.ADML
   C:\Program Files (x86)\Microsoft Group Policy\Windows 11 Sep 2025 Update (25H2)\PolicyDefinitions\en-US
 
 3. Upload the files in Intune.
@@ -82,7 +82,7 @@ For Configuration settings, select Microsoft Edge > Configure favorites (User) a
 
    
 
-## Step 2 Upload Google ADMX and adml files in Intune
+## Step 2 Upload Google ADMX and ADML files in Intune
 
 Download the ADM/ADMX templates in the page below and extract the zip file.
 
@@ -95,7 +95,7 @@ Path: `Devices → Configuration → Import ADMX`
   - In the download templates:
   - Path: `policy_templates > windows > ADMX`
 
-- google.adml
+- google.ADML
   - In the download templates:
   - Path: `policy_templates > windows > ADMX > en-US`
 
@@ -103,7 +103,7 @@ Path: `Devices → Configuration → Import ADMX`
   - In the download templates:
   - Path: `policy_templates > windows > ADMX`
 
-- chrome.adml
+- chrome.ADML
   - In the download templates:
   - Path: `policy_templates > windows > ADMX > en-US`
 
