@@ -62,11 +62,11 @@ For Configuration settings, select Microsoft Edge > Configure favorites (User) a
 
 ## Step 1 — Upload Windows ADMX and ADML files in Intune
 
-1. Download the msi file from the page below and excute it.
+1. Download the msi file from the page below and execute it.
 
    https://www.microsoft.com/en-us/download/details.aspx?id=108394
 
-2. ADMX and ADML file is created in the paths below.
+2. ADMX and ADML file are created in the paths below.
 
 - Windows.ADMX
   C:\Program Files (x86)\Microsoft Group Policy\Windows 11 Sep 2025 Update (25H2)\PolicyDefinitions
