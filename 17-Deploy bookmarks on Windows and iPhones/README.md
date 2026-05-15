@@ -50,8 +50,9 @@ For Configuration settings, select Microsoft Edge > Configure favorites (User) a
 ## Step 2 — Verify on Endpoint
 
 - Bookmarks appeared as expected.
-- As long as Window is logged on by the target user, which Edge profile to use does not matter.
+- The managed bookmarks appeared regardless of which browser profile was signed in.
 - They appear in an InPrivate window too.
+- Edge://policy can be useful in troubleshooting when the policy shows "Succeeded" in Intune but bookmarks do not appear.
 
 <img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/17-Bookmarks%20on%20Windows%20and%20iPhone/02.bookmarks_appeared.jpg" width="400">
 
@@ -106,7 +107,7 @@ Path: `Devices → Configuration → Import ADMX`
   - In the download templates:
   - Path: `policy_templates > windows > admx > en-US`
 
-All three admx files are uploaded as shown in the image.
+All three ADMX templates were uploaded successfully as shown in the image.
 
 <img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/17-Bookmarks%20on%20Windows%20and%20iPhone/15.admx_appear.jpg" width="600">
 
@@ -138,8 +139,10 @@ For Configuration settings, select Managed Bookmarks and enter the same JSON as 
 ## Step 4 — Verify on Endpoint
 
 - Bookmarks appeared as expected.
-- As long as Window is logged on by the target user, which Edge profile to use does not matter.
+- The managed bookmarks appeared regardless of which browser profile was signed in.
 - They appear in an InPrivate window too.
+- Chrome://policy can be useful in troubleshooting when the policy shows "Succeeded" in Intune but bookmarks do not appear.
+
 
 ---
 
@@ -157,7 +160,8 @@ Path: `Apps > iOS/iPadOS > Configuration > Managed Devices`
 
 Select Configuration settings format > Enter XML data
 
-The XML data is on a Miocrosoft article.
+The XML payload format is documented in the Microsoft article below:
+
 https://learn.microsoft.com/en-us/deployedge/microsoft-edge-mobile-policies#managedfavorites
 
 -> ManagedFavorites
@@ -168,9 +172,8 @@ https://learn.microsoft.com/en-us/deployedge/microsoft-edge-mobile-policies#mana
 ## Step 3 — Verify on Endpoint
 
 - Bookmarks appeared as expected.
-- As long as Company Portal is logged on by the target user, which Edge profile to use does not matter.
+- As long as the device is enrolled in Intune and the browser app is managed by Intune, the bookmarks appear regardless of which browser profile is signed in.
 - They appear in an InPrivate window too.
-- Edge://policy can be useful in troubleshooting.
 
 <img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/17-Bookmarks%20on%20Windows%20and%20iPhone/13.Edge_Policy.jpg" width="250">
 
@@ -191,41 +194,17 @@ Path: `Apps > iOS/iPadOS > Configuration > Managed Devices`
 
 Select Configuration settings format > Enter XML data (same as PART 3 — Edge on iPhone)
 
-XML
-```<dict>
-    <key>ManagedBookmarks</key>
-    <array>
-        <dict>
-            <key>toplevel_name</key>
-            <string>Company Resources</string>
-        </dict>
-
-        <dict>
-            <key>name</key>
-            <string>Helpdesk</string>
-
-            <key>url</key>
-            <string>https://helpdesk.contoso.com</string>
-        </dict>
-
-        <dict>
-            <key>name</key>
-            <string>HR Portal</string>
-
-            <key>url</key>
-            <string>https://hr.contoso.com</string>
-        </dict>
-    </array>
-</dict>
-```
-
 
 ## Step 3 — Verify on Endpoint
 
 - Bookmarks appeared as expected.
-- As long as Company Portal is logged on by the target user, which Edge profile to use does not matter.
+- As long as the device is enrolled in Intune and the browser app is managed by Intune, the bookmarks appear regardless of which browser profile is signed in.
 - They appear in an InPrivate window too.
-- Edge://policy can be useful in troubleshooting.
 
+---
 
+# Final Note
 
+- For iPhone deployment, the configuration must be entered as raw XML data rather than Key/Type/Value pairs.
+- On iPhone, apps already installed before Intune enrollment may not immediately appear as managed apps in Intune. 
+Reinstalling the app after enrollment ensured the application became associated with Intune app management and allowed app configuration policies to apply successfully.
