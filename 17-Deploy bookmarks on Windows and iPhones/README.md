@@ -172,7 +172,9 @@ https://learn.microsoft.com/en-us/deployedge/microsoft-edge-mobile-policies#mana
 - They appear in an InPrivate window too.
 - Edge://policy can be useful in troubleshooting.
 
-image
+<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/17-Bookmarks%20on%20Windows%20and%20iPhone/13.Edge_Policy.jpg" width="250">
+
+---
 
 # PART 4 — Chrome on iPhone
 
@@ -180,11 +182,14 @@ image
 
 Path: `Apps > iOS/iPadOS > Create > iOS Store App`
 
+<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/17-Bookmarks%20on%20Windows%20and%20iPhone/14.Create_Google_app.jpg" width=300">
+
+
 ## Step 2 — Create App Configuration Policy
 
 Path: `Apps > iOS/iPadOS > Configuration > Managed Devices`
 
-Select Configuration settings format > Enter XML data
+Select Configuration settings format > Enter XML data (same as PART 3 — Edge on iPhone)
 
 XML
 ```<dict>
@@ -213,6 +218,7 @@ XML
     </array>
 </dict>
 ```
+
 
 ## Step 3 — Verify on Endpoint
 
