@@ -192,8 +192,11 @@ Path: `Apps > iOS/iPadOS > Create > iOS Store App`
 
 Path: `Apps > iOS/iPadOS > Configuration > Managed Devices`
 
-Select Configuration settings format > Enter XML data (same as PART 3 — Edge on iPhone)
+Select Configuration settings format > Enter XML data
 
+The XML payload structure was referenced from the macOS example in the Google Chrome Enterprise policy documentation below:
+
+https://chromeenterprise.google/policies/#ManagedBookmarks
 
 ## Step 3 — Verify on Endpoint
 
