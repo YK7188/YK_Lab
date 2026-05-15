@@ -12,7 +12,7 @@ Tested: May 2026
 
 Path: `Devices > Windows > Configuration > Create > Windows 10 and later > Settings catalog`
 
-For Configuration settings, select Microsoft Edge > Configure favorites (User) and set the script below in Configuration settings. 
+For Configuration settings, select Microsoft Edge > Configure favorites (User) and set the JSON payload below in Configuration settings. 
 
 ```json
 [
@@ -60,15 +60,15 @@ For Configuration settings, select Microsoft Edge > Configure favorites (User) a
 
 # PART 2 — Chrome on Windows
 
-## Step 1 — Upload Windows admx and adml files in Intune
+## Step 1 — Upload Windows ADMX and adml files in Intune
 
 1. Download the msi file from the page below and excute it.
 
    https://www.microsoft.com/en-us/download/details.aspx?id=108394
 
-2. admx and adml file is created in the paths below.
+2. ADMX and adml file is created in the paths below.
 
-- Windows.admx
+- Windows.ADMX
   C:\Program Files (x86)\Microsoft Group Policy\Windows 11 Sep 2025 Update (25H2)\PolicyDefinitions
 
 - Windows.adml
@@ -78,11 +78,11 @@ For Configuration settings, select Microsoft Edge > Configure favorites (User) a
    Path: `Devices → Configuration → Import ADMX`
 
 
-<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/17-Bookmarks%20on%20Windows%20and%20iPhone/05.windows_admx_upload.jpg" width="600">
+<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/17-Bookmarks%20on%20Windows%20and%20iPhone/05.windows_ADMX_upload.jpg" width="600">
 
    
 
-## Step 2 Upload Google admx and adml files in Intune
+## Step 2 Upload Google ADMX and adml files in Intune
 
 Download the ADM/ADMX templates in the page below and extract the zip file.
 
@@ -91,33 +91,33 @@ https://chromeenterprise.google/intl/en_us/download/
 
 Path: `Devices → Configuration → Import ADMX`
 
-- google.admx
+- google.ADMX
   - In the download templates:
-  - Path: `policy_templates > windows > admx`
+  - Path: `policy_templates > windows > ADMX`
 
 - google.adml
   - In the download templates:
-  - Path: `policy_templates > windows > admx > en-US`
+  - Path: `policy_templates > windows > ADMX > en-US`
 
-- chrome.admx
+- chrome.ADMX
   - In the download templates:
-  - Path: `policy_templates > windows > admx`
+  - Path: `policy_templates > windows > ADMX`
 
 - chrome.adml
   - In the download templates:
-  - Path: `policy_templates > windows > admx > en-US`
+  - Path: `policy_templates > windows > ADMX > en-US`
 
 All three ADMX templates were uploaded successfully as shown in the image.
 
-<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/17-Bookmarks%20on%20Windows%20and%20iPhone/15.admx_appear.jpg" width="600">
+<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/17-Bookmarks%20on%20Windows%20and%20iPhone/15.ADMX_appear.jpg" width="600">
 
 
 
 #### Key point
 
-- Windows.admx and Google.admx need to be uploaded before Chrome.admx.
-- When you open the Chrome.admx file, prefix="Google" and prefix="windows" are present under policyNamespaces.
-- This means uploading chrome.admx depends on these two files.
+- Windows.ADMX and Google.ADMX need to be uploaded before Chrome.ADMX.
+- When you open the Chrome.ADMX file, prefix="Google" and prefix="windows" are present under policyNamespaces.
+- This means uploading chrome.ADMX depends on these two files.
 
 ```
   <policyNamespaces>
