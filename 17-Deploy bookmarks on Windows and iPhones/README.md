@@ -78,8 +78,8 @@ For Configuration settings, select Microsoft Edge > Configure favorites (User) a
    Path: `Devices > Configuration > Import ADMX`
 
 
-<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/17-Bookmarks%20on%20Windows%20and%20iPhone/05.windows_ADMX_upload.jpg" width="600">
-
+<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/17-Bookmarks%20on%20Windows%20and%20iPhone/05.windows_admx_upload.jpg
+" width="600">
    
 
 ## Step 2 Upload Google ADMX and ADML files in Intune
@@ -109,7 +109,7 @@ Path: `Devices > Configuration > Import ADMX`
 
 All three ADMX templates were uploaded successfully as shown in the image.
 
-<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/17-Bookmarks%20on%20Windows%20and%20iPhone/15.ADMX_appear.jpg" width="600">
+<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/17-Bookmarks%20on%20Windows%20and%20iPhone/15.admx_appear.jpg" width="600">
 
 
 
