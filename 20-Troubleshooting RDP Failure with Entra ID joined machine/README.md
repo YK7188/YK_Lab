@@ -2,7 +2,7 @@ Tested: May 2026
 
 # Scenario
 
-An AAD user fails to connect to a Entra ID joined PC over RDP.
+An Entra ID user fails to connect to an Entra ID joined PC over RDP.
 
 Root cause was eventually isolated to legacy Per-user MFA.
 
@@ -59,7 +59,7 @@ Entra Admin Center
 
 Result:
 
-- No Conditional Access policy, Device configuration was blocking sign-in.
+- No Conditional Access policy or device configuration was blocking the sign-in.
 
 Conclusion:
 
@@ -128,4 +128,4 @@ Conclusion:
 
 # Key takeaway
 
-Legacy “Per-user MFA” can cause edge case like this. In modern settings, the use of it better be avoided.
+Legacy “Per-user MFA” can cause edge cases like this. In modern environments, Conditional Access-based MFA is generally preferred over legacy Per-user MFA.
