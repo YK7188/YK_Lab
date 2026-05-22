@@ -94,7 +94,29 @@ Right click Computer > Duplicate Template
 - Security tab
   - Ensure Domain computers has Read and Enroll permissions
 
-In certsrv > Certificate Templates, the LabComputerCert is ready to issue.
+In certsrv:
+
+`Certificate Templates > New > Certificate Template to issue`
+
+Select LabComputerCert and Click OK
 
 image
+
+> Clients may now request that cert type
+> 
+> Enterprises commonly duplicate templates rather than modifying/using defaults directly
+
+# STEP 6 — Test manual certificate enrollment
+
+Move to a domain-joined PC, and open certlm.msc as an admin
+
+Personal > All Tasks > Request New Certificate
+
+Request LabComputerCert instead of the default Computer certificate
+
+Certificate now appears in Personal folder
+
+image
+
+
 
