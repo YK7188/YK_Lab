@@ -21,7 +21,10 @@ SRV1 (Domain Controller)
 - Windows server 2016
 - Active Directory
 - Enterprise Root CA
-- Intune Certificate Connector
+
+SRV3 (Certificate Connector Server)
+- Windows server 2016
+
 
 ADPC1 (Windows Client 1)
 - Windows 10
@@ -92,7 +95,7 @@ Right click Computer > Duplicate Template
   - Template display name > LabComputerCert
 
 - Security tab
-  - Ensure Domain computers has Read and Enroll permissions
+  - Ensure Domain computers has Read, Enroll, Autoenroll permissions
 
 In certsrv:
 
@@ -103,20 +106,147 @@ Select LabComputerCert and Click OK
 image
 
 > Clients may now request that cert type
-> 
+
 > Enterprises commonly duplicate templates rather than modifying/using defaults directly
 
 # STEP 6 — Test manual certificate enrollment
 
-Move to a domain-joined PC, and open certlm.msc as an admin
+Run gpmc.msc and create a new GPO object:
 
-Personal > All Tasks > Request New Certificate
+Certificate Services Client - Auto-Enrollment
 
-Request LabComputerCert instead of the default Computer certificate
+> For better management, easier troubleshooting, better create a new object than adding to the default domain policy object.
+
+Path: `Computer Configuration > Policies > Windows Settings > Security Settings > Public Key Policies `
+
+Enable the policy and Check:
+
+- Renew expired certificates, update pending certificates, and remove revoked certificates
+- Update certificates that use certificate templates
 
 Certificate now appears in Personal folder
 
 image
+
+
+# Step 7 — Install Intune Certificate Connector
+
+Microsoft's recommendation is:
+- Windows Server 2012 R2 or later.
+- Intune connector server better not be colocated with the CA.
+
+On SRV3, go to Intune and download the .exe file.
+
+Path: Tenant admin > Connectors and tokens > Certificate Connectors > Add
+
+image14
+
+Run downloaded IntuneCertificateConnector.exe and proceed with the wizard.
+
+- Service Account > Domain Account
+  - Created a new domain account for best practice. No particular previlige required.
+  - Open secpol.msc and add the account to `Local policies > User Rights assignment > Log on as a service`
+- Features > SECP unticked, all the others ticked
+- Service account type > Domain Account
+
+The connector now appears in Intune.
+
+image15
+
+# Step 8 — Deploy Trusted Root Certificate profile
+
+> Intune needs to trust the on-prem CA
+
+## Export Root CA certificate
+
+On SRV1 (CA server):
+
+Run:
+
+certsrv.msc
+
+Right-click CA:
+
+Path: `Properties > View Certificate > Details > Copy to File`
+
+Export:
+
+Base-64 encoded X.509 (.CER)
+
+## Create Trusted Certificate profile in Intune
+
+In Microsoft Intune:
+
+Path:
+
+Devices > Configuration > Create > New policy
+
+Platform: 
+
+Windows 10 and later
+
+Profile type: 
+
+Templates > Trusted certificate
+
+Upload:
+
+RootCA.cer
+
+Assign to test device group.
+
+The root certificate appears on a Entra ID joined PC.
+
+image
+
+## STEP 9 — Create PKCS certificate profile
+
+In Microsoft Intune:
+
+Path:
+
+Devices > Configuration > Create > New policy
+
+Platform: 
+
+Windows 10 and later
+
+Profile type: 
+
+Templates > PKCS certificate
+
+Configuration Settings:
+
+Key storage provider (KSP) > Enroll to Trusted Platform Module (TPM) KSP if present, otherwise Software KSP
+> TPM keeps the key hardware-protected.
+
+Subject name format > CN={{devicename}}
+> It will show the device name.
+
+Result:
+
+Error appears in Intune
+
+## STEP 9 — Publish a new certificate template for Entra ID devices
+
+On SRV1 (CA Server), in Certificates Templates Console (certtmpl.msc):
+
+Right click LabComputerCert > Duplicate Template
+
+- General tab
+  - Template display name > LabComputerCert-Intune
+
+- Subject Name tab
+  - Select Supply in the request
+
+- Cryptography tab
+  - Select Key Storage Provider, RSA for Provider Category
+
+In certsrv:
+
+`Certificate Templates > New > Certificate Template to issue`
+
+Select LabComputerCert and Click OK
 
 
 
