@@ -91,7 +91,7 @@ In Certificates Templates Console (certtmpl.msc):
 Right click Computer > Duplicate Template
 
 - Compatibility tab
-  - Compatibility settings > Choose the latest versions for this lab. *But more considertion may be required in production environments.
+  - Compatibility settings > Choose the latest versions for this lab.
 
 - General tab
   - Template display name > LabComputerCert
@@ -103,21 +103,19 @@ In certsrv:
 
 `Certificate Templates > New > Certificate Template to issue`
 
+<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/18-Hybrid%20PKI%20simulation/05.cert_template.jpg" width="500">
+
 Select LabComputerCert and Click OK
 
-image
-
-> Clients may now request that cert type
+> Clients may now request that cert type. Also, auto-request is ready.
 
 > Enterprises commonly duplicate templates rather than modifying/using defaults directly
 
-# STEP 6 — Test manual certificate enrollment
+# STEP 6 — Test certificate enrollment by GPO policy
 
 Run gpmc.msc and create a new GPO object:
 
 Certificate Services Client - Auto-Enrollment
-
-> For better management, easier troubleshooting, better create a new object than adding to the default domain policy object.
 
 Path: `Computer Configuration > Policies > Windows Settings > Security Settings > Public Key Policies `
 
@@ -126,10 +124,13 @@ Enable the policy and Check:
 - Renew expired certificates, update pending certificates, and remove revoked certificates
 - Update certificates that use certificate templates
 
+<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/18-Hybrid%20PKI%20simulation/18.GPO_Enabled.jpg" width="600">
+
 Certificate now appears in Personal folder
 
-image
+<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/18-Hybrid%20PKI%20simulation/13.Cert_appears.jpg" width="600">
 
+> For better management, easier troubleshooting, creating a new object is better than adding to the default domain policy object.
 
 # Step 7 — Install Intune Certificate Connector
 
@@ -141,7 +142,7 @@ On SRV3, go to Intune and download the .exe file.
 
 Path: Tenant admin > Connectors and tokens > Certificate Connectors > Add
 
-image14
+<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/18-Hybrid%20PKI%20simulation/14.connector_download.jpg" width="600">
 
 Run downloaded IntuneCertificateConnector.exe and proceed with the wizard.
 
@@ -153,7 +154,7 @@ Run downloaded IntuneCertificateConnector.exe and proceed with the wizard.
 
 The connector now appears in Intune.
 
-image15
+<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/18-Hybrid%20PKI%20simulation/15.connector_appear.jpg" width="600">
 
 # Step 8 — Deploy Trusted Root Certificate profile
 
