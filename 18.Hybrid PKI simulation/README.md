@@ -158,7 +158,7 @@ The connector now appears in Intune.
 
 # Step 8 — Deploy Trusted Root Certificate profile
 
-> Intune needs to trust the on-prem CA
+> Intune managed devices need to trust the on-prem CA
 
 ## Export Root CA certificate
 
@@ -199,7 +199,7 @@ Assign to test device group.
 
 The root certificate now appears on a Entra ID joined PC.
 
-## STEP 9 — Create PKCS certificate profile
+# STEP 9 — Create PKCS certificate profile
 
 In Microsoft Intune:
 
@@ -220,16 +220,23 @@ Configuration Settings:
 Key storage provider (KSP) > Enroll to Trusted Platform Module (TPM) KSP if present, otherwise Software KSP
 > TPM keeps the key hardware-protected.
 
-Subject name format > CN={{devicename}}
+Subject name format > CN={{DeviceName}}
 > It will show the device name.
+
+<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/18-Hybrid%20PKI%20simulation/26.failed_PKCS_config.jpg" width="600">
 
 Result:
 
-Error appears in Intune
+Error appeared in Intune
 
-# STEP 9 — Publish a new certificate template for Entra ID devices
+<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/18-Hybrid%20PKI%20simulation/20.pkcs_error.jpg" width="600">
 
-On SRV1 (CA Server), in Certificates Templates Console (certtmpl.msc):
+
+# STEP 10 — Troubleshoot
+
+## Part 1 — Publish a new certificate template for Intune devices
+
+On CA Server, run certtmpl.msc:
 
 Right click LabComputerCert > Duplicate Template
 
@@ -248,21 +255,29 @@ In certsrv:
 
 `Certificate Templates > New > Certificate Template to issue`
 
-Select LabComputerCert and Click OK
+Select LabComputerCert-Intune and Click OK
 
-Results:
+In Intune:
 
-Error appears in the report.
+- Update the target certificate template from LabComputerCert to LabComputerCert-Intune
 
-## Troubleshoot
+Result:
 
-Check Event Viewer on Connector server (SRV3)
+The issue persists
+
+## Part 2 — Correcting CA Connector account's permissions
+
+Check Event Viewer on Connector server
 Path: Applications and Services Logs > Microsoft > Intune > CertificateConnectors
 
-Error appears:
+Error appears as:
 - PKCSRequestFailure
 - User > Connector account (svc_intunecert)
 - Denied by Policy Module
+
+<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/18-Hybrid%20PKI%20simulation/22.Denied_By_Module.jpg" width="600">
+
+> Intune requests the certificate but it is denied by the CA.
 
 Fix:
 
@@ -277,4 +292,4 @@ On test Entra ID device, run certlm.msc
 
 PKCS cert appears
 
-
+The configuration report shows Success for the device as well
