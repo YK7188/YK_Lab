@@ -126,7 +126,7 @@ Enable the policy and Check:
 
 <img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/18-Hybrid%20PKI%20simulation/18.GPO_Enabled.jpg" width="600">
 
-Certificate now appears in Personal folder
+On test AD device, Certificate now appears in Personal folder
 
 <img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/18-Hybrid%20PKI%20simulation/13.Cert_appears.jpg" width="600">
 
@@ -138,7 +138,7 @@ Microsoft's recommendation is:
 - Windows Server 2012 R2 or later.
 - Intune connector server better not be colocated with the CA.
 
-On SRV3, go to Intune and download the .exe file.
+On connector server, go to Intune and download the .exe file.
 
 Path: Tenant admin > Connectors and tokens > Certificate Connectors > Add
 
@@ -162,19 +162,16 @@ The connector now appears in Intune.
 
 ## Export Root CA certificate
 
-On SRV1 (CA server):
-
-Run:
-
-certsrv.msc
-
-Right-click CA:
+On CA server, run certsrv.msc and right-click CA
 
 Path: `Properties > View Certificate > Details > Copy to File`
+
+<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/18-Hybrid%20PKI%20simulation/25.Cert_Copy_CA.jpg" width="700">
 
 Export:
 
 Base-64 encoded X.509 (.CER)
+
 
 ## Create Trusted Certificate profile in Intune
 
@@ -194,13 +191,13 @@ Templates > Trusted certificate
 
 Upload:
 
-RootCA.cer
+The copied file from the CA
+
+<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/18-Hybrid%20PKI%20simulation/17.Cert_config_intune.jpg" width="600">
 
 Assign to test device group.
 
-The root certificate appears on a Entra ID joined PC.
-
-image
+The root certificate now appears on a Entra ID joined PC.
 
 ## STEP 9 — Create PKCS certificate profile
 
