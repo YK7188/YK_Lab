@@ -2,18 +2,16 @@
 
 # Lab Goal
 
-IT wants to have their onboarding Windows devices obtain PKCS certificate automatically.
+IT wants onboarding Windows devices to automatically obtain PKCS certificates.
 
-So I configure a bybrid PKI structure like below using my developer's Entra ID tenant and Hyper-v on premises tenant.
+So I configure a hybrid PKI structure like below using my developer's Entra ID tenant and Hyper-V on-premises Active Directory environment.
 
 ```
-On-prem AD CS (CA)
-↓
-Intune Certificate Connector
-↓
-Intune PKCS Certificate Profile
-↓
-Windows device receives certificate automatically
+Traditional AD autoenrollment:
+Device > Enterprise CA
+
+Intune PKCS:
+Device > Intune > Certificate Connector > Enterprise CA
 ```
 
 # Final Architecture
@@ -29,11 +27,11 @@ SRV3 (Certificate Connector Server)
 
 ADPC1 (Windows Client 1)
 - Windows 10
-- On-premises AD joined
+- On-premises AD-joined
 
 AADPC1 (Windows Client 2)
 - Windows 11
-- Entra ID joined / Intune enrolled
+- Entra ID-joined / Intune enrolled
 ```
 
 # STEP 1 — Confirm AD CS Role Installed
@@ -60,7 +58,7 @@ and proceed with the wizard
 - Setup Type > Enterprise CA
 - CA Type > Root CA
 - Private Key > Create a new private key
-- Cryptography (Leave it as dafault)
+- Cryptography (Leave it as default)
   - RSA#Microsoft Software Key Storage Provider
   - 2048
   - SHA256
@@ -76,13 +74,13 @@ CORP-ROOT-CA is now up and running
 
 # STEP 4 — Verify Root Trust on Domain PC
 
-On a test AD device, open certmgr.msc:
+On the AD-joined test device, open certmgr.msc:
 
 `CORP-ROOT-CA appears under Trusted Root Certification Authorities > Certificates`
 
 <img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/18-Hybrid%20PKI%20simulation/04.Root_Cert_shown.jpg" width="500">
 
-> Active Directory automatically distributed CA trust to all AD joined devices.
+> Active Directory automatically distributed CA trust to all AD-joined devices.
 
 # STEP 5 — Publish a certificate template
 
@@ -99,6 +97,10 @@ Right click Computer > Duplicate Template
 - Security tab
   - Ensure Domain computers has Read, Enroll, Autoenroll permissions
 
+> For traditional AD autoenrollment, Domain Computers requires Read, Enroll, and Autoenroll permissions.
+> For Intune PKCS deployment, the connector service account also requires Read and Enroll permissions on the Intune-specific certificate template.
+> * Missed this part first in my configuration.
+
 In certsrv:
 
 `Certificate Templates > New > Certificate Template to issue`
@@ -107,7 +109,7 @@ In certsrv:
 
 Select LabComputerCert and Click OK
 
-> Clients may now request that cert type. Also, auto-request is ready.
+> Clients may now request certificates based on this template, and the template is now available for autoenrollment.
 
 > Enterprises commonly duplicate templates rather than modifying/using defaults directly
 
@@ -126,7 +128,7 @@ Enable the policy and Check:
 
 <img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/18-Hybrid%20PKI%20simulation/18.GPO_Enabled.jpg" width="600">
 
-On test AD device, Certificate now appears in Personal folder
+On the AD-joined test device, Certificate now appears in Personal folder
 
 <img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/18-Hybrid%20PKI%20simulation/13.Cert_appears.jpg" width="600">
 
@@ -147,9 +149,9 @@ Path: Tenant admin > Connectors and tokens > Certificate Connectors > Add
 Run downloaded IntuneCertificateConnector.exe and proceed with the wizard.
 
 - Service Account > Domain Account
-  - Created a new domain account for best practice. No particular previlige required.
+  - Created a new domain account for best practice. No administrative privileges were required for this lab's purpose.
   - Open secpol.msc and add the account to `Local policies > User Rights assignment > Log on as a service`
-- Features > SECP unticked, all the others ticked
+- Features > SCEP unticked (not required for this lab), all the others ticked
 - Service account type > Domain Account
 
 The connector now appears in Intune.
@@ -197,7 +199,7 @@ The copied file from the CA
 
 Assign to test device group.
 
-The root certificate now appears on a Entra ID joined PC.
+The root certificate now appears on a Entra ID-joined PC.
 
 # STEP 9 — Create PKCS certificate profile
 
@@ -218,7 +220,7 @@ Templates > PKCS certificate
 Configuration Settings:
 
 Key storage provider (KSP) > Enroll to Trusted Platform Module (TPM) KSP if present, otherwise Software KSP
-> TPM keeps the key hardware-protected.
+> TPM keeps the private key hardware-protected and non-exportable where supported.
 
 Subject name format > CN={{DeviceName}}
 > It will show the device name.
@@ -245,11 +247,12 @@ Right click LabComputerCert > Duplicate Template
 
 - Subject Name tab
   - Select Supply in the request
+> Intune PKCS supplies the certificate subject name dynamically using the PKCS profile configuration.
 
 - Cryptography tab
   - Select Key Storage Provider, RSA for Provider Category
 
-> Settings need to be changed for Intune
+> A separate certificate template was created for Intune devices to avoid affecting traditional AD autoenrollment behavior.
 
 In certsrv:
 
@@ -288,8 +291,14 @@ Add svc_intunecert with Read, Enroll permissions
 
 Result:
 
-On test Entra ID device, run certlm.msc
+On the Entra ID-joined test device, run certlm.msc
 
 PKCS cert appears
 
 The configuration report shows Success for the device as well
+
+# Final Result
+
+The hybrid PKI environment was successfully configured.
+
+Traditional AD autoenrollment worked for on-premises AD-joined devices, while Intune PKCS deployment successfully delivered certificates to Entra ID-joined devices through the Intune Certificate Connector and on-premises Enterprise CA.
