@@ -1,8 +1,10 @@
-Tested: May 2026
+> Tested: May 2026
 
 # Lab Goal
 
-To build a bybrid PKI structure like below using my developer's Entra ID tenant and Hyper-v on premises tenant.
+IT wants to have their onboarding Windows devices obtain PKCS certificate automatically.
+
+So I configure a bybrid PKI structure like below using my developer's Entra ID tenant and Hyper-v on premises tenant.
 
 ```
 On-prem AD CS (CA)
@@ -25,14 +27,13 @@ SRV1 (Domain Controller)
 SRV3 (Certificate Connector Server)
 - Windows server 2016
 
-
 ADPC1 (Windows Client 1)
 - Windows 10
-- AD joined
+- On-premises AD joined
 
 AADPC1 (Windows Client 2)
 - Windows 11
-- Entra joined / Intune enrolled
+- Entra ID joined / Intune enrolled
 ```
 
 # STEP 1 — Confirm AD CS Role Installed
@@ -41,7 +42,7 @@ Confirm installed:
 
 `Active Directory Certificate Services > Certification Authority`
 
-image 01
+<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/18-Hybrid%20PKI%20simulation/01.role_installation.jpg" width="600">
 
 # STEP 2 — Configure the CA
 
@@ -49,7 +50,8 @@ Click:
 
 `Configure Active Directory Certificate Services`
 
-image 02
+<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/18-Hybrid%20PKI%20simulation/02.post_deployment_confg.jpg" width="400">
+
 
 and proceed with the wizard
 
@@ -68,9 +70,9 @@ and proceed with the wizard
 
 # STEP 3 — Open Certification Authority Console
 
-CORP-ROOT-CA is up and running
+CORP-ROOT-CA is now up and running
 
-image 03
+<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/18-Hybrid%20PKI%20simulation/03.CA_up.jpg" width="400">
 
 # STEP 4 — Verify Root Trust on Domain PC
 
@@ -78,7 +80,7 @@ On a test AD device, open certmgr.msc:
 
 `CORP-ROOT-CA appears under Trusted Root Certification Authorities > Certificates`
 
-image04
+<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/18-Hybrid%20PKI%20simulation/04.Root_Cert_shown.jpg" width="500">
 
 > Active Directory automatically distributed CA trust to all AD joined devices.
 
@@ -227,7 +229,7 @@ Result:
 
 Error appears in Intune
 
-## STEP 9 — Publish a new certificate template for Entra ID devices
+# STEP 9 — Publish a new certificate template for Entra ID devices
 
 On SRV1 (CA Server), in Certificates Templates Console (certtmpl.msc):
 
@@ -242,11 +244,39 @@ Right click LabComputerCert > Duplicate Template
 - Cryptography tab
   - Select Key Storage Provider, RSA for Provider Category
 
+> Settings need to be changed for Intune
+
 In certsrv:
 
 `Certificate Templates > New > Certificate Template to issue`
 
 Select LabComputerCert and Click OK
 
+Results:
+
+Error appears in the report.
+
+## Troubleshoot
+
+Check Event Viewer on Connector server (SRV3)
+Path: Applications and Services Logs > Microsoft > Intune > CertificateConnectors
+
+Error appears:
+- PKCSRequestFailure
+- User > Connector account (svc_intunecert)
+- Denied by Policy Module
+
+Fix:
+
+- run certtmpl.msc on CA server
+- Open LabComputerCert-Intune > Properties > Security 
+
+Add svc_intunecert with Read, Enroll permissions
+
+Result:
+
+On test Entra ID device, run certlm.msc
+
+PKCS cert appears
 
 
