@@ -88,7 +88,7 @@ Access controls:
 - Grant access
 - Require multifactor authentication
 
-<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/21-MFA%20function/17.CA_Grant.jpg" width="400"> 
+<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/21-MFA%20function/17.CA_Grant.jpg" width="300"> 
   
 When this policy is enabled:
 
@@ -103,14 +103,18 @@ During testing, portal.azure.com and intune.microsoft.com consistently triggered
 
 Additionally, TAP, Email OTP, and QR Code did not function as primary workforce MFA onboarding methods even when enabled in Authentication Methods Policy.
 
+### Realistic MFA configuration example:
 
+1. Conditional access
 
+- Target resources: All resources (formerly 'All cloud apps')
+- Access controls:
+  - Grant access
+  - Require multifactor authentication
 
+2. Authentication Methods
 
+- Primary: Microsoft Authenticator
+- Secondary: SMS or voice call
 
-
-
-
-Realistic config
-
-auth and email? maybe??
+Registration Campaign and MFA Registration Policy are optional.
