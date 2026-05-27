@@ -18,7 +18,7 @@ in modern Microsoft Entra ID MFA onboarding and enforcement.
 
 Migration Complete
 
-Image
+<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/21-MFA%20function/01.Migration_ToModern.jpg" width="700">
 
 # Important Finding Before Testing
 
@@ -38,23 +38,21 @@ Authentication Methods Policy behavior became more aligned with the configured s
 
 This determine available authentication methods tenant-wide.
 
-image
+<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/21-MFA%20function/11.Auth_Method.jpg" width="600">
 
 When a method is enabled, it appears as an available method when a user:
 
-- Encounters a prompt to register an MFA method (Let's keep your account secure) as shown below if no method has been registered yet.
+- Encounters a prompt to register an MFA method (Let's keep your account secure) > add a sign-in method as shown below if no method has been registered yet.
 
-     image phone and authenticator
+<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/21-MFA%20function/13.MFA_add_Prompt.jpg" width="400">
 
 - Adds an MFA method in the Mysignins page (https://mysignins.microsoft.com/security-info) as below.
 
 # MFA Registration Policy
 
-image
+<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/21-MFA%20function/14.reg_policy.jpg" width="700">
 
 When enabled, a target user with no MFA method registered will experience a Let's keep your account secure prompt to register an MFA method when signing in to Office cloud apps such as office.com.
-
-image
 
 ### Key Point
 
@@ -63,11 +61,11 @@ image
 
 # Registration Campaign
 
-image 
+<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/21-MFA%20function/17.registration_campaign.jpg" width="600">
 
 When enabled, a target user is prompted to add Microsoft Authenticator as an improved MFA method as shown below.
 
-image 
+<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/21-MFA%20function/16.improve_your_signins.jpg" width="400"> 
 
 This prompt only appears when the user has at least one another method registered.
 
@@ -87,6 +85,8 @@ Access controlls:
 
 - Grant access
 - Require multifactor authentication
+
+<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/21-MFA%20function/17.CA_Grant.jpg" width="400"> 
   
 When this policy is enabled:
 
@@ -99,3 +99,11 @@ When this policy is enabled:
 The test confirms that Conditional access is the only way to enforce MFA and, Registration policy and Registration Campaign support the structure.
 
 Also, important to note that some sites such as portal.azure.com and intune.microsoft.com act like MFA-enforced.
+
+
+
+
+
+Realistic config
+
+auth and email? maybe??
