@@ -36,11 +36,11 @@ Authentication Methods Policy behavior became more aligned with the configured s
 
 # Authentication Methods Policy
 
-This determines which authentication methods are available tenant-wide.
+This determines which authentication methods are allowed and available for users in the tenant.
 
 <img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/21-MFA%20function/11.Auth_Method.jpg" width="600">
 
-When a method is enabled, it appears as an available method when a user with no MFA method registered:
+When a method is enabled, it can become available during MFA registration or in the My Sign-ins portal depending on the method type and sign-in scenario.
 
 - Encounters a prompt to register an MFA method (Let's keep your account secure) > add a sign-in method as shown below.
 
@@ -69,7 +69,7 @@ When enabled, a target user is prompted to add Microsoft Authenticator as an imp
 
 <img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/21-MFA%20function/16.improve_your_signins.jpg" width="400"> 
 
-This prompt only appears when the user has at least one other MFA method registered.
+During testing, this prompt only appeared when the user already had at least one MFA method registered.
 
 ### Key Point
 
@@ -99,7 +99,7 @@ When this policy is enabled:
 
 The test confirmed that Conditional Access was the primary and most predictable method for enforcing MFA during sign-in, while MFA Registration Policy and Registration Campaign supported the onboarding process.
 
-During testing, portal.azure.com and intune.microsoft.com consistently triggered MFA-related registration behavior even without a tenant Conditional Access policy or registration policy configured.
+During testing, portal.azure.com and intune.microsoft.com triggered MFA-related registration behavior even without a tenant Conditional Access policy or registration policy configured.
 
 Additionally, TAP, Email OTP, and QR Code did not function as primary workforce MFA onboarding methods even when enabled in Authentication Methods Policy.
 
@@ -115,6 +115,6 @@ Additionally, TAP, Email OTP, and QR Code did not function as primary workforce 
 2. Authentication Methods
 
 - Primary: Microsoft Authenticator
-- Secondary: SMS or voice call
+- Secondary: SMS or voice call (fallback methods)
 
 Registration Campaign and MFA Registration Policy are optional.
