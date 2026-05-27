@@ -36,7 +36,7 @@ Authentication Methods Policy behavior became more aligned with the configured s
 
 # Authentication Methods Policy
 
-This determine available authentication methods tenant-wide.
+This determines which authentication methods are available tenant-wide.
 
 <img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/21-MFA%20function/11.Auth_Method.jpg" width="600">
 
@@ -58,7 +58,7 @@ When enabled, a target user with no MFA method registered will experience a Let'
 
 ### Key Point
 
-- During the test, regardless of wether the policy is enabled, test users with no MFA method registered were prompted for the registration when signing in to portal.azure.com, intune.microsoft.com.
+- During the test, regardless of whether the policy is enabled, test users with no MFA method registered were prompted to register an MFA method when signing in to portal.azure.com, intune.microsoft.com.
 - Once any MFA method is registered, a user can sign in to Office cloud apps with no second factor authentication prompted. This policy alone is not meant for enforcing MFA.
 
 # Registration Campaign
@@ -69,7 +69,7 @@ When enabled, a target user is prompted to add Microsoft Authenticator as an imp
 
 <img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/21-MFA%20function/16.improve_your_signins.jpg" width="400"> 
 
-This prompt only appears when the user has at least one another method registered.
+This prompt only appears when the user has at least one other MFA method registered.
 
 ### Key Point
 
@@ -83,7 +83,7 @@ Target resources:
 
 - All resources (formerly 'All cloud apps')
 
-Access controlls:
+Access controls:
 
 - Grant access
 - Require multifactor authentication
@@ -95,12 +95,17 @@ When this policy is enabled:
 - A user with no MFA method registered is prompted to register a method just like MFA registration policy.
 - A user with any MFA method registered is prompted for the secondary authentication.
 
-
 # Final Note
 
-The test confirms that Conditional access is the only way to enforce MFA and, Registration policy and Registration Campaign support the structure.
+The test confirmed that Conditional Access was the primary and most predictable method for enforcing MFA during sign-in, while MFA Registration Policy and Registration Campaign supported the onboarding process.
 
-Also, important to note that some sites such as portal.azure.com and intune.microsoft.com act like MFA-enforced by default.
+During testing, portal.azure.com and intune.microsoft.com consistently triggered MFA-related registration behavior even without a tenant Conditional Access policy or registration policy configured.
+
+Additionally, TAP, Email OTP, and QR Code did not function as primary workforce MFA onboarding methods even when enabled in Authentication Methods Policy.
+
+
+
+
 
 
 
