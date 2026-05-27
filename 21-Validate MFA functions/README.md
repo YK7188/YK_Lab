@@ -43,6 +43,7 @@ This determine available authentication methods tenant-wide.
 When a method is enabled, it appears as an available method when a user with no MFA method registered:
 
 - Encounters a prompt to register an MFA method (Let's keep your account secure) > add a sign-in method as shown below.
+
 <img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/21-MFA%20function/13.MFA_add_Prompt.jpg" width="400">
 
 - Adds an MFA method in the Mysignins page (https://mysignins.microsoft.com/security-info) as below.
@@ -74,13 +75,13 @@ This prompt only appears when the user has at least one another method registere
 
 - Like MFA registration policy, this alone does not enforce MFA.
 
-### Conditional Access
+# Conditional Access
 
 Conditional access was configured for testing.
 
 Target resources:
 
-All resources (formerly 'All cloud apps')
+- All resources (formerly 'All cloud apps')
 
 Access controlls:
 
@@ -99,7 +100,7 @@ When this policy is enabled:
 
 The test confirms that Conditional access is the only way to enforce MFA and, Registration policy and Registration Campaign support the structure.
 
-Also, important to note that some sites such as portal.azure.com and intune.microsoft.com act like MFA-enforced.
+Also, important to note that some sites such as portal.azure.com and intune.microsoft.com act like MFA-enforced by default.
 
 
 
