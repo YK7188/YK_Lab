@@ -40,13 +40,14 @@ This determine available authentication methods tenant-wide.
 
 <img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/21-MFA%20function/11.Auth_Method.jpg" width="600">
 
-When a method is enabled, it appears as an available method when a user:
+When a method is enabled, it appears as an available method when a user with no MFA method registered:
 
-- Encounters a prompt to register an MFA method (Let's keep your account secure) > add a sign-in method as shown below if no method has been registered yet.
-
+- Encounters a prompt to register an MFA method (Let's keep your account secure) > add a sign-in method as shown below.
 <img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/21-MFA%20function/13.MFA_add_Prompt.jpg" width="400">
 
 - Adds an MFA method in the Mysignins page (https://mysignins.microsoft.com/security-info) as below.
+
+<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/21-MFA%20function/12.mysignins.jpg" width="600">
 
 # MFA Registration Policy
 
