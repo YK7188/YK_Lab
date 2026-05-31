@@ -44,8 +44,37 @@ image
 
 
 
+# Config in common
+
+Devices > Android > Configuration > New Policy > Android Enterprise > Templates > Device restrictions
+
+Allow installation from unknown sources
+
+Allow access to all apps in Google Play store (work profile-level)
+
+What if a user access normal Android Store instead of Managed Google play 
 
 
+------
+Fully Managed Android
+
+Usually:
+
+managed Play Store replaces normal experience
+OR
+Play Store becomes restricted/allowlisted
+
+So if user opens app page not approved:
+
+install button missing
+OR
+install blocked
+OR
+app invisible entirely
+
+depending on policy.
+
+------
 
 
 
