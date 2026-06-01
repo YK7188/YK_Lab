@@ -1,57 +1,57 @@
 > Tested: June 2026
 
-# Lab Object
+# Lab Goal
 
-To verify app deployment, management and protection for Android devices by simulating two seperate cases.
+Verify Android app deployment, configuration, and protection in Microsoft Intune by testing the following scenarios:
 
-- Configure Microsoft Edge for non-intune-enrolled BYOD Android
-- Configure Microsoft Edge for intune-enrolled BYOD Android
+- Microsoft Edge on a non-enrolled BYOD Android device
+- Microsoft Edge on an Intune-enrolled BYOD Android device
 
-# Test configure Edge for non-intune-enrolled BYOD device
+# Configure Edge for a non-enrolled BYOD Android device
 
-## STEP 1 — Create app configuration policy
+## STEP 1 — Create an app configuration policy
 
 Go to:
 
 Apps > Android > Configuration > Create > `Managed Apps`
 
-and select Edge to configure.
+and select Microsoft Edge to configure.
 
 <img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/%20%20%20%2022-Android%20applications%20configuration/04.App_config_basics.jpg" width="600">
 
-For testing, set bookmarks:
+For testing, configure bookmarks.
 
 <img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/%20%20%20%2022-Android%20applications%20configuration/05.appconfig_Bookmark.jpg" width="500">
 
-## STEP 2 — Create app protection policy
+## STEP 2 — Create an app protection policy
 
 Go to:
 
 Apps > Android > Protection > Create > Android
 
-Keep the default configuration for this test.
+Keep the default settings for this test.
 
 <img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/%20%20%20%2022-Android%20applications%20configuration/06.app_protection.jpg" width="500">
 
-## STEP 3 — Verify the behavior on the phone
+## STEP 3 — Verify the behavior
 
-Prompted to set a PIN as shown below.
+When signing in to Microsoft Edge using a corporate account, the user is prompted to configure an application PIN.
 
 <img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/%20%20%20%2022-Android%20applications%20configuration/08.PIN.jpg" width="200">
 
-> App protection is applied.
+> App protection policy is applied.
 
-Bookmarks apper as configured.
+Configured bookmarks appear in Microsoft Edge.
 
 <img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/%20%20%20%2022-Android%20applications%20configuration/09.favorite.jpg" width="400">
 
-> App configuration is applied.
+> App configuration policy is applied.
 
 <br>
 
-# Test configure Edge for intune-enrolled BYOD device
+# Configure Microsoft Edge for an Intune-enrolled BYOD Android device
 
-## STEP 1 — Add Android app
+## STEP 1 — Add Microsoft Edge
 
 Go to:
 
@@ -65,55 +65,49 @@ and add Microsoft Edge.
 
 <img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/%20%20%20%2022-Android%20applications%20configuration/11.add_Edge.jpg" width="400">
 
-The app appears as a deployable app.
+The application appears as a deployable app.
 
 <img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/%20%20%20%2022-Android%20applications%20configuration/15.App_ReadyToDeploy.jpg" width="400">
 
-## STEP 2 — Assign the app
+## STEP 2 — Assign the application
 
 Go to:
 
-Apps > Android > Edge > Assignments > Add group
+Apps > Android > Microsoft Edge > Assignments
 
-to target users/devices.
+and target the required users or devices.
 
-## STEP 3 — Create app configuration policy (MAM)
+## STEP 3 — Create an app configuration policy
 
-Configure the same way as non-intune-enrolled devices.
+Configure the same policy used for the non-enrolled device.
 
-## STEP 4 — Create app protection policy
+## STEP 4 — Create an app protection policy
 
-Configure the same way as non-intune-enrolled devices.
+Configure the same policy used for the non-enrolled device.
 
-## STEP 5 — Device configuration for application restriction
+## STEP 5 — Verify the behavior
 
-Devices > Android > Configuration > New Policy > Android Enterprise > Templates > Device restrictions
-
-- Allow installation from unknown sources > Not configured
-- App auto-updates (work profile-level) > Always
-- Allow access to all apps in Google Play store (work profile-level) > Block
-
-<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/%20%20%20%2022-Android%20applications%20configuration/16.Device_Config.jpg" width="400">
-
-## STEP 6 — Verify the behavior on the phone 
-
-- Prompted to set a PIN as configured.
-- Bookmarks apper as configured.
-- Edge appears in Work profile Google play.
+- User is prompted to configure an application PIN.
+- Configured bookmarks appear in Microsoft Edge.
+- Microsoft Edge appears in the Work Profile Google Play Store.
 
 <img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/%20%20%20%2022-Android%20applications%20configuration/12.App_shown.jpg" width="200">
 
-- When trying to install an apk file, installation is blocked with the message "Blocked by work policy".
+- Attempting to install an APK file is blocked with the message "Blocked by work policy".
 
 <img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/%20%20%20%2022-Android%20applications%20configuration/13.APK_blocked.jpg" width="200">
 
-> Device configuration is effective.
+> The restriction was observed without any device configuration policy assigned.
 
-- Accessing a Play Store on a Work profile browser, trying to install an app using a non-corporate Google account. Installation fails with the error "Your administrator has not given you access".
+- When accessing Google Play Store from a Work Profile browser and attempting to install an application using a personal Google account, installation fails with the message "Your administrator has not given you access to this item".
 
 <img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/%20%20%20%2022-Android%20applications%20configuration/14.install_blocked.jpg" width="200">
 
-> Device configuraion is effective.
+> The restriction was observed without any device configuration policy assigned.
+
+
+
+
 
 
 
