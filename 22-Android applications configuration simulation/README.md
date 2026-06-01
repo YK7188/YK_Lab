@@ -1,22 +1,27 @@
-> Tested: May 2026
+> Tested: June 2026
 
 # Lab Object
 
-To verify app management and protection for Android devices.
+To verify app deployment, management and protection for Android devices by simulating two seperate cases.
 
-1. Configure Microsoft Edge for non-enrolled BYOD Android
+- Configure Microsoft Edge for non-intune-enrolled BYOD Android
+- Configure Microsoft Edge for intune-enrolled BYOD Android
 
-# Test configure Edge for BYOD devices
+# Test configure Edge for non-intune-enrolled BYOD device
 
 ## STEP 1 — Create app configuration policy
 
 Go to:
 
-Apps > Android > Configuration > Create > Managed Apps
+Apps > Android > Configuration > Create > `Managed Apps`
+
+and select Edge to configure.
+
+<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/%20%20%20%2022-Android%20applications%20configuration/04.App_config_basics.jpg" width="600">
 
 For testing, set bookmarks:
 
-image
+<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/%20%20%20%2022-Android%20applications%20configuration/05.appconfig_Bookmark.jpg" width="500">
 
 ## STEP 2 — Create app protection policy
 
@@ -41,44 +46,7 @@ image
 > App configuration is applied.
 
 
-
-
-
-# Config in common
-
-Devices > Android > Configuration > New Policy > Android Enterprise > Templates > Device restrictions
-
-Allow installation from unknown sources
-
-Allow access to all apps in Google Play store (work profile-level)
-
-What if a user access normal Android Store instead of Managed Google play 
-
-
-------
-Fully Managed Android
-
-Usually:
-
-managed Play Store replaces normal experience
-OR
-Play Store becomes restricted/allowlisted
-
-So if user opens app page not approved:
-
-install button missing
-OR
-install blocked
-OR
-app invisible entirely
-
-depending on policy.
-
-------
-
-
-
-
+# Test configure Edge for intune-enrolled BYOD devices
 
 ## STEP 1 — Add Android app
 
@@ -92,6 +60,10 @@ Store app > Managed Google Play
 
 and add Microsoft Edge.
 
+image
+
+The app appears as a deployable app.
+
 ## STEP 2 — Assign the app
 
 Go to:
@@ -102,32 +74,28 @@ to target users/devices.
 
 ## STEP 3 — Create app configuration policy
 
-Go to:
+Configure the same way as non-intune-enrolled devices.
 
-Apps > Android > Configuration > Create > Managed Apps
+## STEP 4 — Create app protection policy
 
-For testing, set bookmarks:
+Configure the same way as non-intune-enrolled devices.
 
-image
 
-## STEP 3 — Create app protection policy
+# Device configuration for application restriction
 
-Go to:
+Devices > Android > Configuration > New Policy > Android Enterprise > Templates > Device restrictions
 
-Apps > Android > Protection > Create > Android
+Allow installation from unknown sources > Not configured
 
-Keep the default configuration for this test.
- 
-## STEP 4 — Verify the behavior on the phone
+App auto-updates (work profile-level) > User choice
 
-Prompted to set a PIN as shown below.
+Allow access to all apps in Google Play store (work profile-level) > Block
 
-image
 
-> App protection is applied.
 
-Bookmarks apper as configured.
 
-image 
+What if a user access normal Android Store instead of Managed Google play 
 
-> App configuration is applied.
+
+
+
