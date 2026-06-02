@@ -2,11 +2,13 @@
 
 # Lab Goal
 
-Deploy an application from SCCM and install it through Software Center.
+Deploy an application with SCCM and make it available for installation through Software Center.
 
 # Step 1 — Download Installer
 
-On the SCCM server, create and share a source folder for the 7-zip msi file.
+On the SCCM server, create a source folder and place the 7-Zip MSI installer inside it.
+
+Share the folder so SCCM can access the installation source.
 
 # Step 2 — Create Application
 
@@ -18,7 +20,7 @@ Go: Software Library > Applications >Create Application
 - Type: Windows Installer (*.msi)
 - Browse to: The shared msi file
 
-# step 3 — Enter App Detail
+# Step 3 — Enter App Details
 
 Enter:
 
@@ -43,7 +45,7 @@ and finish the wizard.
 
 Go: Monitoring > Distribution Status > Content Status > 7-Zip 26.01 (x64)
 
-It appears as success within a few minutes.
+The content status changes to Success within a few minutes.
 
 <img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/24-App%20deployment%20by%20SCCM/05.content_status.jpg" width="600">
 
@@ -51,7 +53,7 @@ It appears as success within a few minutes.
 
 Go: Assets and Compliance > Device Collections > Create Device Collection
 
-and create a device collection for 7-zip deployment.
+and create a device collection that contains the target devices for the deployment.
 
 # Step 6 — Deploy Application
 
@@ -77,8 +79,8 @@ To see the deployment status,
 
 Go: Monitoring > Deployments > 7-zip > Summary
 
-- Once the app is installed by the user, it counts as success in completion Statistics.
-- Once the app is deployed to a distribution point, it counts as success in Content Status.
+- Completion Statistics tracks deployment results reported by client devices, such as Success, In Progress, Error, or Unknown.
+- Content Status tracks whether application content has been successfully distributed to distribution points.
 
 <img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/24-App%20deployment%20by%20SCCM/08.Install_success.jpg" width="700">
 
