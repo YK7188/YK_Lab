@@ -1,3 +1,5 @@
+> Tested: June 2026
+
 # Lab Goal
 
 Deploy an application from SCCM and install it through Software Center.
