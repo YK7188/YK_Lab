@@ -1,30 +1,30 @@
 > Tested: June 2026
 
-# lab objective
+# Lab Objective
 
 deploy windows update 
 
-# step1 - deploy update
+# Step 1 - Deploy the Update
 
-Go to Software Updates > All Software Updates
+Go to Software Updates > All Software Updates.
 
-Find KB5031539 showing required = 1 
+Find an update that shows Required = 1 for at least one device.
 
-Select Deploy and complete the Wizard.
+Select Deploy and complete the deployment wizard.
 
 <img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/25-Deploy%20Software%20updates%20by%20SCCM/15.deploy_required.jpg" width="600">
 
-# Step2 - verification
+# Step 2 - Verify Deployment
 
-Go to Software Center in a test device
+On the test device, open Software Center.
 
-KB5031539 appears as available.
+The deployed update should appear as available.
 
 <img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/25-Deploy%20Software%20updates%20by%20SCCM/16.update_appears.jpg" width="600">
 
-### In case it does not appear in Software center
+### If the Update Does Not Appear
 
-Open Configuration Manager Properties and run actions:
+Open Configuration Manager Properties and run the following actions:
 
 - Machine Policy Retrieval & Evaluation Cycle
 - Software Updates Deployment Evaluation Cycle
@@ -32,8 +32,9 @@ Open Configuration Manager Properties and run actions:
 
 <img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/25-Deploy%20Software%20updates%20by%20SCCM/14.run_actions.jpg" width="300">
 
-Go to Deployments to see Deployment Status
+Also, go to Monitoring > Deployments and review the deployment status.
 
-The test device just installed the update and it appears as In progress
+In this example, the test device appears as In Progress because the update installation or compliance reporting process has not completed yet.
+
 <img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/25-Deploy%20Software%20updates%20by%20SCCM/17.deployment_status.jpg" width="600">
 
