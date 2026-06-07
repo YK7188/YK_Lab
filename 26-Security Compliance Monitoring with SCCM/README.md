@@ -5,7 +5,7 @@
 The company requires:
 
 - Windows Firewall enabled
-- Password minimum length set
+- Password minimum length of at least 12 characters
 - Device encrypted
 
 SCCM should determine whether devices are compliant.
