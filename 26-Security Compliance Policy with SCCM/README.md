@@ -16,14 +16,16 @@ Open SCCM Console and go to
 
 Assets and Compliance > Compliance Settings > Configuration Items > Create Configuration Item
 
+Select Windows 10 or later for "Settings for devices managed with the Configuration Manager client"
+
 and complete the wizard.
 
 <img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/26-Security%20compliance%20policy%20with%20SCCM/01.create_configItem.jpg" width="600">
 
-- For Select the device setting groups to configure, select
-  - System Security
-  - Password
-  - Encryption
+For Select the device setting groups to configure, select
+- System Security
+- Password
+- Encryption
 
 Set settings as below.
 
@@ -123,5 +125,59 @@ https://learn.microsoft.com/en-us/intune/configmgr/compliance/deploy-use/create-
 
 # Lab scenario 2
 
+The company still requires:
 
+- Windows Firewall enabled
+- Password minimum length set
+- Device encrypted
 
+SCCM should determine whether devices are compliant.
+
+# Step 1 - Create Configuration Item
+
+Go to Asset and Compliance > Overview > Compliance Settings > Compliance Items > Create Configuration Item
+
+- Select "Windows Desktops and Servers (custom)" for "Settings for devices managed with the Configuration Manager client"
+- For each items, set a discovery script and Compliance Rules script.
+
+<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/26-Security%20compliance%20policy%20with%20SCCM/19.Disco_Scripts.jpg" width="400">
+
+and complete the wizard.
+
+# Step 2 - Create a Configuration Baseline
+
+Go to
+
+Assets and Compliance > Compliance Settings > Configuration Baselines > Create Configuration Baseline
+
+Add the configuration item and complete the wizard.
+
+<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/26-Security%20compliance%20policy%20with%20SCCM/05.Create_CB.jpg" width="400">
+
+And then deploy the configuration baseline.
+
+# Step 3 - Troubleshoot and verification
+
+### Error 
+
+Setting Discovery Error 0x87d00327 Script is not signed CCM
+
+appeared on test devices' reports.
+
+<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/26-Security%20compliance%20policy%20with%20SCCM/15.CI_errors.jpg" width="400">
+
+### Solution
+
+In SCCM, go to Administration > Client Settings > Default Client Settings > Computer Agent
+
+Changed PowerShell execution policy setting from Signed to Bypass as below.
+
+<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/26-Security%20compliance%20policy%20with%20SCCM/17.Shell_Policy.jpg" width="500">
+
+The CB now evaluats the devices properly. Verified that compliance status changed following Bitlocker on/off, local password policy on/off, Firewall on/off.
+
+<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/26-Security%20compliance%20policy%20with%20SCCM/18.All_compliant.jpg" width="500">
+
+Status starts showing in Monitoring as well.
+
+<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/26-Security%20compliance%20policy%20with%20SCCM/20.Deployment_status.jpg" width="650">
