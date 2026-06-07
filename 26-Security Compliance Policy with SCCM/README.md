@@ -99,7 +99,7 @@ After turning on Bitlocker, report keeps showing it not compliant
 
 To rule out the possibility that domain default policy affects the evaluation, I set the rule undefined for the policy.
 
-<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/26-Security%20compliance%20policy%20with%20SCCM/13.GPO_Corrected.jpg" width="500">
+<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/26-Security%20compliance%20policy%20with%20SCCM/13.GPO_Corrected.jpg" width="600">
 
 The password setting still not shown in report.
 
@@ -111,7 +111,7 @@ The password setting still not shown in report.
 
 For testing I turned off Firewall on a test device and the report shows it not compliant.
 
-<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/26-Security%20compliance%20policy%20with%20SCCM/12.FW_NotCompliant.jpg" width="400">
+<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/26-Security%20compliance%20policy%20with%20SCCM/12.FW_NotCompliant.jpg" width="500">
 
 > Firewall setting is evaluated properly.
 
