@@ -83,7 +83,7 @@ In SCCM, reviewed the CI settings and found in Supported Platform tab, Windows 1
 
 CI is now evaluated and shown not compliant.
 
-> Windows 11 could not be targeted by default.
+> Windows 11 was not included in the Configuration Item applicability settings by default.
 
 <img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/26-Security%20compliance%20policy%20with%20SCCM/21.only_win10.jpg" width="400">
 
@@ -129,14 +129,14 @@ https://learn.microsoft.com/en-us/intune/configmgr/compliance/deploy-use/create-
 The company still requires:
 
 - Windows Firewall enabled
-- Password minimum length set
+- Password minimum length of at least 12 characters
 - Device encrypted
 
 SCCM should determine whether devices are compliant.
 
 # Step 1 - Create Configuration Item
 
-Go to Asset and Compliance > Overview > Compliance Settings > Compliance Items > Create Configuration Item
+Go to Go to Assets and Compliance > Compliance Settings > Configuration Items > Create Configuration Item
 
 - Select "Windows Desktops and Servers (custom)" for "Settings for devices managed with the Configuration Manager client"
 - Create custom settings using discovery scripts and define corresponding compliance rules.
@@ -187,7 +187,7 @@ Changed PowerShell execution policy setting from Signed to Bypass as below.
 
 <img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/26-Security%20compliance%20policy%20with%20SCCM/17.Shell_Policy.jpg" width="500">
 
-The CB now ecaluates the devices properly. Verified that compliance status changed following Bitlocker on/off, local password policy on/off, Firewall on/off.
+The CB now evaluates the devices properly. Verified that compliance status changed when BitLocker, local password policy, and Windows Firewall settings were modified.
 
 <img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/26-Security%20compliance%20policy%20with%20SCCM/18.All_compliant.jpg" width="500">
 
@@ -197,4 +197,4 @@ Status starts showing in Monitoring as well.
 
 # Final Note
 
-Unlike the built-in Windows 10 compliance settings tested in Scenario 1, the custom Configuration Item provided predictable and verifiable compliance results.
+Unlike the built-in Windows 10 compliance settings tested in Scenario 1, the custom Configuration Item provided predictable, verifiable, and repeatable compliance results.
