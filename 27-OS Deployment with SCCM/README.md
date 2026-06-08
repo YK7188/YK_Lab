@@ -32,7 +32,7 @@ Distribute Content
 
 Select your DP.
 
-# Step 4 – Confirm PXE Support on the Distribution Point
+# Step 4 – Configure PXE Support on the Distribution Point
 
 Go to:
 
@@ -42,3 +42,27 @@ From the bottom pane,
 
 Distribution Point Role > Properties > PXE tab
 
+Configure the followings:
+- check: Enable PXE support for clients
+- check: Allow this distribution point to respond to incoming PXE requests
+- uncheck: Enable unknown computer support
+- check: Enable a PXE responder without Windows Deployment Service
+- uncheck: Enable Preferred Management Point(s) for PXE requests
+- check: Require a password when computers use PXE
+- check: Respond to PXE requests on all network interfaces
+
+image
+
+# Step 5 – Create Task Sequence (Bare Metal Deploy)
+
+Software Library > Operating Systems > Task Sequences > Create Task Sequence
+
+To simplify the process, I chose no updates, applications installed in the sequence.
+
+# Step 6 – Import 
+
+Assets and Compliance > Devices > Import Computer Information
+
+Use SMBios GUID as identifier for this lab.
+
+# Step 7 – Deploy the Task Sequence
