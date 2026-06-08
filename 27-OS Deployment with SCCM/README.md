@@ -1,6 +1,8 @@
 > Tested: June 2026
 
+# Lab objective
 
+Achieve OS installation by PXE servered by SCCM.
 
 # Step 1 - Add Windows Installation Media
 
@@ -11,6 +13,8 @@ In SCCM go to:
 Software Library > Operating Systems > Operating System Image > Add Operating System Image
 
 Complete the wizard to add the OS image.
+
+<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/27-OS%20Deployment%20with%20SCCM/01.addOS.jpg" width="600">
 
 # Step 2 – Verify and Distribute the Boot Image
 
