@@ -73,6 +73,8 @@ Use SMBios GUID obtained by the command below as identifier for this lab.
 
 Powershell on the Hyper-V host: Get-VM TestVM | Select-Object VMId
 
+> Wrong move. Explained later.
+
 <img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/27-OS%20Deployment%20with%20SCCM/05.Import_VMInfo.jpg" width="500">
 
 # Step 7 – Deploy the Task Sequence
@@ -105,6 +107,8 @@ The error message indicates that it works up to:
 
 VM > DHCP works > PXE server responds > SCCM receives request but cannot provide a boot image
 
+Checked the follwoing that are closely related to boot image deployment.
+
 - Boot image is successfully distributed accrording to the content status.
   
 <img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/27-OS%20Deployment%20with%20SCCM/09.Boot_ditributed.jpg" width="600">
@@ -119,13 +123,16 @@ VM > DHCP works > PXE server responds > SCCM receives request but cannot provide
 
 #### - SMSPXE.log shows a different GUID.
 
+According to the log, the GUID for the test device was not recognized as I entered in the device information.
+
 <img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/27-OS%20Deployment%20with%20SCCM/13.SMSPXE_Log.jpg" width="600">
+
+> Hyper-V VMId is not same as SMBios GUID.
+> At the time of configuration, Hyper-V VMId was the only available GUID exposed in my lab environment and at this point it is invalidated. 
 
 Fix:
 
-Import the computer information with the MAC using the command below instead.
-
-Get-VMNetworkAdapter -VMName TestVM | Select-Object MacAddress
+Use the MAC address or the correct SMBIOS UUID observed in SMSPXE.log for computer import.
 
 Result:
 
