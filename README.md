@@ -2,10 +2,10 @@
 
 Hands-on labs for learning:
 
-- Microsoft Intune
-- Microsoft Entra ID
-- Windows Server
- 
+- Microsoft Intune  
+- Microsoft Entra ID  
+- Windows Server  
+
 This repository documents practical lab environments built to develop skills for endpoint management and cloud identity administration roles.
 
 ---
@@ -13,24 +13,26 @@ This repository documents practical lab environments built to develop skills for
 # Environment
 
 - Windows 11 PC
-- Hyper-v
+- Hyper-V
   - SRV1 (DC, DNS, CA)
   - SRV2 (DHCP, Routing)
   - SRV3 (AD Connect, Certificate Connector)
-  - SRV4 (SCCM) 
-- Intune, Entra ID, Office 365 (Developer's plan)
+  - SRV4 (SCCM)
+- Microsoft Intune, Entra ID, Microsoft 365 Developer tenant
 
 ---
 
 # Lab Index
 
-### Infrastructure
+## Infrastructure
 
-1. [Lab 01 – Conditional access troubleshoot simulation](01-ConditionalAccess-troubleshoot)
+- [01 - Hyper-V Setup](01-hyperv-setup)
+- [02 - Active Directory Domain Services](02-ad-ds)
+- [03 - DHCP + Routing Services](03-dhcp-routing)
 
-1. [Lab 01 – Hyper-V Setup](01-hyperv-setup)
+## Identity
 
-### Identity (Planned)
+- [04 - Entra ID Hybrid Sync](04-entra-hybrid-sync)
+- [05 - Conditional Access Troubleshooting](05-conditional-access)
 
-2. Active Directory Domain Setup  
-3. Entra ID Hybrid Identity Sync  
+---
