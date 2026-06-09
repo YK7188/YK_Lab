@@ -127,13 +127,11 @@ Import the computer information with the MAC using the command below instead.
 
 Get-VMNetworkAdapter -VMName TestVM | Select-Object MacAddress
 
-image
-
 Result:
 
 PXE boot began.
 
-# Verification
+# Verification 2
 
 - Password required.
 
