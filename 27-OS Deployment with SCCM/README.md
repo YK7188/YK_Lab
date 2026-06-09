@@ -53,7 +53,7 @@ Configure the followings:
 - check: Require a password when computers use PXE
 - check: Respond to PXE requests on all network interfaces
 
-<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/27-OS%20Deployment%20with%20SCCM/03.DPRole_PXE.jpg" width="600">
+<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/27-OS%20Deployment%20with%20SCCM/03.DPRole_PXE.jpg" width="500">
 
 # Step 5 – Create Task Sequence (Bare Metal Deploy)
 
@@ -61,7 +61,7 @@ Software Library > Operating Systems > Task Sequences > Create Task Sequence
 
 Select "Install an existing image package" for a new task sequence to be created.
 
-<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/27-OS%20Deployment%20with%20SCCM/04.Create_Task.jpg" width="600">
+<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/27-OS%20Deployment%20with%20SCCM/04.Create_Task.jpg" width="500">
 
 Additionally, to simplify the process, choose no updates and applications to be installed in the sequence.
 
@@ -73,7 +73,7 @@ Use SMBios GUID obtained by the command below as identifier for this lab.
 
 Powershell on the Hyper-V host: Get-VM TestVM | Select-Object VMId
 
-<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/27-OS%20Deployment%20with%20SCCM/05.Import_VMInfo.jpg" width="600">
+<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/27-OS%20Deployment%20with%20SCCM/05.Import_VMInfo.jpg" width="500">
 
 # Step 7 – Deploy the Task Sequence
 
@@ -111,11 +111,11 @@ VM > DHCP works > PXE server responds > SCCM receives request but cannot provide
 
 - Boot image is set to be PXE available in the wizard as below.
 
-<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/27-OS%20Deployment%20with%20SCCM/10.PXE_Enabled.jpg" width="600">
+<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/27-OS%20Deployment%20with%20SCCM/10.PXE_Enabled.jpg" width="500">
 
 - Deployed Task sequence is PXE available in the wizard as below.
 
-<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/27-OS%20Deployment%20with%20SCCM/12.Deploy_PXEAvailable.jpg" width="600">
+<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/27-OS%20Deployment%20with%20SCCM/12.Deploy_PXEAvailable.jpg" width="500">
 
 #### - SMSPXE.log shows a different GUID.
 
@@ -133,21 +133,21 @@ PXE boot began.
 
 # Verification 2
 
-- Password required.
+- Password required in the task sequence as configured.
 
-<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/27-OS%20Deployment%20with%20SCCM/14.Password_required.jpg" width="600">
+<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/27-OS%20Deployment%20with%20SCCM/14.Password_required.jpg" width="400">
 
 - Task sequence appears as an avalable option.
 
-<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/27-OS%20Deployment%20with%20SCCM/15.Task_Available.jpg" width="600">
+<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/27-OS%20Deployment%20with%20SCCM/15.Task_Available.jpg" width="400">
 
 - Progress bar appears.
 
-<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/27-OS%20Deployment%20with%20SCCM/16.ProgressBar.jpg" width="600">
+<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/27-OS%20Deployment%20with%20SCCM/16.ProgressBar.jpg" width="400">
 
 - PC is domain joined.
 
-<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/27-OS%20Deployment%20with%20SCCM/17.DomainJoined.jpg" width="400">
+<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/27-OS%20Deployment%20with%20SCCM/17.DomainJoined.jpg" width="300">
 
 - The command below confirms that the machine's GUID matches what PXE recognized it as.
   
