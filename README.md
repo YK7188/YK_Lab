@@ -61,7 +61,6 @@ This repository documents practical lab environments built to develop skills for
 
 * [11 - BIOS Compliance Simulation](./11-BIOS-Compliance-Simulation-PowerShell)
 * [18 - Windows Exploit Protection with Intune](./18-Windows-Exploit-Protection-Intune-XML)
-* [25 - SCCM Security Compliance Monitoring](./25-SCCM-Security-Compliance-Monitoring)
 
 ---
 
@@ -69,6 +68,7 @@ This repository documents practical lab environments built to develop skills for
 
 * [23 - SCCM Application Deployment](./23-SCCM-App-Deployment)
 * [24 - SCCM Software Updates Configuration](./24-SCCM-Software-Updates-Configuration)
+* [25 - SCCM Security Compliance Monitoring](./25-SCCM-Security-Compliance-Monitoring)
 * [26 - SCCM OS Deployment](./26-SCCM-OS-Deployment)
 
 ---
