@@ -69,11 +69,11 @@ Additionally, to simplify the process, choose no updates and applications to be 
 
 Assets and Compliance > Devices > Import Computer Information
 
-Use SMBios GUID obtained by the command below as identifier for this lab.
+At this point, I used the Hyper-V VMId incorrectly: 
 
 Powershell on the Hyper-V host: Get-VM TestVM | Select-Object VMId
 
-> Wrong move. Explained later.
+> This value was later found incorrect. VMId does not equal SMBIOS UUID.
 
 <img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/27-OS%20Deployment%20with%20SCCM/05.Import_VMInfo.jpg" width="500">
 
@@ -105,7 +105,7 @@ Result:
 
 The error message indicates that it works up to:
 
-VM > DHCP works > PXE server responds > SCCM receives request but cannot provide a boot image
+VM > DHCP works > PXE server responds > SCCM receives request but the boot image is not provided
 
 Checked the follwoing that are closely related to boot image deployment.
 
@@ -123,7 +123,7 @@ Checked the follwoing that are closely related to boot image deployment.
 
 #### - SMSPXE.log shows a different GUID.
 
-According to the log, the GUID for the test device was not recognized as I entered in the device information.
+SMSPXE.log showed that SCCM received the PXE request successfully, but the client identity did not match any existing device record.
 
 <img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/27-OS%20Deployment%20with%20SCCM/13.SMSPXE_Log.jpg" width="600">
 
@@ -132,7 +132,7 @@ According to the log, the GUID for the test device was not recognized as I enter
 
 Fix:
 
-Use the MAC address or the correct SMBIOS UUID observed in SMSPXE.log for computer import.
+The issue was resolved by re-importing the computer using the correct identity observed during PXE boot (SMBIOS UUID or MAC address from SMSPXE.log).
 
 Result:
 
@@ -156,8 +156,8 @@ PXE boot began.
 
 <img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/27-OS%20Deployment%20with%20SCCM/17.DomainJoined.jpg" width="300">
 
-- The command below confirms that the machine's GUID matches what PXE recognized it as.
-  
-  (Get-CimInstance Win32_ComputerSystemProduct).UUID
+- The following command confirms the SMBIOS UUID of the operating system:
 
-  > Reason is unknown but running Get-VM TestVM | Select-Object VMId on a host can return a wrong GUID.
+Within the test device: (Get-CimInstance Win32_ComputerSystemProduct).UUID
+
+This value matches the SMBIOS UUID used PXE when identifing the test device.
