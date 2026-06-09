@@ -69,7 +69,7 @@ Additionally, to simplify the process, choose no updates and applications to be 
 
 Assets and Compliance > Devices > Import Computer Information
 
-At this point, I used the Hyper-V VMId incorrectly: 
+At this point, the Hyper-V VMId was used:
 
 Powershell on the Hyper-V host: Get-VM TestVM | Select-Object VMId
 
@@ -103,9 +103,7 @@ Result:
 
 # Troubleshoot
 
-The error message indicates that it works up to:
-
-VM > DHCP works > PXE server responds > SCCM receives request but the boot image is not provided
+The error indicates that PXE boot succeeds and SCCM responds, but no boot image is provided.
 
 Checked the follwoing that are closely related to boot image deployment.
 
@@ -123,7 +121,7 @@ Checked the follwoing that are closely related to boot image deployment.
 
 #### - SMSPXE.log shows a different GUID.
 
-SMSPXE.log showed that SCCM received the PXE request successfully, but the client identity did not match any existing device record.
+SMSPXE.log shows that neither SMBIOS UUID nor MAC address matched an existing device record.
 
 <img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/27-OS%20Deployment%20with%20SCCM/13.SMSPXE_Log.jpg" width="600">
 
@@ -132,7 +130,7 @@ SMSPXE.log showed that SCCM received the PXE request successfully, but the clien
 
 Fix:
 
-The issue was resolved by re-importing the computer using the correct identity observed during PXE boot (SMBIOS UUID or MAC address from SMSPXE.log).
+The issue was resolved after re-importing the computer using the correct identity observed during PXE boot (SMBIOS UUID or MAC address from SMSPXE.log).
 
 Result:
 
@@ -160,4 +158,4 @@ PXE boot began.
 
 Within the test device: (Get-CimInstance Win32_ComputerSystemProduct).UUID
 
-This value matches the SMBIOS UUID used PXE when identifing the test device.
+This value matches the SMBIOS UUID used by PXE for device identification.
