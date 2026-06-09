@@ -1,10 +1,10 @@
-# About YK_Lab1
+# About YK_Lab
+
 Hands-on labs for learning:
 
 - Microsoft Intune
 - Microsoft Entra ID
 - Windows Server
-- Hyper-V virtualization
  
 This repository documents practical lab environments built to develop skills for endpoint management and cloud identity administration roles.
 
@@ -12,7 +12,13 @@ This repository documents practical lab environments built to develop skills for
 
 # Environment
 
-
+- Windows 11 PC
+- Hyper-v
+  - SRV1 (DC, DNS, CA)
+  - SRV2 (DHCP, Routing)
+  - SRV3 (AD Connect, Certificate Connector)
+  - SRV4 (SCCM) 
+- Intune, Entra ID, Office 365 (Developer's plan)
 
 ---
 
