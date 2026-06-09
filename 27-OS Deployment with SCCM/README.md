@@ -137,14 +137,22 @@ PXE boot began.
 
 - Password required.
 
+<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/27-OS%20Deployment%20with%20SCCM/14.Password_required.jpg" width="600">
+
 - Task sequence appears as an avalable option.
+
+<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/27-OS%20Deployment%20with%20SCCM/15.Task_Available.jpg" width="600">
 
 - Progress bar appears.
 
+<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/27-OS%20Deployment%20with%20SCCM/16.ProgressBar.jpg" width="600">
+
 - PC is domain joined.
+
+<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/27-OS%20Deployment%20with%20SCCM/17.DomainJoined.jpg" width="400">
 
 - The command below confirms that the machine's GUID matches what PXE recognized it as.
   
   (Get-CimInstance Win32_ComputerSystemProduct).UUID
 
-  > Reason is unknown. Running Get-VM TestVM | Select-Object VMId on a host can return a wrong GUID.
+  > Reason is unknown but running Get-VM TestVM | Select-Object VMId on a host can return a wrong GUID.
