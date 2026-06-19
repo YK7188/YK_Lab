@@ -27,7 +27,7 @@ The VPN server configuration itself is outside the scope of this lab.
 - Trusted Root Certificate deployment has been configured with Trusted Certificate Profile. 
 - Computer certificate deployment has been configured with PKCS certificate profile.
 
-# Step 1 — Prepare Certificates
+# Step 1 - Prepare Certificates
 
 ### Create and issue the server certificate
 
@@ -59,7 +59,7 @@ Open certsrv.msc > right click the root CA > properties > General > View certifi
 
 Import the server certificate and CA certificate into the VPN server. The VPN server is now ready to accept certificate-based VPN connections.
 
-# Step 2 — Create the VPN profile
+# Step 2 - Create the VPN profile
 
 ### Create the VPN profile for Windows
 
