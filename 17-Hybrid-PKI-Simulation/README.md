@@ -1,4 +1,8 @@
-> Tested: May 2026
+﻿> Last Updated: June 2026
+> 
+> Initial Publication: May 2026
+
+# Original Lab
 
 # Lab Goal
 
@@ -34,7 +38,7 @@ AADPC1 (Windows Client 2)
 - Entra ID-joined / Intune enrolled
 ```
 
-# STEP 1 — Confirm AD CS Role Installed
+# STEP 1 - Confirm AD CS Role Installed
 
 Confirm installed:
 
@@ -42,7 +46,7 @@ Confirm installed:
 
 <img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/18-Hybrid%20PKI%20simulation/01.role_installation.jpg" width="600">
 
-# STEP 2 — Configure the CA
+# STEP 2 - Configure the CA
 
 Click:
 
@@ -66,13 +70,13 @@ and proceed with the wizard
 - Validity Period > 5 years
 - Database Locations > Leave it as default
 
-# STEP 3 — Open Certification Authority Console
+# STEP 3 - Open Certification Authority Console
 
 CORP-ROOT-CA is now up and running
 
 <img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/18-Hybrid%20PKI%20simulation/03.CA_up.jpg" width="400">
 
-# STEP 4 — Verify Root Trust on Domain PC
+# STEP 4 - Verify Root Trust on Domain PC
 
 On the AD-joined test device, open certmgr.msc:
 
@@ -82,7 +86,7 @@ On the AD-joined test device, open certmgr.msc:
 
 > Active Directory automatically distributed CA trust to all AD-joined devices.
 
-# STEP 5 — Publish a certificate template
+# STEP 5 - Publish a certificate template
 
 In Certificates Templates Console (certtmpl.msc):
 
@@ -113,7 +117,7 @@ Select LabComputerCert and Click OK
 
 > Enterprises commonly duplicate templates rather than modifying/using defaults directly
 
-# STEP 6 — Test certificate enrollment by GPO policy
+# STEP 6 - Test certificate enrollment by GPO policy
 
 Run gpmc.msc and create a new GPO object:
 
@@ -134,7 +138,7 @@ On the AD-joined test device, Certificate now appears in Personal folder
 
 > For better management, easier troubleshooting, creating a new object is better than adding to the default domain policy object.
 
-# Step 7 — Install Intune Certificate Connector
+# Step 7 - Install Intune Certificate Connector
 
 Microsoft's recommendation is:
 - Windows Server 2012 R2 or later.
@@ -158,7 +162,7 @@ The connector now appears in Intune.
 
 <img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/18-Hybrid%20PKI%20simulation/15.connector_appear.jpg" width="600">
 
-# Step 8 — Deploy Trusted Root Certificate profile
+# Step 8 - Deploy Trusted Root Certificate profile
 
 > Intune managed devices need to trust the on-prem CA
 
@@ -201,7 +205,7 @@ Assign to test device group.
 
 The root certificate now appears on a Entra ID-joined PC.
 
-# STEP 9 — Create PKCS certificate profile
+# STEP 9 - Create PKCS certificate profile
 
 In Microsoft Intune:
 
@@ -234,9 +238,9 @@ Error appeared in Intune
 <img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/18-Hybrid%20PKI%20simulation/20.pkcs_error.jpg" width="600">
 
 
-# STEP 10 — Troubleshoot
+# STEP 10 - Troubleshoot
 
-## Part 1 — Publish a new certificate template for Intune devices
+## Part 1 - Publish a new certificate template for Intune devices
 
 On CA Server, run certtmpl.msc:
 
@@ -268,7 +272,7 @@ Result:
 
 The issue persists
 
-## Part 2 — Correcting CA Connector account's permissions
+## Part 2 - Correcting CA Connector account's permissions
 
 Check Event Viewer on Connector server
 Path: Applications and Services Logs > Microsoft > Intune > CertificateConnectors
@@ -302,3 +306,51 @@ The configuration report shows Success for the device as well
 The hybrid PKI environment was successfully configured.
 
 Traditional AD autoenrollment worked for on-premises AD-joined devices, while Intune PKCS deployment successfully delivered certificates to Entra ID-joined devices through the Intune Certificate Connector and on-premises Enterprise CA.
+
+
+---
+
+<br>
+<br>
+
+# UPDATE - June 2026
+
+The following section was added after the original lab was completed.
+
+## Extending PKCS Deployment to Android
+
+##### Step 1 - Trusted Certificate Profile
+
+In Intune, create a new configuration profile for the CA certificate.
+
+Path: Devices > Android > Configuration > Create > New Policy > Android Enterprise > Templates > Trusted Certificate
+
+##### Step 2 - PKCS Certificate Profile 
+
+In Intune, create a new configuration profile for the PKCS certificate.
+
+Path: Devices > Android > Configuration > Create > New Policy > Android Enterprise > Templates > PKCS Certificate
+
+##### Step 3 - Verification
+
+The CA certificate appears on the Android. Although PKCS cert is not listed alongside other certificates, it appears in the certificate picker when configuring a VPN connection. 
+
+<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/28-Intune%20VPN%20Profiles%20%26%20Certificate%20Deployment/08.pkcs_shown_sSwan.jpg" width="300">
+
+## Extending PKCS Deployment to iPhone
+
+##### Step 1 - Trusted Certificate Profile
+
+In Intune, create a new configuration profile for the CA certificate.
+
+Path: Devices > Apple mobile > Configuration > Create > New Policy > iOS/iPadOS > Templates > Trusted Certificate
+
+##### Step 2 - PKCS Certificate Profile 
+
+In Intune, create a new configuration profile for the PKCS certificate.
+
+Path: Devices > Apple mobile > Configuration > Create > New Policy > iOS/iPadOS > Templates > PKCS Certificate
+
+##### Step 3 - Verification
+
+The certificates appear on the iPhone. The management profile shows both the Trusted Certificate profile and PKCS Certificate profile as successfully applied. Intune reporting also shows successful deployment.
