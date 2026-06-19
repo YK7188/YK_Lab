@@ -21,7 +21,7 @@ For this lab:
 
 The VPN server configuration itself is outside the scope of this lab.
 
-### CA and Certificate Deployment (Labbed in [18.Hybrid PKI simulation](https://github.com/YK7188/YK_Lab1/tree/main/18.Hybrid%20PKI%20simulation))
+### CA and Certificate Deployment (Labbed in [17.Hybrid PKI simulation](https://github.com/YK7188/YK_Lab/tree/main/17-Hybrid-PKI-Simulation))
 
 - PKCS Connector has been configured and Intune can request certificates on behalf of users/devices. This enables certificate issuance from on-prem CA via Intune.
 - Trusted Root Certificate deployment has been configured with Trusted Certificate Profile. 
