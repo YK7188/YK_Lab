@@ -46,7 +46,7 @@ This repository documents practical lab environments built to develop skills for
 * [16 - Deploy Bookmarks (Windows & iOS)](./16-Deploy-Bookmarks-Windows-iOS)
 * [21 - Android App Configuration Simulation](./21-Android-App-Configuration-Simulation)
 * [22 - Intune Initial Setup Troubleshooting](./22-Intune-Initial-Setup-Troubleshooting)
-
+* [27 - Intune VPN Profiles & Certificate Deployment](./27-Intune-VPN-Profiles-&-Certificate-Deployment)
 ---
 
 ## 📁 Microsoft 365
