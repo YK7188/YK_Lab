@@ -11,19 +11,23 @@ evaluation due to antivirus protection being disabled.
 
 1. Start up a Windows 10 PC - AADPC1. As shown in the image it has not joined AAD yet.
 ![1 dsregcmd](https://github.com/user-attachments/assets/a1505543-8c00-4289-bdac-3dbca5d52337)
+<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/01-CA-TS-01/1.dsregcmd.jpg" width="600">
 
 2. Manually join the device to Entra ID as shown in the image.
 ![2 joinAAD](https://github.com/user-attachments/assets/3cb7b4bb-821c-4d13-8e9d-7b616a485d7b)
+<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/01-CA-TS-01/2.joinAAD.jpg" width="600">
 
 3. The user has to be allowed to join devices.
 ![5 devicesettings](https://github.com/user-attachments/assets/c4653ca0-5b17-4f75-b85f-993990edb296)
+<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/01-CA-TS-01/5.devicesettings.jpg" width="600">
 
 4. Confirm that the device has joined to Entra ID.
 ![3 proofonPC](https://github.com/user-attachments/assets/fd64bc9b-8b26-4bb0-be66-19802f216db7)
+<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/01-CA-TS-01/3.proofonPC.jpg" width="600">
 
 5. The device is automatically enrolled into Intune because MDM automatic enrollment is enabled for all users.
 ![6 Autoenrollment](https://github.com/user-attachments/assets/eae2e088-76ac-490e-938f-161b8b97a19c)
-
+<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/01-CA-TS-01/6.Autoenrollment.jpg" width="600">
 
 ## Policy Configuration
 
@@ -31,20 +35,23 @@ evaluation due to antivirus protection being disabled.
    
    Antivirus > Require
 ![7 antivirus](https://github.com/user-attachments/assets/05826fa9-e267-447c-9cfb-ea8f329838e0)
+<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/01-CA-TS-01/7.antivirus.jpg" width="600">
 
 3. Configure Conditional access for Office365.
    
    Grant access > Require device to be marked as compliant
 ![8 conditional](https://github.com/user-attachments/assets/4e71beb5-8eb1-47c0-87ac-f71e65719f6a)
-
+<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/01-CA-TS-01/8.conditional.jpg" width="600">
 
 ## Policy Enforcement Test
 
 1. Test to log into office.com on the device with Antivirus turned off and confirm the policy is effective.
 ![10 loginfailure](https://github.com/user-attachments/assets/d1dcefa6-d1c1-4bef-b2a7-0aa314525d2a)
+<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/01-CA-TS-01/10.loginfailure.jpg" width="600">
 
 2. The device is shown as non-compliant in the report.
 ![9 noncompliant](https://github.com/user-attachments/assets/b37c532b-bbf4-4b4e-844d-58da550d9ea7)
+<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/01-CA-TS-01/9.noncompliant.jpg" width="600">
 
 3. Turn Antivirus on or turn the policy off and confirm login is successfull this time.
    
