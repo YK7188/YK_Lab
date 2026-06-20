@@ -1,4 +1,4 @@
-## Objective
+# Objective
 
 This lab demonstrates two deployment approaches for Microsoft 365 Apps for enterprise using Microsoft Intune:
 
@@ -7,9 +7,9 @@ Office Deployment Tool (ODT) via Win32 app
 
 ---
 
-## Scenario 1 — Clean Environment (Built-in Intune)
+# Scenario 1 — Clean Environment (Built-in Intune)
 
-## 📌 Overview
+## Overview
 
 ✔ New or freshly provisioned devices
 
@@ -17,7 +17,7 @@ Office Deployment Tool (ODT) via Win32 app
 
 ✔ Standardized configuration
 
-## ⚙️ Configuration (Intune Built-in)
+## Configuration (Intune Built-in)
 
 - App type: Microsoft 365 Apps
 - Architecture: 64-bit
@@ -28,7 +28,7 @@ Office Deployment Tool (ODT) via Win32 app
 
 ![01 app addition](https://github.com/user-attachments/assets/76aa7659-7dd8-4f95-9aba-993bba7a1794)
 
-## ✅ Result
+## Result
 
 ✔ Office installs successfully
 
@@ -36,9 +36,9 @@ Office Deployment Tool (ODT) via Win32 app
 
 ✔ No conflicts or leftover components
 
-## Scenario 2 — Unorganized Environment (ODT preferred)
+# Scenario 2 — Unorganized Environment (ODT preferred)
 
-## 📌 Overview
+## Overview
 
 ✔ Existing Office installations may include:
    - Office 2016 (MSI)
@@ -82,8 +82,7 @@ https://www.microsoft.com/en-us/download/details.aspx?id=49117&msockid=26bb9383d
 </Configuration>
 ```
 
-💡 O365ProPlusRetail is required for enterprise-managed deployments.
-Other product types (e.g., Home editions) are not fully manageable via Intune.
+> O365ProPlusRetail is required for enterprise-managed deployments. Other product types (e.g., Home editions) are not fully manageable via Intune.
 
 ## Removal XML
 ```
@@ -99,7 +98,7 @@ Prepare the ODT folder and package it using:
 
 https://github.com/microsoft/Microsoft-Win32-Content-Prep-Tool/releases/tag/v1.8.7
 
-💡 The Office “Data” folder is optional and mainly used for offline deployments.
+> The Office “Data” folder is optional and mainly used for offline deployments.
 
 ## Step 4 — Configure Win32 App in Intune
 
@@ -125,7 +124,7 @@ Configure detection to validate installation of O365ProPlusRetail
 
   ![04 detection rule](https://github.com/user-attachments/assets/e261fd3e-4853-4bcc-ab0d-2f79b4bd69fa)
 
-## ✅ Result
+## Result
 
 ✔ Office installs successfully
 
@@ -141,7 +140,7 @@ Configure detection to validate installation of O365ProPlusRetail
   - Installed when using ODT (Win32 app)
   - Not installed when using built-in Intune deployment
 
-## Final Note
+# Final Note
 
 In this lab, I simulated a simplified scenario in which any existing Click-to-Run Office installations were removed prior to deploying Microsoft 365 Apps.
 
