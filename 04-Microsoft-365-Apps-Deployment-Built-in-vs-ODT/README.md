@@ -12,11 +12,11 @@ This lab demonstrates two deployment approaches for Microsoft 365 Apps for enter
 
 ## Overview
 
-✔ New or freshly provisioned devices
+- New or freshly provisioned devices
 
-✔ Existing devices with no Office installations
+- Existing devices with no Office installations
 
-✔ Standardized configuration
+- Standardized configuration
 
 ## Configuration (Intune Built-in)
 
@@ -31,21 +31,21 @@ This lab demonstrates two deployment approaches for Microsoft 365 Apps for enter
 
 ## Result
 
-✔ Office installs successfully
+- Office installs successfully
 
-✔ Selected apps deployed correctly
+- Selected apps deployed correctly
 
-✔ No conflicts or leftover components
+- No conflicts or leftover components
 
 # Scenario 2 — Unorganized Environment (ODT preferred)
 
 ## Overview
 
-✔ Existing Office installations may include:
+- Existing Office installations may include:
    - Office 2016 (MSI)
    - Office 2019 (Click-to-Run)
    - OEM Office (Home edition)
-✔ Standalone apps may exist (e.g., Teams, Access)
+- Standalone apps may exist (e.g., Teams, Access)
 
 ## Limitation of Built-in Deployment
 
@@ -109,12 +109,12 @@ setup.exe /configure config.xml
 
 - Install behavior
 
-→ System
+System
 (Ensures device-wide, reliable installation)
 
 - Device restart behavior
 
-→ No specific action
+No specific action
 (Office installation does not require a reboot)
 
 - Detection rule
@@ -127,11 +127,11 @@ Configure detection to validate installation of O365ProPlusRetail
 
 ## Result
 
-✔ Office installs successfully
+- Office installs successfully
 
-✔ Selected apps deployed correctly
+- Selected apps deployed correctly
 
-✔ Removed Personal Office that had been installed
+- Removed Personal Office that had been installed
 
 ## Observations from Lab
 
