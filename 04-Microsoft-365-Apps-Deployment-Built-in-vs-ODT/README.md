@@ -2,8 +2,8 @@
 
 This lab demonstrates two deployment approaches for Microsoft 365 Apps for enterprise using Microsoft Intune:
 
-Built-in Intune app deployment
-Office Deployment Tool (ODT) via Win32 app
+- Built-in Intune app deployment
+- Office Deployment Tool (ODT) via Win32 app
 
 ---
 
