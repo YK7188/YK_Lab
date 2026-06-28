@@ -1,4 +1,4 @@
-﻿# Objective
+# Objective
 
 This lab demonstrates two deployment approaches for Microsoft 365 Apps for enterprise using Microsoft Intune:
 
@@ -8,7 +8,7 @@ This lab demonstrates two deployment approaches for Microsoft 365 Apps for enter
 
 ---
 
-# Scenario 1 窶・Clean Environment (Built-in Intune)
+# Scenario 1 — Clean Environment (Built-in Intune)
 
 ## Overview
 
@@ -37,7 +37,7 @@ This lab demonstrates two deployment approaches for Microsoft 365 Apps for enter
 
 - No conflicts or leftover components
 
-# Scenario 2 窶・Unorganized Environment (ODT preferred)
+# Scenario 2 — Unorganized Environment (ODT preferred)
 
 ## Overview
 
@@ -49,7 +49,7 @@ This lab demonstrates two deployment approaches for Microsoft 365 Apps for enter
 
 ## Limitation of Built-in Deployment
 
-The 窶彝emove other versions窶・option in the built-in Intune app performs best-effort cleanup, but may not consistently remove all existing Office installations.
+The “Remove other versions” option in the built-in Intune app performs best-effort cleanup, but may not consistently remove all existing Office installations.
 
 ## Step 1 Download ODT
 
@@ -92,16 +92,16 @@ https://www.microsoft.com/en-us/download/details.aspx?id=49117&msockid=26bb9383d
 </Configuration>
 ```
 
-## Step 3 窶・Package as Win32 App
+## Step 3 — Package as Win32 App
 ![03 office folder downloaded](https://github.com/user-attachments/assets/a30948a9-cca7-4fab-baed-8874180fed80)
 
 Prepare the ODT folder and package it using:
 
 https://github.com/microsoft/Microsoft-Win32-Content-Prep-Tool/releases/tag/v1.8.7
 
-> The Office 窶廛ata窶・folder is optional and mainly used for offline deployments.
+> The Office “Data” folder is optional and mainly used for offline deployments.
 
-## Step 4 窶・Configure Win32 App in Intune
+## Step 4 — Configure Win32 App in Intune
 
 - Install command
   
@@ -150,4 +150,3 @@ However, real-world environments often require more granular control, such as:
 - Avoiding unintended removal of related products (e.g., Visio or Project)
 
 - Correcting only the update channel for devices that already have Microsoft 365 Apps installed but are configured with an incorrect channel
-

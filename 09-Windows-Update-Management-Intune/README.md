@@ -1,4 +1,4 @@
-﻿> Tested: April 2026
+> Tested: April 2026
 
 
 ## Create Update ring
@@ -15,20 +15,20 @@ Path: `Devices > Windows Updates > Update rings > Create Profile`
 
 - User experience settings
   - Automatic update behavior: Auto install and restart at maintenance time
-  - Active hours: 8 AM 窶・6 PM
+  - Active hours: 8 AM – 6 PM
   - Deadline for feature updates: 30 days
   - Deadline for quality updates: 4 days
   - Grace period: 2 days
 
 <br>
-<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/10-Lab%3A%20Windows%20Update%20Management%20with%20Intune/01.%20updatering.jpg" width="600">
+<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/10-Lab%3A%20Windows%20Update%20Management%20with%20Intune/01.%20updatering.jpg" width="600">
 
-笨・Windows Update driver delivery may introduce instability depending on hardware and driver quality
+✔ Windows Update driver delivery may introduce instability depending on hardware and driver quality
 
-笨・Enterprises often block driver updates and instead rely on OEM tools
+✔ Enterprises often block driver updates and instead rely on OEM tools
    such as Lenovo Vantage, managed via Intune
 
-笨・Multiple update rings are typically used to implement staged rollout (e.g., Pilot -> Broad -> Production)
+✔ Multiple update rings are typically used to implement staged rollout (e.g., Pilot -> Broad -> Production)
 
 ---
 
@@ -38,13 +38,13 @@ Path: `Devices > Windows Updates > Feature updates > Create Profile`
 - Feature update to deploy > Windows 11, version 24H2
 
 <br>
-<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/10-Lab%3A%20Windows%20Update%20Management%20with%20Intune/02.%20featureUD_config.jpg" width="600">
+<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/10-Lab%3A%20Windows%20Update%20Management%20with%20Intune/02.%20featureUD_config.jpg" width="600">
 
 ---
 
 ## Troubleshooting notes
 
-笨・Observation 1: About "Pending restart" showing unexepected OS version
+✔ Observation 1: About "Pending restart" showing unexepected OS version
   
 After assigning a Feature Update Policy for 24H2, the test device
 (Windows 10 22H2) showed: 
@@ -52,33 +52,33 @@ After assigning a Feature Update Policy for 24H2, the test device
 `Pending restart for Windows 11 23H2`
 
 <br>
-<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/10-Lab%3A%20Windows%20Update%20Management%20with%20Intune/04.%2023H2_Downloaded.jpg" width="600">
+<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/10-Lab%3A%20Windows%20Update%20Management%20with%20Intune/04.%2023H2_Downloaded.jpg" width="600">
 
 <br>
 
-笨・Analysis
+✔ Analysis
   
 An existing Feature Update Policy for 23H2 had previously been assigned.
 
 - The device had already downloaded 23H2
 - Even after unassignment, it remained in Pending restart
 
-> Key behaviour: `Once an update reaches 窶弃ending restart,窶・it cannot be skipped.`
+> Key behaviour: `Once an update reaches “Pending restart,” it cannot be skipped.`
 
 <br>
 
-笨・Observation 2: About "Managed by your organization" not shown
+✔ Observation 2: About "Managed by your organization" not shown
   
 After upgrading to 23H2:
 
-- The message 窶彜ome settings are managed by your organization窶・did NOT appear
+- The message “Some settings are managed by your organization” did NOT appear
 - However, selecting Check for updates triggered download of 24H2 (instead of latest public version 25H2)
 
 > This indicates the Feature Update Policy is active
 
 <br>
 
-笨・Analysis
+✔ Analysis
   
 Policy application was confirmed via registry:
 Path: `Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\current\device\Update`
@@ -89,14 +89,14 @@ Path: `Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\current\devi
 
 <br>
 
-笨・Additional observation
+✔ Additional observation
 
 When the setting `"Option to check for Windows updates" = disabled` was applied,
 
 the "settings are managed by your organization" message appeared.
 
 <br>
-<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/10-Lab%3A%20Windows%20Update%20Management%20with%20Intune/14.%20managed%20by%20org%20appears.jpg" width="600">
+<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/10-Lab%3A%20Windows%20Update%20Management%20with%20Intune/14.%20managed%20by%20org%20appears.jpg" width="600">
 
 <br>
 
@@ -116,7 +116,7 @@ Path: `Devices > Windows > Configuration > Create New Policy > Settings catalog 
 
 
 <br>
-<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/10-Lab%3A%20Windows%20Update%20Management%20with%20Intune/03.%20DevConfig.jpg" width="600">
+<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/10-Lab%3A%20Windows%20Update%20Management%20with%20Intune/03.%20DevConfig.jpg" width="600">
 
 ---
 
@@ -126,43 +126,42 @@ After assigning the device configuration:
 - Devices reported Conflict in check-in status
 
 <br>
-<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/10-Lab%3A%20Windows%20Update%20Management%20with%20Intune/17.%20conflict_deviceconfig.jpg" width="600">
+<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/10-Lab%3A%20Windows%20Update%20Management%20with%20Intune/17.%20conflict_deviceconfig.jpg" width="600">
 
 <br>
 
-笨・Cause 
+✔ Cause 
 
 The conflict also appeared on the assigned Update Ring:
 > Overlapping settings between Update Ring and Device Configuration
 
 <br>
 
-笨・Resolution
+✔ Resolution
 
 - Reviewed Per-setting status
 - Identified overlapping configurations
 - Adjusted settings to remove duplication
 
 <br>
-<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/10-Lab%3A%20Windows%20Update%20Management%20with%20Intune/15.%20conflict%20list.jpg" width="600">
+<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/10-Lab%3A%20Windows%20Update%20Management%20with%20Intune/15.%20conflict%20list.jpg" width="600">
 
 <br>
 
-笨・Result
-> Status changed from Conflict 竊・Succeeded
+✔ Result
+> Status changed from Conflict → Succeeded
 
 ---
 
 ## Key points
 
-笨・Feature Update Policy overrides Update Ring for OS version control
+✔ Feature Update Policy overrides Update Ring for OS version control
 
-笨・Once an update reaches 窶弃ending restart,窶・it cannot be skipped
+✔ Once an update reaches “Pending restart,” it cannot be skipped
 
-笨・Update Ring and Device Configuration must not define overlapping settings
+✔ Update Ring and Device Configuration must not define overlapping settings
 
-笨・窶廴anaged by your organization窶・is NOT a reliable indicator of policy application
+✔ “Managed by your organization” is NOT a reliable indicator of policy application
 
-笨・Registry (PolicyManager) provides the most accurate validation
-
+✔ Registry (PolicyManager) provides the most accurate validation
 

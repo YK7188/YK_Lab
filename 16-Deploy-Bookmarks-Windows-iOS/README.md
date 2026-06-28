@@ -1,4 +1,4 @@
-﻿> Tested: May 2026
+> Tested: May 2026
 
 # LAB SCENARIO
 
@@ -6,9 +6,9 @@
 
 ---
 
-# PART 1 窶・Edge on Windows
+# PART 1 — Edge on Windows
 
-## Step 1 窶・Create Configuration Profile
+## Step 1 — Create Configuration Profile
 
 Path: `Devices > Windows > Configuration > Create > Windows 10 and later > Settings catalog`
 
@@ -44,23 +44,23 @@ For Configuration settings, select Microsoft Edge > Configure favorites (User) a
 ```
 <br>
 
-<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/17-Bookmarks%20on%20Windows%20and%20iPhone/01.config_settings.jpg" width="600">
+<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/17-Bookmarks%20on%20Windows%20and%20iPhone/01.config_settings.jpg" width="600">
 
 
-## Step 2 窶・Verify on Endpoint
+## Step 2 — Verify on Endpoint
 
 - Bookmarks appeared as expected.
 - The managed bookmarks appeared regardless of which browser profile was signed in.
 - They appear in an InPrivate window too.
 - Edge://policy can be useful in troubleshooting when the policy shows "Succeeded" in Intune but bookmarks do not appear.
 
-<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/17-Bookmarks%20on%20Windows%20and%20iPhone/02.bookmarks_appeared.jpg" width="400">
+<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/17-Bookmarks%20on%20Windows%20and%20iPhone/02.bookmarks_appeared.jpg" width="400">
 
 ---
 
-# PART 2 窶・Chrome on Windows
+# PART 2 — Chrome on Windows
 
-## Step 1 窶・Upload Windows ADMX and ADML files in Intune
+## Step 1 — Upload Windows ADMX and ADML files in Intune
 
 1. Download the msi file from the page below and execute it.
 
@@ -78,7 +78,7 @@ For Configuration settings, select Microsoft Edge > Configure favorites (User) a
    Path: `Devices > Configuration > Import ADMX`
 
 
-<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/17-Bookmarks%20on%20Windows%20and%20iPhone/05.windows_admx_upload.jpg
+<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/17-Bookmarks%20on%20Windows%20and%20iPhone/05.windows_admx_upload.jpg
 " width="600">
    
 
@@ -109,7 +109,7 @@ Path: `Devices > Configuration > Import ADMX`
 
 All three ADMX templates were uploaded successfully as shown in the image.
 
-<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/17-Bookmarks%20on%20Windows%20and%20iPhone/15.admx_appear.jpg" width="600">
+<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/17-Bookmarks%20on%20Windows%20and%20iPhone/15.admx_appear.jpg" width="600">
 
 
 
@@ -127,16 +127,16 @@ All three ADMX templates were uploaded successfully as shown in the image.
 ```
 
 
-## Step 3 窶・Create Configuration profile
+## Step 3 — Create Configuration profile
 
 Path: Devices > `Windows > Configuration > Create > Windows 10 and later > Templates > Imported Administrative templates`
 
-For Configuration settings, select Managed Bookmarks and enter the same JSON as used in PART 1 窶・Edge on Windows. 
+For Configuration settings, select Managed Bookmarks and enter the same JSON as used in PART 1 — Edge on Windows. 
 
-<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/17-Bookmarks%20on%20Windows%20and%20iPhone/07.managed_bookmarks.jpg" width="600">
+<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/17-Bookmarks%20on%20Windows%20and%20iPhone/07.managed_bookmarks.jpg" width="600">
 
 
-## Step 4 窶・Verify on Endpoint
+## Step 4 — Verify on Endpoint
 
 - Bookmarks appeared as expected.
 - The managed bookmarks appeared regardless of which browser profile was signed in.
@@ -146,15 +146,15 @@ For Configuration settings, select Managed Bookmarks and enter the same JSON as 
 
 ---
 
-# PART 3 窶・Edge on iPhone
+# PART 3 — Edge on iPhone
 
-## Step 1 窶・Create Edge app
+## Step 1 — Create Edge app
 
 Path: `Apps > iOS/iPadOS > Create > iOS store app`
 
-<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/17-Bookmarks%20on%20Windows%20and%20iPhone/08.Create_Edge_app.jpg" width="600">
+<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/17-Bookmarks%20on%20Windows%20and%20iPhone/08.Create_Edge_app.jpg" width="600">
 
-## Step 2 窶・Create Edge configuration policy
+## Step 2 — Create Edge configuration policy
 
 Path: `Apps > iOS/iPadOS > Configuration > Managed Devices`
 
@@ -166,29 +166,29 @@ https://learn.microsoft.com/en-us/deployedge/microsoft-edge-mobile-policies#mana
 
 -> ManagedFavorites
 
-<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/17-Bookmarks%20on%20Windows%20and%20iPhone/17.create_appconfig_edge.jpg" width="500">
+<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/17-Bookmarks%20on%20Windows%20and%20iPhone/17.create_appconfig_edge.jpg" width="500">
 
 
-## Step 3 窶・Verify on Endpoint
+## Step 3 — Verify on Endpoint
 
 - Bookmarks appeared as expected.
 - As long as the device is enrolled in Intune and the browser app is managed by Intune, the bookmarks appear regardless of which browser profile is signed in.
 - They appear in an InPrivate window too.
 
-<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/17-Bookmarks%20on%20Windows%20and%20iPhone/13.Edge_Policy.jpg" width="250">
+<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/17-Bookmarks%20on%20Windows%20and%20iPhone/13.Edge_Policy.jpg" width="250">
 
 ---
 
-# PART 4 窶・Chrome on iPhone
+# PART 4 — Chrome on iPhone
 
-## Step 1 窶・Add Chrome app
+## Step 1 — Add Chrome app
 
 Path: `Apps > iOS/iPadOS > Create > iOS Store App`
 
-<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/17-Bookmarks%20on%20Windows%20and%20iPhone/14.Create_Google_app.jpg" width="600">
+<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/17-Bookmarks%20on%20Windows%20and%20iPhone/14.Create_Google_app.jpg" width="600">
 
 
-## Step 2 窶・Create App Configuration Policy
+## Step 2 — Create App Configuration Policy
 
 Path: `Apps > iOS/iPadOS > Configuration > Managed Devices`
 
@@ -198,7 +198,7 @@ The XML payload structure was referenced from the macOS example in the Google Ch
 
 https://chromeenterprise.google/policies/#ManagedBookmarks
 
-## Step 3 窶・Verify on Endpoint
+## Step 3 — Verify on Endpoint
 
 - Bookmarks appeared as expected.
 - As long as the device is enrolled in Intune and the browser app is managed by Intune, the bookmarks appear regardless of which browser profile is signed in.
@@ -211,4 +211,3 @@ https://chromeenterprise.google/policies/#ManagedBookmarks
 - For iPhone deployment, the configuration must be entered as raw XML data rather than Key/Type/Value pairs.
 - On iPhone, apps already installed before Intune enrollment may not immediately appear as managed apps in Intune. 
 Reinstalling the app after enrollment ensured the application became associated with Intune app management and allowed app configuration policies to apply successfully.
-

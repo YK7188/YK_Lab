@@ -1,4 +1,4 @@
-﻿## Objective
+## Objective
 
 This lab simulates a real-world endpoint security baseline using:
 - Microsoft Intune
@@ -8,10 +8,10 @@ This lab simulates a real-world endpoint security baseline using:
 
 ## 1. Configuring Endpoint Protection Policies
 
-隼 Antivirus Policy
+🔹 Antivirus Policy
 <br>
 <br>
-Path: `Endpoint Security 竊・Antivirus 竊・Create Policy`
+Path: `Endpoint Security → Antivirus → Create Policy`
 
 <br>
 
@@ -22,7 +22,7 @@ Path: `Endpoint Security 竊・Antivirus 竊・Create Policy`
 
 - Cloud Protection
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Extends detection using Microsoft窶冱 cloud intelligence for unknown threats.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Extends detection using Microsoft’s cloud intelligence for unknown threats.
 
 - Automatic Sample Submission
 
@@ -37,34 +37,34 @@ Path: `Endpoint Security 竊・Antivirus 竊・Create Policy`
   - Time: 03:00 daily
   - Frequency: Every day
 <br>
-<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/07-Device%20Security%20Config/01.%20configuring%20policies.jpg" width="600">
+<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/07-Device%20Security%20Config/01.%20configuring%20policies.jpg" width="600">
 
 ---
 
-隼 Firewall Policy
+🔹 Firewall Policy
 <br>
 <br>
-Path: `Endpoint Security 竊・Firewall 竊・Create Policy`
+Path: `Endpoint Security → Firewall → Create Policy`
 
 Configured to enforce strict inbound control while allowing outbound traffic:
 
 - Firewall enabled on all profiles:
-  - Domain / Private / Public 竊・ON
+  - Domain / Private / Public → ON
 - Default behavior:
-  - Inbound 竊・Block
-  - Outbound 竊・Allow
+  - Inbound → Block
+  - Outbound → Allow
 - Logging enabled for dropped packets
 
 <br>
-<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/07-Device%20Security%20Config/02.%20FWPolicies.jpg" width="600">
+<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/07-Device%20Security%20Config/02.%20FWPolicies.jpg" width="600">
 
 ---
 
 <br>
-蛤 Firewall Rules
+🔸 Firewall Rules
 <br>
 <br>
-Path: `Endpoint Security 竊・Firewall Rules 竊・Create Policy`
+Path: `Endpoint Security → Firewall Rules → Create Policy`
 <br>
 
 Example rules:
@@ -72,14 +72,14 @@ Example rules:
 - Allow inbound TCP 8080 (internal web app access)
 - Block outbound TCP 445 (Public networks) to prevent SMB exposure
 
-<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/07-Device%20Security%20Config/05.%20FW_Rules_Policy.jpg" width="600">
+<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/07-Device%20Security%20Config/05.%20FW_Rules_Policy.jpg" width="600">
 
 ---
 
-隼 Attack Surface Reduction (ASR)
+🔹 Attack Surface Reduction (ASR)
 <br>
 <br>
-Path: `Endpoint Security 竊・Attack Surface Reduction 竊・Create Policy`
+Path: `Endpoint Security → Attack Surface Reduction → Create Policy`
 
 <br>
 Configured rule:
@@ -89,7 +89,7 @@ Block all Office applications from creating child processes
 >This directly targets macro-based attack techniques
 
 <br>
-<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/07-Device%20Security%20Config/07.%20ASR_Creation1.jpg" width="600">
+<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/07-Device%20Security%20Config/07.%20ASR_Creation1.jpg" width="600">
 
 ---
 
@@ -100,21 +100,21 @@ After deployment, policies are validated on the endpoint:
 
 - Antivirus / Firewall
   
-  竊・窶廴anaged by your organization窶・message confirms enforcement
+  → “Managed by your organization” message confirms enforcement
 
 - Firewall Rules
   
-  竊・Verified via wf.msc 竊・Monitoring
+  → Verified via wf.msc → Monitoring
   
 - ASR Policy
   
-  竊・Verified using: `Get-MpPreference` Powershell command
+  → Verified using: `Get-MpPreference` Powershell command
 
 
 
 - Troubleshooting reference:
   
-    竊・[08-Firewall rules not appearing on endpoint](/08-Firewall%20rules%20not%20appearing%20on%20endpoint/)
+    → [08-Firewall rules not appearing on endpoint](/08-Firewall%20rules%20not%20appearing%20on%20endpoint/)
 
 ---
 
@@ -123,11 +123,11 @@ After deployment, policies are validated on the endpoint:
 Steps:
 - Download onboarding package
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Settings 竊・Endpoints 竊・Onboarding
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Settings → Endpoints → Onboarding
 - Run the onboarding script on the endpoint
 - Confirm device appears in Device Inventory
 
-<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/07-Device%20Security%20Config/12.deviceshown.jpg" width="600">
+<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/07-Device%20Security%20Config/12.deviceshown.jpg" width="600">
 
 ---
 
@@ -138,7 +138,7 @@ To validate the security controls, a macro-based attack scenario is simulated:
 A macro attempts to launch cmd.exe from an excel file but the ASR rule blocks the action
 <br>
 
-<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/07-Device%20Security%20Config/10.%20action_blocked.jpg" width="600">
+<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/07-Device%20Security%20Config/10.%20action_blocked.jpg" width="600">
 
 
 ---
@@ -148,9 +148,8 @@ A macro attempts to launch cmd.exe from an excel file but the ASR rule blocks th
 
 Although the attack was blocked, the activity is still recorded in:
 
-`Microsoft Defender Portal 竊・Device 竊・Timeline`
+`Microsoft Defender Portal → Device → Timeline`
 
 Observed the event "EXCEL.EXE was blocked by the attack surface reduction (ASR) rule".
-<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/07-Device%20Security%20Config/13.Timeline.jpg" width="600">
-
+<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/07-Device%20Security%20Config/13.Timeline.jpg" width="600">
 

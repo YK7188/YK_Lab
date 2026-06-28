@@ -4,7 +4,7 @@
 
 Enable and validate remote administration of Windows devices using PowerShell Remoting (WinRM) and PsExec in both Intune-managed and on-premises environments.
 
-# Scenario 1 窶・PowerShell Remoting on Intune Devices
+# Scenario 1 —PowerShell Remoting on Intune Devices
 
 ## Environment
 
@@ -13,7 +13,7 @@ Enable and validate remote administration of Windows devices using PowerShell Re
 
 ## Configuration
 
-### Step 1 窶・Assign local administrator permissions using Intune
+### Step 1 —Assign local administrator permissions using Intune
 
 Navigate to:
 
@@ -23,7 +23,7 @@ and add the required user or group to the local Administrators group on the remo
 
 <img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/28-RemoteAdministration_WinRM%20%26%20PSExec/01.LocalAdmin_Deployment.jpg" width="600">
 
-### Step 2 窶・Create and assign an Intune PowerShell script
+### Step 2 —Create and assign an Intune PowerShell script
 
 Navigate to:
 
@@ -81,14 +81,14 @@ The command executed successfully and returned the hostname of the remote device
 
 ---
 
-# Scenario 2 窶・PsExec on Intune Devices
+# Scenario 2 —PsExec on Intune Devices
 
 ## Environment
 
 - Both source and remote devices are Entra ID joined and Intune managed.
 - Both devices reside within the same Hyper-V LAN.
 
-## Configuration 窶・Enable SMB access using an Intune firewall policy
+## Configuration —Enable SMB access using an Intune firewall policy
 
 Create an Intune firewall rule to allow inbound TCP port 445 on the remote device.
 
@@ -116,7 +116,7 @@ Adding the -i switch allowed the command to execute successfully using the same 
 
 ---
 
-# Scenario 3 窶・PowerShell Remoting on On-Premises AD Devices
+# Scenario 3 —PowerShell Remoting on On-Premises AD Devices
 
 ## Environment
 
@@ -126,7 +126,7 @@ Adding the -i switch allowed the command to execute successfully using the same 
 
 ## Configuration
 
-### Step 1 窶・Assign local administrator permissions using Group Policy
+### Step 1 —Assign local administrator permissions using Group Policy
 
 Create a GPO to add the required users or groups to the local Administrators group.
 
@@ -134,7 +134,7 @@ Path: Computer Configuration > Preferences > Control Panel Settings > Local User
 
 <img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/28-RemoteAdministration_WinRM%20%26%20PSExec/06.LocalAdmins.jpg" width="600">
 
-### Step 2 窶・Create a startup PowerShell script using Group Policy
+### Step 2 —Create a startup PowerShell script using Group Policy
 
 Create a startup script policy.
 
@@ -176,7 +176,7 @@ Result:
 
 ---
 
-# Scenario 4 窶・PsExec on On-Premises AD Devices
+# Scenario 4 —PsExec on On-Premises AD Devices
 
 ## Environment
 
@@ -206,5 +206,6 @@ Result:
 - Explicit credentials using -u and -p were not required because PsExec automatically leveraged Kerberos authentication between the two domain-joined machines.
 
 <img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/28-RemoteAdministration_WinRM%20%26%20PSExec/10.psexec_succeed.jpg" width="600">
+
 
 

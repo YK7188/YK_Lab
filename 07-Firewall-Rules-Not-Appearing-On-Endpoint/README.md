@@ -1,4 +1,4 @@
-﻿
+
 ## Issue
 
 A firewall rule (`Allow-8080-inbound`) was configured via Intune Endpoint Security.
@@ -6,8 +6,8 @@ A firewall rule (`Allow-8080-inbound`) was configured via Intune Endpoint Securi
 Although the policy shows as successfully applied, the rule does not appear in `wf.msc` under Inbound Rules.
 
 <br>
-<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/08-FW%20rules%20policy%20TS/03.%20FW%20rule%20in%20intune.jpg" width="600">
-<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/08-FW%20rules%20policy%20TS/02.%20rule%20not%20shown.jpg" width="600">
+<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/08-FW%20rules%20policy%20TS/03.%20FW%20rule%20in%20intune.jpg" width="600">
+<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/08-FW%20rules%20policy%20TS/02.%20rule%20not%20shown.jpg" width="600">
 
 ---
 
@@ -16,7 +16,7 @@ Although the policy shows as successfully applied, the rule does not appear in `
 - Intune record indicates that the policy is applied to the device.
 
   <br>
-<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/08-FW%20rules%20policy%20TS/01.%20policy_succeed.jpg" width="600">
+<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/08-FW%20rules%20policy%20TS/01.%20policy_succeed.jpg" width="600">
 
 
 - The following command does not show rules from MDM:
@@ -24,7 +24,7 @@ Although the policy shows as successfully applied, the rule does not appear in `
 `Get-NetFirewallRule | Select DisplayName, PolicyStoreSource`
 
 <br>
-<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/08-FW%20rules%20policy%20TS/04.%20nothing%20from%20MDM.jpg" width="600">
+<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/08-FW%20rules%20policy%20TS/04.%20nothing%20from%20MDM.jpg" width="600">
 
 ---
 
@@ -44,17 +44,16 @@ The rules can be verified using the following methods:
   : `HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Services\SharedAccess\Parameters\FirewallPolicy\Mdm\FirewallRules`
 
 - **wf.msc**
-  : Monitoring 竊・Firewall
+  : Monitoring → Firewall
 
 - **PowerShell**
   : `Get-NetFirewallRule -PolicyStore ActiveStore`
 
 
-<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/08-FW%20rules%20policy%20TS/05.%20shown%20in%20regedit.jpg" width="600">
-<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/08-FW%20rules%20policy%20TS/06.%20shown%20in%20wf.msc.jpg" width="600">
-<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/08-FW%20rules%20policy%20TS/07.%20shown%20via%20Powershell.jpg" width="600">
+<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/08-FW%20rules%20policy%20TS/05.%20shown%20in%20regedit.jpg" width="600">
+<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/08-FW%20rules%20policy%20TS/06.%20shown%20in%20wf.msc.jpg" width="600">
+<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/08-FW%20rules%20policy%20TS/07.%20shown%20via%20Powershell.jpg" width="600">
 
 
 
     
-

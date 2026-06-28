@@ -44,7 +44,7 @@ Confirm installed:
 
 `Active Directory Certificate Services > Certification Authority`
 
-<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/18-Hybrid%20PKI%20simulation/01.role_installation.jpg" width="600">
+<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/18-Hybrid%20PKI%20simulation/01.role_installation.jpg" width="600">
 
 # STEP 2 - Configure the CA
 
@@ -52,7 +52,7 @@ Click:
 
 `Configure Active Directory Certificate Services`
 
-<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/18-Hybrid%20PKI%20simulation/02.post_deployment_confg.jpg" width="400">
+<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/18-Hybrid%20PKI%20simulation/02.post_deployment_confg.jpg" width="400">
 
 
 and proceed with the wizard
@@ -74,7 +74,7 @@ and proceed with the wizard
 
 CORP-ROOT-CA is now up and running
 
-<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/18-Hybrid%20PKI%20simulation/03.CA_up.jpg" width="400">
+<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/18-Hybrid%20PKI%20simulation/03.CA_up.jpg" width="400">
 
 # STEP 4 - Verify Root Trust on Domain PC
 
@@ -82,7 +82,7 @@ On the AD-joined test device, open certmgr.msc:
 
 `CORP-ROOT-CA appears under Trusted Root Certification Authorities > Certificates`
 
-<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/18-Hybrid%20PKI%20simulation/04.Root_Cert_shown.jpg" width="500">
+<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/18-Hybrid%20PKI%20simulation/04.Root_Cert_shown.jpg" width="500">
 
 > Active Directory automatically distributed CA trust to all AD-joined devices.
 
@@ -109,7 +109,7 @@ In certsrv:
 
 `Certificate Templates > New > Certificate Template to issue`
 
-<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/18-Hybrid%20PKI%20simulation/05.cert_template.jpg" width="500">
+<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/18-Hybrid%20PKI%20simulation/05.cert_template.jpg" width="500">
 
 Select LabComputerCert and Click OK
 
@@ -130,11 +130,11 @@ Enable the policy and Check:
 - Renew expired certificates, update pending certificates, and remove revoked certificates
 - Update certificates that use certificate templates
 
-<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/18-Hybrid%20PKI%20simulation/18.GPO_Enabled.jpg" width="600">
+<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/18-Hybrid%20PKI%20simulation/18.GPO_Enabled.jpg" width="600">
 
 On the AD-joined test device, Certificate now appears in Personal folder
 
-<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/18-Hybrid%20PKI%20simulation/13.Cert_appears.jpg" width="600">
+<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/18-Hybrid%20PKI%20simulation/13.Cert_appears.jpg" width="600">
 
 > For better management, easier troubleshooting, creating a new object is better than adding to the default domain policy object.
 
@@ -148,7 +148,7 @@ On connector server, go to Intune and download the .exe file.
 
 Path: Tenant admin > Connectors and tokens > Certificate Connectors > Add
 
-<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/18-Hybrid%20PKI%20simulation/14.connector_download.jpg" width="600">
+<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/18-Hybrid%20PKI%20simulation/14.connector_download.jpg" width="600">
 
 Run downloaded IntuneCertificateConnector.exe and proceed with the wizard.
 
@@ -160,7 +160,7 @@ Run downloaded IntuneCertificateConnector.exe and proceed with the wizard.
 
 The connector now appears in Intune.
 
-<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/18-Hybrid%20PKI%20simulation/15.connector_appear.jpg" width="600">
+<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/18-Hybrid%20PKI%20simulation/15.connector_appear.jpg" width="600">
 
 # Step 8 - Deploy Trusted Root Certificate profile
 
@@ -172,7 +172,7 @@ On CA server, run certsrv.msc and right-click CA
 
 Path: `Properties > View Certificate > Details > Copy to File`
 
-<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/18-Hybrid%20PKI%20simulation/25.Cert_Copy_CA.jpg" width="700">
+<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/18-Hybrid%20PKI%20simulation/25.Cert_Copy_CA.jpg" width="700">
 
 Export:
 
@@ -199,7 +199,7 @@ Upload:
 
 The copied file from the CA
 
-<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/18-Hybrid%20PKI%20simulation/17.Cert_config_intune.jpg" width="600">
+<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/18-Hybrid%20PKI%20simulation/17.Cert_config_intune.jpg" width="600">
 
 Assign to test device group.
 
@@ -229,13 +229,13 @@ Key storage provider (KSP) > Enroll to Trusted Platform Module (TPM) KSP if pres
 Subject name format > CN={{DeviceName}}
 > It will show the device name.
 
-<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/18-Hybrid%20PKI%20simulation/26.failed_PKCS_config.jpg" width="600">
+<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/18-Hybrid%20PKI%20simulation/26.failed_PKCS_config.jpg" width="600">
 
 Result:
 
 Error appeared in Intune
 
-<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/18-Hybrid%20PKI%20simulation/20.pkcs_error.jpg" width="600">
+<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/18-Hybrid%20PKI%20simulation/20.pkcs_error.jpg" width="600">
 
 
 # STEP 10 - Troubleshoot
@@ -282,7 +282,7 @@ Error appears as:
 - User > Connector account (svc_intunecert)
 - Denied by Policy Module
 
-<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/18-Hybrid%20PKI%20simulation/22.Denied_By_Module.jpg" width="600">
+<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/18-Hybrid%20PKI%20simulation/22.Denied_By_Module.jpg" width="600">
 
 > Intune requests the certificate but it is denied by the CA.
 
@@ -335,7 +335,7 @@ Path: Devices > Android > Configuration > Create > New Policy > Android Enterpri
 
 The CA certificate appears on the Android. Although PKCS cert is not listed alongside other certificates, it appears in the certificate picker when configuring a VPN connection. 
 
-<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/28-Intune%20VPN%20Profiles%20%26%20Certificate%20Deployment/08.pkcs_shown_sSwan.jpg" width="300">
+<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/28-Intune%20VPN%20Profiles%20%26%20Certificate%20Deployment/08.pkcs_shown_sSwan.jpg" width="300">
 
 ## Extending PKCS Deployment to iPhone
 
@@ -354,4 +354,3 @@ Path: Devices > Apple mobile > Configuration > Create > New Policy > iOS/iPadOS 
 ##### Step 3 - Verification
 
 The certificates appear on the iPhone. The management profile shows both the Trusted Certificate profile and PKCS Certificate profile as successfully applied. Intune reporting also shows successful deployment.
-

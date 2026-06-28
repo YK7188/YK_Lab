@@ -1,4 +1,4 @@
-﻿> Tried: April 2026
+> Tried: April 2026
 
 ## Objective
 Attempt to start a Microsoft 365 E5 trial in a new tenant to access additional Microsoft Intune features (e.g., quality updates and driver updates in Windows Update for Business).
@@ -57,4 +57,3 @@ The tenant was successfully created, but trial license activation consistently f
 
 This suggests Microsoft applies backend validation mechanisms that can block trial activation even when the admin portal is accessible.
   
-

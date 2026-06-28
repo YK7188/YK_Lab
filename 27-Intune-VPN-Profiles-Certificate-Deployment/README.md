@@ -1,4 +1,4 @@
-﻿> Tested: June 2026
+> Tested: June 2026
 
 
 # Scenario
@@ -33,7 +33,7 @@ The VPN server configuration itself is outside the scope of this lab.
 
 Go to the CA server and open certtmpl.msc. Create and issue a new template for the VPN server.
 
-<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/28-Intune%20VPN%20Profiles%20%26%20Certificate%20Deployment/02.issue_VPNtempl.jpg" width="600">
+<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/28-Intune%20VPN%20Profiles%20%26%20Certificate%20Deployment/02.issue_VPNtempl.jpg" width="600">
 
 Obtain Certificate signing request (CSR) from the VPN server and submit a PKCS certificate by running the command below.
 
@@ -53,7 +53,7 @@ strongSwan must trust the CA. Export the CA certificate on the CA server so it c
 
 Open certsrv.msc > right click the root CA > properties > General > View certificate > Details > Copy to file
 
-<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/28-Intune%20VPN%20Profiles%20%26%20Certificate%20Deployment/03.export_CAcert.jpg" width="800">
+<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/28-Intune%20VPN%20Profiles%20%26%20Certificate%20Deployment/03.export_CAcert.jpg" width="800">
 
 ### Import the Certificates into the VPN Server
 
@@ -65,7 +65,7 @@ Import the server certificate and CA certificate into the VPN server. The VPN se
 
 Intune > Devices > Windows > Configuration > Create > New policy > Windows 10 and later > Templates > VPN
 
-<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/28-Intune%20VPN%20Profiles%20%26%20Certificate%20Deployment/04.create_VPNPolicy.jpg" width="700">
+<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/28-Intune%20VPN%20Profiles%20%26%20Certificate%20Deployment/04.create_VPNPolicy.jpg" width="700">
 
 Enter the correct information for configuration settings:
 - Use this VPN profile with a user/device scope > Device 
@@ -76,7 +76,7 @@ Result:
 
 The VPN profile appears in the native Windows VPN client. Because a PKCS device certificate is already deployed through Intune, the device can authenticate to the VPN without entering credentials.
 
-<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/28-Intune%20VPN%20Profiles%20%26%20Certificate%20Deployment/05.vpn_shown.jpg" width="500">
+<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/28-Intune%20VPN%20Profiles%20%26%20Certificate%20Deployment/05.vpn_shown.jpg" width="500">
 
 ### Create the VPN profile for Android
 
@@ -84,7 +84,7 @@ Intune > Devices > Android > Configuration > Create > New policy > Android Enter
 
 The image below shows the VPN client types supported by Intune.
 
-<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/28-Intune%20VPN%20Profiles%20%26%20Certificate%20Deployment/09.no_strongswan.jpg" width="500">
+<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/28-Intune%20VPN%20Profiles%20%26%20Certificate%20Deployment/09.no_strongswan.jpg" width="500">
 
 Result: 
 
@@ -98,11 +98,11 @@ Intune > Devices > Apple mobile > Configuration > Create > New policy > iOS/iPad
 
 Configure a profile choosing IKEv2 for Connection type. 
 
-<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/28-Intune%20VPN%20Profiles%20%26%20Certificate%20Deployment/10.not_credentials_strongswan.jpg" width="500">
+<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/28-Intune%20VPN%20Profiles%20%26%20Certificate%20Deployment/10.not_credentials_strongswan.jpg" width="500">
 
 Once the policy applies to the iPhone, the configured profile appears on the native vpn client.
 
-<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/28-Intune%20VPN%20Profiles%20%26%20Certificate%20Deployment/10.not_credentials_strongswan.jpg" width="500">
+<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/28-Intune%20VPN%20Profiles%20%26%20Certificate%20Deployment/10.not_credentials_strongswan.jpg" width="500">
 
 Result: 
 
@@ -121,4 +121,3 @@ This lab demonstrated deployment of VPN profiles and certificates through Micros
 - iPhone received both the VPN profile and PKCS certificate but could not establish a successful VPN connection during testing.
 
 In production environments, organizations commonly use vendor-supported VPN solutions such as Cisco AnyConnect, GlobalProtect, or F5 Access. These solutions typically provide tighter integration with Intune and reduce the amount of manual client configuration required.
-
