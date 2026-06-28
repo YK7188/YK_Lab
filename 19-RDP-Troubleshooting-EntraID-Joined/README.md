@@ -1,4 +1,4 @@
-Tested: May 2026
+﻿Tested: May 2026
 
 # Scenario
 
@@ -6,7 +6,7 @@ An Entra ID user fails to connect to an Entra ID joined PC over RDP.
 
 Root cause was eventually isolated to legacy Per-user MFA.
 
-<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/20-Troubleshooting%20Entra%20ID%20RDP%20Failure/01.Error.jpg" width="600">
+<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/20-Troubleshooting%20Entra%20ID%20RDP%20Failure/01.Error.jpg" width="600">
 
 # Isolation Steps Performed
 
@@ -108,7 +108,7 @@ Disabled:
 
 for affected users.
 
-<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/20-Troubleshooting%20Entra%20ID%20RDP%20Failure/02.Legacy_MFA.jpg" width="600">
+<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/20-Troubleshooting%20Entra%20ID%20RDP%20Failure/02.Legacy_MFA.jpg" width="600">
 
 Result:
 
@@ -128,4 +128,5 @@ Conclusion:
 
 # Key takeaway
 
-Legacy “Per-user MFA” can cause edge cases like this. In modern environments, Conditional Access-based MFA is generally preferred over legacy Per-user MFA.
+Legacy 窶弃er-user MFA窶・can cause edge cases like this. In modern environments, Conditional Access-based MFA is generally preferred over legacy Per-user MFA.
+

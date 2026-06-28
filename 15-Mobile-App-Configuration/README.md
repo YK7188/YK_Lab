@@ -1,4 +1,4 @@
-> Tested: May 2026
+﻿> Tested: May 2026
 
 # Objective
 
@@ -16,9 +16,9 @@ Configure an Intune App Protection Policy (MAM only) and observe how each config
 # Contents
 
 - [App Protection Policy (MAM only)](#app-protection-policy-mam-only)
-  - [1️⃣ Data Protection](#1️⃣-data-protection)
-  - [2️⃣ Access requirements](#2️⃣-access-requirements)
-  - [3️⃣ Conditional launch](#3️⃣-conditional-launch)
+  - [1・鞘Ε Data Protection](#1・鞘Ε-data-protection)
+  - [2・鞘Ε Access requirements](#2・鞘Ε-access-requirements)
+  - [3・鞘Ε Conditional launch](#3・鞘Ε-conditional-launch)
 
 - [App Protection Policy Validation](#app-protection-policy-validation)
   - [1. Send org data to other apps](#1-send-org-data-to-other-apps-policy-managed-apps)
@@ -36,7 +36,7 @@ Configure an Intune App Protection Policy (MAM only) and observe how each config
 
 # App Protection Policy (MAM only)
 
-Path: `Apps → protection → Create`
+Path: `Apps 竊・protection 竊・Create`
 
 Choose: `iOS/iPadOS`
 
@@ -46,15 +46,15 @@ Selected apps:
 - Microsoft Teams
 - Microsoft OneDrive
 
-<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/%20%20%20%2016-Mobile%20app%20configration/01.add_apps.jpg" width="600">
+<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/%20%20%20%2016-Mobile%20app%20configration/01.add_apps.jpg" width="600">
 
 <br>
 
-## 1️⃣ Data Protection
+## 1・鞘Ε Data Protection
 
 Image from the policy wizard
 
-<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/%20%20%20%2016-Mobile%20app%20configration/02.data_protection.jpg" width="600">
+<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/%20%20%20%2016-Mobile%20app%20configration/02.data_protection.jpg" width="600">
 
 
 
@@ -69,11 +69,11 @@ Image from the policy wizard
 
 <br>
 
-## 2️⃣ Access requirements
+## 2・鞘Ε Access requirements
 
 Image from the policy wizard
 
-<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/%20%20%20%2016-Mobile%20app%20configration/03.access_reqirements.jpg" width="600">
+<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/%20%20%20%2016-Mobile%20app%20configration/03.access_reqirements.jpg" width="600">
 
 
 |Setting|Value|
@@ -89,11 +89,11 @@ Image from the policy wizard
 
 <br>
 
-## 3️⃣ Conditional launch
+## 3・鞘Ε Conditional launch
 
 Image from the policy wizard
 
-<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/%20%20%20%2016-Mobile%20app%20configration/04.conditional_launch.jpg" width="600">
+<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/%20%20%20%2016-Mobile%20app%20configration/04.conditional_launch.jpg" width="600">
 
 ### App conditions
 
@@ -124,10 +124,10 @@ When signing in, the following message appeared:
 
 > `Your organization is now protecting its data in this app.`
 
-<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/%20%20%20%2016-Mobile%20app%20configration/08.Initial_notice_protection.jpg" width="400">
+<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/%20%20%20%2016-Mobile%20app%20configration/08.Initial_notice_protection.jpg" width="400">
 
 
-## 1️⃣ Data Protection Validation
+## 1・鞘Ε Data Protection Validation
 
 ### 1. Send org data to other apps (Policy managed apps)
 
@@ -139,7 +139,7 @@ A test image was shared from managed apps to both managed and unmanaged apps.
 
   - When the configuration was in effect, sharing was blocked with: `Sharing not allowed`
 
-    <img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/%20%20%20%2016-Mobile%20app%20configration/05.Files_blocked.jpg" width="400">
+    <img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/%20%20%20%2016-Mobile%20app%20configration/05.Files_blocked.jpg" width="400">
 
   - When the configuration was removed, sharing succeeded.
 
@@ -147,7 +147,7 @@ A test image was shared from managed apps to both managed and unmanaged apps.
 
   - When the configuration was in effect, sharing appeared to complete, but the received image could not be properly rendered as in the image below.
 
-    <img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/%20%20%20%2016-Mobile%20app%20configration/07.Image_FreeForm.jpg" width="400">
+    <img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/%20%20%20%2016-Mobile%20app%20configration/07.Image_FreeForm.jpg" width="400">
 
   - When the configuration was removed, the image displayed normally.
 
@@ -181,7 +181,7 @@ Tested:
 
 The behavior of this setting was unclear from the configuration description alone, so each option was tested individually.
 
-<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/%20%20%20%2016-Mobile%20app%20configration/12.receive_data_from_other_apps.jpg" width="600">
+<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/%20%20%20%2016-Mobile%20app%20configration/12.receive_data_from_other_apps.jpg" width="600">
 
 <br>
 
@@ -212,7 +212,7 @@ Observed behavior:
 
 <br>
   
-  <img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/%20%20%20%2016-Mobile%20app%20configration/13.OutlookBlocked_OrgData.jpg" width="300">
+  <img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/%20%20%20%2016-Mobile%20app%20configration/13.OutlookBlocked_OrgData.jpg" width="300">
 
 
 - OneDrive failed to receive data from Teams with:
@@ -221,7 +221,7 @@ Observed behavior:
 
 <br>
 
-  <img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/%20%20%20%2016-Mobile%20app%20configration/14.OneDrive_Blocked_OrgData.jpg" width="300">
+  <img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/%20%20%20%2016-Mobile%20app%20configration/14.OneDrive_Blocked_OrgData.jpg" width="300">
 
 - OneNote successfully received data from Teams.
 - Data from Files, Freeform, and Notes could not be shared into Outlook, OneDrive, or OneNote.
@@ -261,7 +261,7 @@ The wording appears to suggest that:
 
 Based on this interpretation, the following behavior was expected.
 
-#### Scenario 1 — “All apps” selected for “Receive data from other apps”
+#### Scenario 1 窶・窶廣ll apps窶・selected for 窶彝eceive data from other apps窶・
 
 Configuration:
 
@@ -274,7 +274,7 @@ Expected behavior:
 - The imported data can then be shared from the managed app to an unmanaged app because the data is not treated as organizational data.
 - Therefore, the Send org data to other apps restriction would not be applied to the imported data.
 
-#### Scenario 2 — “Any app with incoming org data” selected
+#### Scenario 2 窶・窶廣ny app with incoming org data窶・selected
 
 Configuration:
 
@@ -298,13 +298,13 @@ In both configurations:
 
 This suggests that the imported data was effectively treated as organizational data in both scenarios.
 
-As a result, the practical effect of “treat as org data” remains unclear based on this testing alone.
+As a result, the practical effect of 窶徼reat as org data窶・remains unclear based on this testing alone.
 
 <br>
 
 ### 3. Restrict cut, copy, and paste between other apps (Policy managed apps only)
 
-#### Managed app → unmanaged app
+#### Managed app 竊・unmanaged app
 
 
 Copying/cutting text from managed apps into unmanaged apps failed.
@@ -316,14 +316,14 @@ Tested:
 
 Observed behavior: `Your organization's data cannot be pasted here`
 
-<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/%20%20%20%2016-Mobile%20app%20configration/15.CannotBe_Pasted.jpg" width="400">
+<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/%20%20%20%2016-Mobile%20app%20configration/15.CannotBe_Pasted.jpg" width="400">
 
 <br>
 
 
 
 
-#### Unmanaged app → managed app
+#### Unmanaged app 竊・managed app
 
 Copying/cutting text from an unmanaged app and pasting it into a managed app shows different behaviours.
 
@@ -340,7 +340,7 @@ Observed behavior:
 - From unmanaged apps to OneDrive, past option does not appear.  
 
 
-#### Managed app → managed app
+#### Managed app 竊・managed app
 
 Copying/cutting and pasting between the protected apps is allowed.
 
@@ -377,11 +377,11 @@ Observed behavior:
 - Saving an attachment from Outlook to Dropbox failed with: `Save not allowed`
 
 <br>
-  <img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/%20%20%20%2016-Mobile%20app%20configration/16.save_not_allowed.jpg" width="300">
+  <img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/%20%20%20%2016-Mobile%20app%20configration/16.save_not_allowed.jpg" width="300">
 
 - OneDrive and Teams could send a test image to Dropbox, but the image could not be previewed properly.
 
-  <img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/%20%20%20%2016-Mobile%20app%20configration/17.Dropbox_no_preview.jpg" width="300">
+  <img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/%20%20%20%2016-Mobile%20app%20configration/17.Dropbox_no_preview.jpg" width="300">
 
 <br>
 - Saving/sending data from Teams and Outlook to OneDrive succeeded.
@@ -448,14 +448,14 @@ Observed behavior:
 - Device passcode existence enforcement worked consistently.
 
 <br>
-  <img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/%20%20%20%2016-Mobile%20app%20configration/20.Passcode_required.jpg" width="300">
+  <img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/%20%20%20%2016-Mobile%20app%20configration/20.Passcode_required.jpg" width="300">
  
 - Protected apps also required an Intune App PIN.
 - The Intune App PIN:
   - required 6 numeric digits
   - rejected simple combinations
     
-    <img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/%20%20%20%2016-Mobile%20app%20configration/19.AppPIN_required.jpg" width="300">
+    <img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/%20%20%20%2016-Mobile%20app%20configration/19.AppPIN_required.jpg" width="300">
 
 <br>
 consistent with the configured policy.
@@ -464,6 +464,7 @@ consistent with the configured policy.
 # Final Note
 
 Intune App Protection Policies successfully enforced core protections. However, behavior was not always consistent between Microsoft applications despite identical policy assignments. Administrators should validate behavior carefully across different Microsoft apps rather than assuming identical enforcement behavior.
+
 
 
 

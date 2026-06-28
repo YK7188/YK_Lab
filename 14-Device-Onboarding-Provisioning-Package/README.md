@@ -1,4 +1,4 @@
-> Tested: April 2026
+﻿> Tested: April 2026
 
 ## Objective
 Onboard an existing device (no wipe) using a provisioning package.
@@ -9,7 +9,7 @@ Preserve existing apps and user data
 
 ---
 
-## Step 1 — Install Configuration designer
+## Step 1 窶・Install Configuration designer
 
 Install Windows Assessment and Deployment Kit and select Configuration Designer.
 
@@ -18,16 +18,16 @@ Download:
 https://learn.microsoft.com/en-us/windows-hardware/get-started/adk-install
 
 
-## Step 2 — Launch the tool
+## Step 2 窶・Launch the tool
 
 Open Windows Configuration Designer and select:
 
 Provision desktop devices
 
-<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/15-ppkg%20file%20creation/01.open_designer.jpg" width="600">
+<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/15-ppkg%20file%20creation/01.open_designer.jpg" width="600">
 
 
-## Step 3 — Create provisioning package
+## Step 3 窶・Create provisioning package
 
 Enter a project name and proceed through the wizard.
 
@@ -37,7 +37,7 @@ Path: Set up device > Device name
 
 Example:  PC-%SERIAL%
 
-<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/15-ppkg%20file%20creation/02.designer_steps.jpg" width="600">
+<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/15-ppkg%20file%20creation/02.designer_steps.jpg" width="600">
 
 ### 2. Configure Entra ID enrollment and local admin
 
@@ -51,13 +51,13 @@ Path (Local admin):
 
 Account management > Optional: Create a local administrator account
 
-## Step 4 — Apply the provisioning package
+## Step 4 窶・Apply the provisioning package
 
 Execute the .ppkg file on the target device.
 - Confirm the prompt
 - The device will automatically restart
 
-## Step 5 — Verification
+## Step 5 窶・Verification
 
 ### 1. Confirm Entra ID join
    
@@ -81,8 +81,8 @@ The device's "managed by" status shows Intune.
 
 Existing applications and user data remain intact
 
-<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/15-ppkg%20file%20creation/04.verify_endpoint.jpg" width="600">
-<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/15-ppkg%20file%20creation/05.verify_intune.jpg" width="600">
+<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/15-ppkg%20file%20creation/04.verify_endpoint.jpg" width="600">
+<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/15-ppkg%20file%20creation/05.verify_intune.jpg" width="600">
 
 ## Key points
 
@@ -92,3 +92,4 @@ Existing applications and user data remain intact
   - Devices cannot be reset
   - User interaction must be minimized
   - Standardized onboarding is required
+

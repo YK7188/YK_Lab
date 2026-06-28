@@ -1,4 +1,4 @@
-## Scenario
+﻿## Scenario
 
 A Conditional Access policy was created in Microsoft Entra ID to restrict Microsoft 365 access to Windows devices marked as compliant by Microsoft Intune.
 ![Image](https://github.com/user-attachments/assets/098f900b-ca7f-4c46-adcc-9fb3e3a166f3)
@@ -54,4 +54,5 @@ This may appear as inconvenient to some users.
 
 ## Alternative approach used in many enterprises
 Instead of verifying the device directly with Microsoft Intune, some organizations restrict SaaS access based on trusted network egress IPs like Netskope.
+
 

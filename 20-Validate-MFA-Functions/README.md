@@ -1,4 +1,4 @@
-> Tested: May 2026
+﻿> Tested: May 2026
 
 # Lab Goal
 
@@ -18,7 +18,7 @@ in modern Microsoft Entra ID MFA onboarding and enforcement.
 
 Migration Complete
 
-<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/21-MFA%20function/01.Migration_ToModern.jpg" width="700">
+<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/21-MFA%20function/01.Migration_ToModern.jpg" width="700">
 
 # Important Finding Before Testing
 
@@ -38,21 +38,21 @@ Authentication Methods Policy behavior became more aligned with the configured s
 
 This determines which authentication methods are allowed and available for users in the tenant.
 
-<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/21-MFA%20function/11.Auth_Method.jpg" width="600">
+<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/21-MFA%20function/11.Auth_Method.jpg" width="600">
 
 When a method is enabled, it can become available during MFA registration or in the My Sign-ins portal depending on the method type and sign-in scenario.
 
 - Encounters a prompt to register an MFA method (Let's keep your account secure) > add a sign-in method as shown below.
 
-<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/21-MFA%20function/13.MFA_add_Prompt.jpg" width="400">
+<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/21-MFA%20function/13.MFA_add_Prompt.jpg" width="400">
 
 - Adds an MFA method in the Mysignins page (https://mysignins.microsoft.com/security-info) as below.
 
-<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/21-MFA%20function/12.mysignins.jpg" width="600">
+<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/21-MFA%20function/12.mysignins.jpg" width="600">
 
 # MFA Registration Policy
 
-<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/21-MFA%20function/14.reg_policy.jpg" width="700">
+<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/21-MFA%20function/14.reg_policy.jpg" width="700">
 
 When enabled, a target user with no MFA method registered will experience a Let's keep your account secure prompt to register an MFA method when signing in to Office cloud apps such as office.com.
 
@@ -63,11 +63,11 @@ When enabled, a target user with no MFA method registered will experience a Let'
 
 # Registration Campaign
 
-<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/21-MFA%20function/17.registration_campaign.jpg" width="600">
+<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/21-MFA%20function/17.registration_campaign.jpg" width="600">
 
 When enabled, a target user is prompted to add Microsoft Authenticator as an improved MFA method as shown below.
 
-<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/21-MFA%20function/16.improve_your_signins.jpg" width="400"> 
+<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/21-MFA%20function/16.improve_your_signins.jpg" width="400"> 
 
 During testing, this prompt only appeared when the user already had at least one MFA method registered.
 
@@ -88,7 +88,7 @@ Access controls:
 - Grant access
 - Require multifactor authentication
 
-<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/21-MFA%20function/17.CA_Grant.jpg" width="300"> 
+<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/21-MFA%20function/17.CA_Grant.jpg" width="300"> 
   
 When this policy is enabled:
 
@@ -118,3 +118,4 @@ Additionally, TAP, Email OTP, and QR Code did not function as primary workforce 
 - Secondary: SMS or voice call (fallback methods)
 
 Registration Campaign and MFA Registration Policy are optional.
+

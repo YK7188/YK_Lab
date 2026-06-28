@@ -1,4 +1,4 @@
-> Labbed: May 2026
+﻿> Labbed: May 2026
 
 # Issue
 
@@ -9,7 +9,7 @@ When an Entra ID user attempted to sign in to an Intune-managed Windows device, 
 - Apps (Error) appeared in the status screen.
 - User sign-in could not complete successfully.
 
-<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/23-Troubleshoot_Intune_InitialSetupFailure/03.apps_error.jpg" width="500">
+<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/23-Troubleshoot_Intune_InitialSetupFailure/03.apps_error.jpg" width="500">
 
 # Environment
 
@@ -25,7 +25,7 @@ A newly created Intune device configuration policy caused the issue.
 
 The failing policy appeared with Error status for the affected device in Intune.
 
-<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/23-Troubleshoot_Intune_InitialSetupFailure/01.user2_error.jpg" width="500">
+<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/23-Troubleshoot_Intune_InitialSetupFailure/01.user2_error.jpg" width="500">
 
 # Resolution
 
@@ -35,5 +35,6 @@ After the problematic policy configuration was corrected:
 - the user was able to sign in normally
 - the policy status changed from Error to Success
 
-<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/23-Troubleshoot_Intune_InitialSetupFailure/04.user2_nowsuccess.jpg" width="500">
+<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/23-Troubleshoot_Intune_InitialSetupFailure/04.user2_nowsuccess.jpg" width="500">
+
 

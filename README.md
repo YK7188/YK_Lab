@@ -1,4 +1,4 @@
-# About YK_Lab
+﻿# About YK_Lab
 
 Hands-on labs for learning:
 
@@ -24,7 +24,7 @@ This repository documents practical lab environments built to develop skills for
 
 # Lab Index
 
-## 📁 Identity & Access (Entra ID / Conditional Access)
+## 刀 Identity & Access (Entra ID / Conditional Access)
 
 * [01 - Conditional Access Troubleshoot](./01-Conditional-Access-Troubleshoot)
 * [02 - Conditional Access Troubleshooting](./02-Conditional-access-Troubleshooting)
@@ -33,7 +33,7 @@ This repository documents practical lab environments built to develop skills for
 
 ---
 
-## 📁 Intune / Endpoint Management
+## 刀 Intune / Endpoint Management
 
 * [03 - Intune Enrollment Troubleshooting (iOS)](./03-Intune-Enrollment-Troubleshooting-iOS)
 * [06 - Endpoint Security (Intune + Defender)](./06-Endpoint-Security-Intune-Defender)
@@ -50,7 +50,7 @@ This repository documents practical lab environments built to develop skills for
   
 ---
 
-## 📁 Microsoft 365
+## 刀 Microsoft 365
 
 * [04 - Microsoft 365 Apps Deployment (Built-in vs ODT)](./04-Microsoft-365-Apps-Deployment-Built-in-vs-ODT)
 * [05 - Microsoft 365 Apps Post-Deployment Management](./05-Microsoft-365-Apps-Post-Deployment-Management)
@@ -58,14 +58,14 @@ This repository documents practical lab environments built to develop skills for
 
 ---
 
-## 📁 Security & Compliance
+## 刀 Security & Compliance
 
 * [11 - BIOS Compliance Simulation](./11-BIOS-Compliance-Simulation-PowerShell)
 * [18 - Windows Exploit Protection with Intune](./18-Windows-Exploit-Protection-Intune-XML)
 
 ---
 
-## 📁 SCCM
+## 刀 SCCM
 
 * [23 - SCCM Application Deployment](./23-SCCM-App-Deployment)
 * [24 - SCCM Software Updates Configuration](./24-SCCM-Software-Updates-Configuration)
@@ -74,15 +74,16 @@ This repository documents practical lab environments built to develop skills for
 
 ---
 
-## 📁 Hybrid / On-Prem Infrastructure
+## 刀 Hybrid / On-Prem Infrastructure
 
 * [12 - GPO Simulation (On-Prem)](./12-GPO-Simulation-On-Prem)
 * [17 - Hybrid PKI Simulation](./17-Hybrid-PKI-Simulation)
 
 ---
 
-## 📌 Notes
+## 東 Notes
 
 * All labs were built and tested in a personal lab environment.
 * Each lab contains a scenario, implementation steps, validation results, and troubleshooting notes.
 * The portfolio focuses on Microsoft Intune, Entra ID, Microsoft 365, SCCM, Active Directory, and endpoint management.
+

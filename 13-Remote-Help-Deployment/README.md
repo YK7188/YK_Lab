@@ -1,4 +1,4 @@
-> Tested: April 2026
+﻿> Tested: April 2026
 
 ## Objective
 
@@ -12,7 +12,7 @@ Path: `Tenant administration > Intune add-ons`
 
 The linked page redirects to the trial option in the Microsoft 365 admin center.
 
-<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/14-Remote%20Help%20app%20deployment/01.%20trial.jpg" width="600">
+<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/14-Remote%20Help%20app%20deployment/01.%20trial.jpg" width="600">
 
 ---
 
@@ -22,7 +22,7 @@ Assign the Microsoft Intune Remote Help license in the Microsoft 365 admin cente
 
 Path: `Users > Active Users`
 
-<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/14-Remote%20Help%20app%20deployment/02.%20licensing.jpg" width="600">
+<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/14-Remote%20Help%20app%20deployment/02.%20licensing.jpg" width="600">
 
 ---
 
@@ -32,7 +32,7 @@ Path: `Users > Active Users`
 
 Path: `Tenant administration > Roles > Helpdesk Operator > Assignments`
 
-<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/14-Remote%20Help%20app%20deployment/04.%20assign%20role.jpg" width="600">
+<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/14-Remote%20Help%20app%20deployment/04.%20assign%20role.jpg" width="600">
 
 ---
 
@@ -40,7 +40,7 @@ Path: `Tenant administration > Roles > Helpdesk Operator > Assignments`
 
 Path: `Tenant administration > Remote Help > Settings`
 
-<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/14-Remote%20Help%20app%20deployment/03.%20enabling%20remote%20help.jpg" width="600">
+<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/14-Remote%20Help%20app%20deployment/03.%20enabling%20remote%20help.jpg" width="600">
 
 ---
 
@@ -56,7 +56,7 @@ Place the installer in a source folder and package it using:
 
 `https://github.com/microsoft/Microsoft-Win32-Content-Prep-Tool/releases/tag/v1.8.7`
    
-<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/14-Remote%20Help%20app%20deployment/05.%20run%20prep%20tool.jpg" width="600">
+<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/14-Remote%20Help%20app%20deployment/05.%20run%20prep%20tool.jpg" width="600">
 
 <br>
    
@@ -68,7 +68,7 @@ Use the following reference for configuration:
 
 `https://learn.microsoft.com/en-us/intune/remote-help/deploy?tabs=windows`
 
-> ⚠️ The install command, uninstall command, and detection rules must be exact.
+> 笞・・The install command, uninstall command, and detection rules must be exact.
 > Incorrect configuration can result in:
 > - Installation failure
 > - Silent install doing nothing
@@ -78,7 +78,7 @@ Use the following reference for configuration:
 
 &nbsp;&nbsp;Confirm that the app installs successfully on the endpoint via Company Portal.
 
-<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/14-Remote%20Help%20app%20deployment/06.%20companyportal.jpg" width="600">
+<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/14-Remote%20Help%20app%20deployment/06.%20companyportal.jpg" width="600">
 
 ---
 
@@ -86,3 +86,4 @@ Use the following reference for configuration:
 
 - Unsupported operating systems (e.g., older Windows Server versions) may result in false-success installations.
 - In a BYOD environment, the app can be assigned User-based.
+
