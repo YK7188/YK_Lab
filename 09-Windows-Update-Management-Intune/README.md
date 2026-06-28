@@ -21,7 +21,7 @@ Path: `Devices > Windows Updates > Update rings > Create Profile`
   - Grace period: 2 days
 
 <br>
-<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/10-Lab%3A%20Windows%20Update%20Management%20with%20Intune/01.%20updatering.jpg" width="600">
+<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/10-Lab%3A%20Windows%20Update%20Management%20with%20Intune/01.%20updatering.jpg" width="600">
 
 ✔ Windows Update driver delivery may introduce instability depending on hardware and driver quality
 
@@ -38,7 +38,7 @@ Path: `Devices > Windows Updates > Feature updates > Create Profile`
 - Feature update to deploy > Windows 11, version 24H2
 
 <br>
-<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/10-Lab%3A%20Windows%20Update%20Management%20with%20Intune/02.%20featureUD_config.jpg" width="600">
+<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/10-Lab%3A%20Windows%20Update%20Management%20with%20Intune/02.%20featureUD_config.jpg" width="600">
 
 ---
 
@@ -52,7 +52,7 @@ After assigning a Feature Update Policy for 24H2, the test device
 `Pending restart for Windows 11 23H2`
 
 <br>
-<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/10-Lab%3A%20Windows%20Update%20Management%20with%20Intune/04.%2023H2_Downloaded.jpg" width="600">
+<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/10-Lab%3A%20Windows%20Update%20Management%20with%20Intune/04.%2023H2_Downloaded.jpg" width="600">
 
 <br>
 
@@ -96,7 +96,7 @@ When the setting `"Option to check for Windows updates" = disabled` was applied,
 the "settings are managed by your organization" message appeared.
 
 <br>
-<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/10-Lab%3A%20Windows%20Update%20Management%20with%20Intune/14.%20managed%20by%20org%20appears.jpg" width="600">
+<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/10-Lab%3A%20Windows%20Update%20Management%20with%20Intune/14.%20managed%20by%20org%20appears.jpg" width="600">
 
 <br>
 
@@ -116,7 +116,7 @@ Path: `Devices > Windows > Configuration > Create New Policy > Settings catalog 
 
 
 <br>
-<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/10-Lab%3A%20Windows%20Update%20Management%20with%20Intune/03.%20DevConfig.jpg" width="600">
+<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/10-Lab%3A%20Windows%20Update%20Management%20with%20Intune/03.%20DevConfig.jpg" width="600">
 
 ---
 
@@ -126,7 +126,7 @@ After assigning the device configuration:
 - Devices reported Conflict in check-in status
 
 <br>
-<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/10-Lab%3A%20Windows%20Update%20Management%20with%20Intune/17.%20conflict_deviceconfig.jpg" width="600">
+<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/10-Lab%3A%20Windows%20Update%20Management%20with%20Intune/17.%20conflict_deviceconfig.jpg" width="600">
 
 <br>
 
@@ -144,7 +144,7 @@ The conflict also appeared on the assigned Update Ring:
 - Adjusted settings to remove duplication
 
 <br>
-<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/10-Lab%3A%20Windows%20Update%20Management%20with%20Intune/15.%20conflict%20list.jpg" width="600">
+<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/10-Lab%3A%20Windows%20Update%20Management%20with%20Intune/15.%20conflict%20list.jpg" width="600">
 
 <br>
 

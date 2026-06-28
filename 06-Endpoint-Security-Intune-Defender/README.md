@@ -37,7 +37,7 @@ Path: `Endpoint Security → Antivirus → Create Policy`
   - Time: 03:00 daily
   - Frequency: Every day
 <br>
-<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/07-Device%20Security%20Config/01.%20configuring%20policies.jpg" width="600">
+<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/07-Device%20Security%20Config/01.%20configuring%20policies.jpg" width="600">
 
 ---
 
@@ -56,7 +56,7 @@ Configured to enforce strict inbound control while allowing outbound traffic:
 - Logging enabled for dropped packets
 
 <br>
-<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/07-Device%20Security%20Config/02.%20FWPolicies.jpg" width="600">
+<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/07-Device%20Security%20Config/02.%20FWPolicies.jpg" width="600">
 
 ---
 
@@ -72,7 +72,7 @@ Example rules:
 - Allow inbound TCP 8080 (internal web app access)
 - Block outbound TCP 445 (Public networks) to prevent SMB exposure
 
-<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/07-Device%20Security%20Config/05.%20FW_Rules_Policy.jpg" width="600">
+<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/07-Device%20Security%20Config/05.%20FW_Rules_Policy.jpg" width="600">
 
 ---
 
@@ -89,7 +89,7 @@ Block all Office applications from creating child processes
 >This directly targets macro-based attack techniques
 
 <br>
-<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/07-Device%20Security%20Config/07.%20ASR_Creation1.jpg" width="600">
+<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/07-Device%20Security%20Config/07.%20ASR_Creation1.jpg" width="600">
 
 ---
 
@@ -127,7 +127,7 @@ Steps:
 - Run the onboarding script on the endpoint
 - Confirm device appears in Device Inventory
 
-<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/07-Device%20Security%20Config/12.deviceshown.jpg" width="600">
+<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/07-Device%20Security%20Config/12.deviceshown.jpg" width="600">
 
 ---
 
@@ -138,7 +138,7 @@ To validate the security controls, a macro-based attack scenario is simulated:
 A macro attempts to launch cmd.exe from an excel file but the ASR rule blocks the action
 <br>
 
-<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/07-Device%20Security%20Config/10.%20action_blocked.jpg" width="600">
+<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/07-Device%20Security%20Config/10.%20action_blocked.jpg" width="600">
 
 
 ---
@@ -151,5 +151,5 @@ Although the attack was blocked, the activity is still recorded in:
 `Microsoft Defender Portal → Device → Timeline`
 
 Observed the event "EXCEL.EXE was blocked by the attack surface reduction (ASR) rule".
-<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/07-Device%20Security%20Config/13.Timeline.jpg" width="600">
+<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/07-Device%20Security%20Config/13.Timeline.jpg" width="600">
 

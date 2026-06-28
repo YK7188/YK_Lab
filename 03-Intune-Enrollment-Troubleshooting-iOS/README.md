@@ -1,7 +1,7 @@
 ## Scenario
 An iOS device failed to enroll into Microsoft Intune, showing an error during the “Download management profile” step in the Company Portal app.
 
-<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/03-intune-enrollment-troubleshoot/01%20error.jpg" width="200">
+<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/03-intune-enrollment-troubleshoot/01%20error.jpg" width="200">
 
 ---
 
@@ -32,7 +32,7 @@ Download management profile
 ## Root cause
 
 The Apple MDM Push Certificate in Microsoft Intune was found to be expired.
-<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/03-intune-enrollment-troubleshoot/02.%20expired.jpg" width="700">
+<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/03-intune-enrollment-troubleshoot/02.%20expired.jpg" width="700">
 
 ## Resolution
 

@@ -33,7 +33,7 @@ Write-Output ($result | ConvertTo-Json -Compress)
 
 
 <br>
-<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/12-custom%20compliance/01.%20add_Bios_script.jpg" width="600">
+<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/12-custom%20compliance/01.%20add_Bios_script.jpg" width="600">
 <br>
 
 ---
@@ -69,7 +69,7 @@ This rule evaluates compliance based on the integer value returned by the script
 
 <br>
 
-<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/12-custom%20compliance/02.%20compliance%20policy.jpg" width="600">
+<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/12-custom%20compliance/02.%20compliance%20policy.jpg" width="600">
 <br>
 
 ---
@@ -81,13 +81,13 @@ This rule evaluates compliance based on the integer value returned by the script
 
 Results matched expectations after policy evaluation completed.
 
-<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/12-custom%20compliance/06.%20hostcompliant.jpg" width="600">
+<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/12-custom%20compliance/06.%20hostcompliant.jpg" width="600">
 <br>
 
 
 - The Company Portal displays the remediation information configured in the JSON file.
 
-<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/12-custom%20compliance/07.%20companyportal.jpg" width="600">
+<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/12-custom%20compliance/07.%20companyportal.jpg" width="600">
 <br>
 
 ---

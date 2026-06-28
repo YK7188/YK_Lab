@@ -44,7 +44,7 @@ For Configuration settings, select Microsoft Edge > Configure favorites (User) a
 ```
 <br>
 
-<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/17-Bookmarks%20on%20Windows%20and%20iPhone/01.config_settings.jpg" width="600">
+<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/17-Bookmarks%20on%20Windows%20and%20iPhone/01.config_settings.jpg" width="600">
 
 
 ## Step 2 — Verify on Endpoint
@@ -54,7 +54,7 @@ For Configuration settings, select Microsoft Edge > Configure favorites (User) a
 - They appear in an InPrivate window too.
 - Edge://policy can be useful in troubleshooting when the policy shows "Succeeded" in Intune but bookmarks do not appear.
 
-<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/17-Bookmarks%20on%20Windows%20and%20iPhone/02.bookmarks_appeared.jpg" width="400">
+<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/17-Bookmarks%20on%20Windows%20and%20iPhone/02.bookmarks_appeared.jpg" width="400">
 
 ---
 
@@ -78,7 +78,7 @@ For Configuration settings, select Microsoft Edge > Configure favorites (User) a
    Path: `Devices > Configuration > Import ADMX`
 
 
-<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/17-Bookmarks%20on%20Windows%20and%20iPhone/05.windows_admx_upload.jpg
+<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/17-Bookmarks%20on%20Windows%20and%20iPhone/05.windows_admx_upload.jpg
 " width="600">
    
 
@@ -109,7 +109,7 @@ Path: `Devices > Configuration > Import ADMX`
 
 All three ADMX templates were uploaded successfully as shown in the image.
 
-<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/17-Bookmarks%20on%20Windows%20and%20iPhone/15.admx_appear.jpg" width="600">
+<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/17-Bookmarks%20on%20Windows%20and%20iPhone/15.admx_appear.jpg" width="600">
 
 
 
@@ -133,7 +133,7 @@ Path: Devices > `Windows > Configuration > Create > Windows 10 and later > Templ
 
 For Configuration settings, select Managed Bookmarks and enter the same JSON as used in PART 1 — Edge on Windows. 
 
-<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/17-Bookmarks%20on%20Windows%20and%20iPhone/07.managed_bookmarks.jpg" width="600">
+<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/17-Bookmarks%20on%20Windows%20and%20iPhone/07.managed_bookmarks.jpg" width="600">
 
 
 ## Step 4 — Verify on Endpoint
@@ -152,7 +152,7 @@ For Configuration settings, select Managed Bookmarks and enter the same JSON as 
 
 Path: `Apps > iOS/iPadOS > Create > iOS store app`
 
-<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/17-Bookmarks%20on%20Windows%20and%20iPhone/08.Create_Edge_app.jpg" width="600">
+<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/17-Bookmarks%20on%20Windows%20and%20iPhone/08.Create_Edge_app.jpg" width="600">
 
 ## Step 2 — Create Edge configuration policy
 
@@ -166,7 +166,7 @@ https://learn.microsoft.com/en-us/deployedge/microsoft-edge-mobile-policies#mana
 
 -> ManagedFavorites
 
-<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/17-Bookmarks%20on%20Windows%20and%20iPhone/17.create_appconfig_edge.jpg" width="500">
+<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/17-Bookmarks%20on%20Windows%20and%20iPhone/17.create_appconfig_edge.jpg" width="500">
 
 
 ## Step 3 — Verify on Endpoint
@@ -175,7 +175,7 @@ https://learn.microsoft.com/en-us/deployedge/microsoft-edge-mobile-policies#mana
 - As long as the device is enrolled in Intune and the browser app is managed by Intune, the bookmarks appear regardless of which browser profile is signed in.
 - They appear in an InPrivate window too.
 
-<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/17-Bookmarks%20on%20Windows%20and%20iPhone/13.Edge_Policy.jpg" width="250">
+<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/17-Bookmarks%20on%20Windows%20and%20iPhone/13.Edge_Policy.jpg" width="250">
 
 ---
 
@@ -185,7 +185,7 @@ https://learn.microsoft.com/en-us/deployedge/microsoft-edge-mobile-policies#mana
 
 Path: `Apps > iOS/iPadOS > Create > iOS Store App`
 
-<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/17-Bookmarks%20on%20Windows%20and%20iPhone/14.Create_Google_app.jpg" width="600">
+<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/17-Bookmarks%20on%20Windows%20and%20iPhone/14.Create_Google_app.jpg" width="600">
 
 
 ## Step 2 — Create App Configuration Policy

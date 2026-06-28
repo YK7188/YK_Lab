@@ -46,7 +46,7 @@ Selected apps:
 - Microsoft Teams
 - Microsoft OneDrive
 
-<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/%20%20%20%2016-Mobile%20app%20configration/01.add_apps.jpg" width="600">
+<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/%20%20%20%2016-Mobile%20app%20configration/01.add_apps.jpg" width="600">
 
 <br>
 
@@ -54,7 +54,7 @@ Selected apps:
 
 Image from the policy wizard
 
-<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/%20%20%20%2016-Mobile%20app%20configration/02.data_protection.jpg" width="600">
+<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/%20%20%20%2016-Mobile%20app%20configration/02.data_protection.jpg" width="600">
 
 
 
@@ -73,7 +73,7 @@ Image from the policy wizard
 
 Image from the policy wizard
 
-<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/%20%20%20%2016-Mobile%20app%20configration/03.access_reqirements.jpg" width="600">
+<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/%20%20%20%2016-Mobile%20app%20configration/03.access_reqirements.jpg" width="600">
 
 
 |Setting|Value|
@@ -93,7 +93,7 @@ Image from the policy wizard
 
 Image from the policy wizard
 
-<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/%20%20%20%2016-Mobile%20app%20configration/04.conditional_launch.jpg" width="600">
+<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/%20%20%20%2016-Mobile%20app%20configration/04.conditional_launch.jpg" width="600">
 
 ### App conditions
 
@@ -124,7 +124,7 @@ When signing in, the following message appeared:
 
 > `Your organization is now protecting its data in this app.`
 
-<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/%20%20%20%2016-Mobile%20app%20configration/08.Initial_notice_protection.jpg" width="400">
+<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/%20%20%20%2016-Mobile%20app%20configration/08.Initial_notice_protection.jpg" width="400">
 
 
 ## 1️⃣ Data Protection Validation
@@ -139,7 +139,7 @@ A test image was shared from managed apps to both managed and unmanaged apps.
 
   - When the configuration was in effect, sharing was blocked with: `Sharing not allowed`
 
-    <img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/%20%20%20%2016-Mobile%20app%20configration/05.Files_blocked.jpg" width="400">
+    <img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/%20%20%20%2016-Mobile%20app%20configration/05.Files_blocked.jpg" width="400">
 
   - When the configuration was removed, sharing succeeded.
 
@@ -147,7 +147,7 @@ A test image was shared from managed apps to both managed and unmanaged apps.
 
   - When the configuration was in effect, sharing appeared to complete, but the received image could not be properly rendered as in the image below.
 
-    <img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/%20%20%20%2016-Mobile%20app%20configration/07.Image_FreeForm.jpg" width="400">
+    <img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/%20%20%20%2016-Mobile%20app%20configration/07.Image_FreeForm.jpg" width="400">
 
   - When the configuration was removed, the image displayed normally.
 
@@ -181,7 +181,7 @@ Tested:
 
 The behavior of this setting was unclear from the configuration description alone, so each option was tested individually.
 
-<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/%20%20%20%2016-Mobile%20app%20configration/12.receive_data_from_other_apps.jpg" width="600">
+<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/%20%20%20%2016-Mobile%20app%20configration/12.receive_data_from_other_apps.jpg" width="600">
 
 <br>
 
@@ -212,7 +212,7 @@ Observed behavior:
 
 <br>
   
-  <img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/%20%20%20%2016-Mobile%20app%20configration/13.OutlookBlocked_OrgData.jpg" width="300">
+  <img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/%20%20%20%2016-Mobile%20app%20configration/13.OutlookBlocked_OrgData.jpg" width="300">
 
 
 - OneDrive failed to receive data from Teams with:
@@ -221,7 +221,7 @@ Observed behavior:
 
 <br>
 
-  <img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/%20%20%20%2016-Mobile%20app%20configration/14.OneDrive_Blocked_OrgData.jpg" width="300">
+  <img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/%20%20%20%2016-Mobile%20app%20configration/14.OneDrive_Blocked_OrgData.jpg" width="300">
 
 - OneNote successfully received data from Teams.
 - Data from Files, Freeform, and Notes could not be shared into Outlook, OneDrive, or OneNote.
@@ -316,7 +316,7 @@ Tested:
 
 Observed behavior: `Your organization's data cannot be pasted here`
 
-<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/%20%20%20%2016-Mobile%20app%20configration/15.CannotBe_Pasted.jpg" width="400">
+<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/%20%20%20%2016-Mobile%20app%20configration/15.CannotBe_Pasted.jpg" width="400">
 
 <br>
 
@@ -377,11 +377,11 @@ Observed behavior:
 - Saving an attachment from Outlook to Dropbox failed with: `Save not allowed`
 
 <br>
-  <img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/%20%20%20%2016-Mobile%20app%20configration/16.save_not_allowed.jpg" width="300">
+  <img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/%20%20%20%2016-Mobile%20app%20configration/16.save_not_allowed.jpg" width="300">
 
 - OneDrive and Teams could send a test image to Dropbox, but the image could not be previewed properly.
 
-  <img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/%20%20%20%2016-Mobile%20app%20configration/17.Dropbox_no_preview.jpg" width="300">
+  <img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/%20%20%20%2016-Mobile%20app%20configration/17.Dropbox_no_preview.jpg" width="300">
 
 <br>
 - Saving/sending data from Teams and Outlook to OneDrive succeeded.
@@ -448,14 +448,14 @@ Observed behavior:
 - Device passcode existence enforcement worked consistently.
 
 <br>
-  <img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/%20%20%20%2016-Mobile%20app%20configration/20.Passcode_required.jpg" width="300">
+  <img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/%20%20%20%2016-Mobile%20app%20configration/20.Passcode_required.jpg" width="300">
  
 - Protected apps also required an Intune App PIN.
 - The Intune App PIN:
   - required 6 numeric digits
   - rejected simple combinations
     
-    <img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/%20%20%20%2016-Mobile%20app%20configration/19.AppPIN_required.jpg" width="300">
+    <img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/%20%20%20%2016-Mobile%20app%20configration/19.AppPIN_required.jpg" width="300">
 
 <br>
 consistent with the configured policy.

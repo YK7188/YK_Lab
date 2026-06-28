@@ -24,7 +24,7 @@ Open Windows Configuration Designer and select:
 
 Provision desktop devices
 
-<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/15-ppkg%20file%20creation/01.open_designer.jpg" width="600">
+<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/15-ppkg%20file%20creation/01.open_designer.jpg" width="600">
 
 
 ## Step 3 — Create provisioning package
@@ -37,7 +37,7 @@ Path: Set up device > Device name
 
 Example:  PC-%SERIAL%
 
-<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/15-ppkg%20file%20creation/02.designer_steps.jpg" width="600">
+<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/15-ppkg%20file%20creation/02.designer_steps.jpg" width="600">
 
 ### 2. Configure Entra ID enrollment and local admin
 
@@ -81,8 +81,8 @@ The device's "managed by" status shows Intune.
 
 Existing applications and user data remain intact
 
-<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/15-ppkg%20file%20creation/04.verify_endpoint.jpg" width="600">
-<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/15-ppkg%20file%20creation/05.verify_intune.jpg" width="600">
+<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/15-ppkg%20file%20creation/04.verify_endpoint.jpg" width="600">
+<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/15-ppkg%20file%20creation/05.verify_intune.jpg" width="600">
 
 ## Key points
 
