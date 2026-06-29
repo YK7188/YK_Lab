@@ -114,7 +114,7 @@ After deployment, policies are validated on the endpoint:
 
 - Troubleshooting reference:
   
-    → [08-Firewall rules not appearing on endpoint](/08-Firewall%20rules%20not%20appearing%20on%20endpoint/)
+    → [08-Firewall rules not appearing on endpoint](https://github.com/YK7188/YK_Lab/tree/main/07-Firewall-Rules-Not-Appearing-On-Endpoint)
 
 ---
 
