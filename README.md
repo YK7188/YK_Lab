@@ -81,6 +81,12 @@ This repository documents practical lab environments built to develop skills for
 
 ---
 
+## 📁 Endpoint Operations
+
+* [28-Remote-Administration-with-WinRM-and-PsExec](./28-Remote-Administration-with-WinRM-and-PsExec)
+
+---
+
 ## 📌 Notes
 
 * All labs were built and tested in a personal lab environment.
