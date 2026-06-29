@@ -151,5 +151,5 @@ Although the attack was blocked, the activity is still recorded in:
 `Microsoft Defender Portal → Device → Timeline`
 
 Observed the event "EXCEL.EXE was blocked by the attack surface reduction (ASR) rule".
-<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/07-Device%20Security%20Config/13.Timeline.jpg" width="600">
+<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/07-Device%20Security%20Config/13.Timeline.jpg" width="700">
 
