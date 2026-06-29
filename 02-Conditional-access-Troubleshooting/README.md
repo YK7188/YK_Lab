@@ -1,7 +1,9 @@
 ## Scenario
 
 A Conditional Access policy was created in Microsoft Entra ID to restrict Microsoft 365 access to Windows devices marked as compliant by Microsoft Intune.
-![Image](https://github.com/user-attachments/assets/098f900b-ca7f-4c46-adcc-9fb3e3a166f3)
+
+<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/02-CA_TS_Compliance/01.jpg" width="750">
+
 
 
 ---
@@ -14,7 +16,9 @@ The user attempted to access office.com and web applications from a Windows devi
 
 - Browser access (Edge, Chrome, Firefox)	> Access blocked as shown below
 
-![Image](https://github.com/user-attachments/assets/f3107ac0-846f-4123-ab06-b94051e79000)
+<br>
+<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/02-CA_TS_Compliance/02.jpg" width="350">
+
 
 
 ---
