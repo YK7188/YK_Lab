@@ -1,6 +1,6 @@
 ## Objective
 
-This lab simulates a real-world endpoint security baseline using:
+This lab simulates a real-world endpoint security using:
 - Microsoft Intune
 - Microsoft Defender Portal
 
