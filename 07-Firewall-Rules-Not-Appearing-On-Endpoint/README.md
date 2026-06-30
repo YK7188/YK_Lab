@@ -31,12 +31,6 @@ Although the policy shows as successfully applied, the rule does not appear in `
 
 **Firewall rules deployed via Intune (MDM) are not always visible in the default rule view in `wf.msc` or standard PowerShell queries.**
 
-This is because:
-
-- MDM-managed firewall rules are stored in a separate policy store
-- They are not displayed in the same way as locally configured rules
- 
-
 The rules can be verified using the following methods:
 
 - **Registry**
