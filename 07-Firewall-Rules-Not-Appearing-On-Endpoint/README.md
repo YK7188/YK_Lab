@@ -43,9 +43,9 @@ The rules can be verified using the following methods:
   : `Get-NetFirewallRule -PolicyStore ActiveStore`
 
 
-<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/08-FW%20rules%20policy%20TS/05.%20shown%20in%20regedit.jpg" width="600">
+<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/08-FW%20rules%20policy%20TS/05.%20shown%20in%20regedit.jpg" width="700">
 <img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/08-FW%20rules%20policy%20TS/06.%20shown%20in%20wf.msc.jpg" width="600">
-<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/08-FW%20rules%20policy%20TS/07.%20shown%20via%20Powershell.jpg" width="600">
+<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/08-FW%20rules%20policy%20TS/07.%20shown%20via%20Powershell.jpg" width="700">
 
 
 
