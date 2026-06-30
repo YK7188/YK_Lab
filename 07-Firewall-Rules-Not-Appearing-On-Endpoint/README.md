@@ -7,7 +7,6 @@ Although the policy shows as successfully applied, the rule does not appear in `
 
 <br>
 <img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/08-FW%20rules%20policy%20TS/03.%20FW%20rule%20in%20intune.jpg" width="600">
-<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/08-FW%20rules%20policy%20TS/02.%20rule%20not%20shown.jpg" width="600">
 
 ---
 
