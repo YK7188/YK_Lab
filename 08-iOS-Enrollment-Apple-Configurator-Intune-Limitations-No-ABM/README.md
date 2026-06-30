@@ -11,7 +11,7 @@ Test whether an iPhone can be enrolled into Microsoft Intune using Apple Configu
 ## Method
 
 1. Created MDM server in Configurator using: `https://enrollment.manage.microsoft.com`
-<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/09-ios-configurator-intune/04.%20serverURL.jpg" width="300">
+<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/09-ios-configurator-intune/04.%20serverURL.jpg" width="400">
 
 
 2. Prepared device:
@@ -40,10 +40,10 @@ Then: `The configuration for your iPhone could not be downloaded`
 2. The device serial number was imported and associated with the profile.
 
 3. The enrollment URL exported from Intune was also tested in Apple Configurator.
-<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/09-ios-configurator-intune/05.%20profile.jpg" width="700">
+<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/09-ios-configurator-intune/05.%20profile.jpg" width="800">
 
 4. Ensured that no restrictions were configured.
-<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/09-ios-configurator-intune/03.%20enrollment%20restrictions.jpg" width="700">
+<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/09-ios-configurator-intune/03.%20enrollment%20restrictions.jpg" width="800">
 
 -> The same error occurred: `The configuration for your iPhone could not be downloaded`
 
