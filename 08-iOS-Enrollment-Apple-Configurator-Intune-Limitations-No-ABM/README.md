@@ -67,19 +67,21 @@ Then: `The configuration for your iPhone could not be downloaded`
 
 ✔ Based on the evidence available at the time, it was assumed that Apple Business Manager might be required for Intune recognition during Setup Assistant enrollment.
 
-# Conclusion
+# Conclusion (May 2026)
 
-Even after assigning a Configurator enrollment profile and importing the device serial number, 
+Even after assigning a Configurator enrollment profile and importing the device serial number,
 the iPhone failed to download any enrollment configuration during Setup Assistant.
 
-This suggests that without Apple Business Manager, Intune cannot fully recognize the device
-for device-driven enrollment, and enrollment fails before user authentication.
+Based on the evidence available at the time, it was concluded that Apple Business Manager
+might be required for Apple Configurator enrollment.
+
+This assumption was later disproved by follow-up testing conducted in July 2026.
 
 <br>
 
 ---
 
-> # The below describes follow-up testing conducted in July 2026
+> # Follow-up Testing (July 2026)
 
 <br>
 
@@ -88,8 +90,6 @@ for device-driven enrollment, and enrollment fails before user authentication.
 # Method 1 - Setup Assistant Enrollment (Successful)
 
 Goal: Supervised + Setup Assistant Remote Management + Corporate-owned style enrollment
-
-> This result disproved the earlier assumption that Apple Business Manager was required for Apple Configurator enrollment.
   
 ## Steps on Intune side
 
@@ -110,7 +110,7 @@ Choose:
 
 Create a csv file that contains the test device's:
 
-Serial number,device details
+Serial number, device details
 
 Then go to:
 
@@ -197,7 +197,7 @@ Export Profile > Download SCEP Profile
 
 > It is mentioned that ACME profile does not work in the Microsoft article as of July 2026.
 
-## Steps on Intune side
+## Steps on Apple Configurator side
 
 Connect the wiped iPhone.
 
@@ -213,7 +213,7 @@ Adding a profile was attempted using both:
 - ACME profile
 - SCEP profile
 
-Howerver, both profiles failed during profile installation with: 0xFA1 (4001) although the procedure followed the Microsoft documentation referenced above.
+However, both profiles failed during profile installation with: 0xFA1 (4001) although the procedure followed the Microsoft documentation referenced above.
 
 <img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/09-ios-configurator-intune/Followup1/07.error_AddProfile.jpg" width="400">
 
@@ -221,14 +221,14 @@ Howerver, both profiles failed during profile installation with: 0xFA1 (4001) al
 
 # Final Findings
 
-| Scenario | Result |
-|----------|--------|
-| Generic enrollment URL (With user affinity) | Failed |
-| Exported profile URL (With user affinity) | Successful |
-| Supervised device without ABM (With user affinity) | Supported |
-| Intune enrollment without ABM (With user affinity) | Supported |
-| Company Portal requirement (With user affinity) | Required for user affinity enrollment |
-| Direct enrollment without user affinity | Unsuccessful in testing |
+| Scenario | Enrollment Type | Result |
+|----------|-----------------|--------|
+| Generic enrollment URL | Setup Assistant (User affinity) | Failed |
+| Exported profile URL | Setup Assistant (User affinity) | Successful |
+| Supervised device without ABM | Setup Assistant (User affinity) | Supported |
+| Intune enrollment without ABM | Setup Assistant (User affinity) | Supported |
+| Company Portal requirement | Setup Assistant (User affinity) | Required |
+| Direct enrollment | No user affinity | Unsuccessful in testing |
 
 
 
