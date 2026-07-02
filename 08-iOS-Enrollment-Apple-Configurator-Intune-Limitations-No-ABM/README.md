@@ -90,7 +90,10 @@ This assumption was later disproved by follow-up testing conducted in July 2026.
 # Method 1 - Setup Assistant Enrollment (Successful)
 
 Goal: Supervised + Setup Assistant Remote Management + Corporate-owned style enrollment
-  
+
+- Intended for corporate devices assigned to individual users. 
+- The device is enrolled into Intune and supervised, while Company Portal completes user association and Entra registration, enabling user-based management and policy assignment.
+
 ## Steps on Intune side
 
 ### Step 1 - Create a profile
@@ -176,6 +179,9 @@ Select:
 # Method 2 - Direct Enrollment without User Affinity (Unsuccessful)
 
 Goal: Supervised + No User Affinity + Corporate-owned style enrollment
+
+- Intended to target kiosk, shared, or other corporate-owned devices that do not have a dedicated user.
+- In this model, the device can be supervised and managed by Intune without requiring Company Portal or user sign-in.
 
 ## Steps on Intune side
 
