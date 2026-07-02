@@ -1,6 +1,7 @@
-> Labbed: May 2026
+>Labbed: May 2026
 
-> Editted: July 2026
+>Edited: July 2026
+
 
 # Objective
 Test whether an iPhone can be enrolled into Microsoft Intune using Apple Configurator without Apple Business Manager.
@@ -48,23 +49,23 @@ Then: `The configuration for your iPhone could not be downloaded`
 # Additional Testing — Enrollment Profile Assignment
 
 1. To rule out missing enrollment configuration, an Apple Configurator profile was created in Intune.
-<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/09-ios-configurator-intune/01.%20Profile%20Creation.jpg" width="700">
+<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/09-ios-configurator-intune/01.%20Profile%20Creation.jpg" width="800">
 
 2. The device serial number was imported and associated with the profile.
 
 3. The enrollment URL exported from Intune was also tested in Apple Configurator.
-<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/09-ios-configurator-intune/05.%20profile.jpg" width="800">
+<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/09-ios-configurator-intune/05.%20profile.jpg" width="900">
 
 4. Ensured that no restrictions were configured.
-<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/09-ios-configurator-intune/03.%20enrollment%20restrictions.jpg" width="800">
+<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/09-ios-configurator-intune/03.%20enrollment%20restrictions.jpg" width="900">
 
 -> The same error occurred: `The configuration for your iPhone could not be downloaded`
 
-# Analysis
+# Analysis (May 2026)
 
 ✔ Remote Management was triggered, but no enrollment configuration was successfully delivered to the device.
 
-✔ Without Apple Business Manager, the device is not recognized by Intune during Setup Assistant.
+✔ Based on the evidence available at the time, it was assumed that Apple Business Manager might be required for Intune recognition during Setup Assistant enrollment.
 
 # Conclusion
 
@@ -74,10 +75,13 @@ the iPhone failed to download any enrollment configuration during Setup Assistan
 This suggests that without Apple Business Manager, Intune cannot fully recognize the device
 for device-driven enrollment, and enrollment fails before user authentication.
 
+<br>
 
 ---
 
-> # The below describes follow-up testing of iPhone enrollment in July 2026
+> # The below describes follow-up testing conducted in July 2026
+
+<br>
 
 ---
 
@@ -85,6 +89,8 @@ for device-driven enrollment, and enrollment fails before user authentication.
 
 Goal: Supervised + Setup Assistant Remote Management + Corporate-owned style enrollment
 
+> This result disproved the earlier assumption that Apple Business Manager was required for Apple Configurator enrollment.
+  
 ## Steps on Intune side
 
 ### Step 1 - Create a profile
@@ -98,6 +104,8 @@ Choose:
 - User Affinity = Enroll with user affinity
 - Select where users must authenticate = Company Portal
 
+<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/09-ios-configurator-intune/Followup1/01.Create_Profile.jpg" width="600">
+
 ### Step 2 - Add the device
 
 Create a csv file that contains the test device's:
@@ -110,9 +118,13 @@ Devices > Enrollment > Apple > Apple Configurator > Devices
 
 and add the test device.
 
+<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/09-ios-configurator-intune/Followup1/02.Add_Device.jpg" width="800">
+
 ### Step 3 - Obtain the profile URL.
 
 Open the profile and choose Export profile to obtain the profile URL.
+
+<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/09-ios-configurator-intune/Followup1/03.Profile_URL.jpg" width="900">
 
 ## Steps on Apple Configurator side
 
@@ -124,6 +136,8 @@ Settings > Servers > +
 
 and add the profile URL obtained from Intune.
 
+<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/09-ios-configurator-intune/Followup1/04.AddServer.jpg" width="400">
+
 ### Step 2 - Configure the device with Apple Configurator
 
 Choose the device and Click Prepare.
@@ -134,9 +148,13 @@ Select:
 - Allow devices to pair with other computers
 - Server: The one added in Step 1
 
+<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/09-ios-configurator-intune/Followup1/05.preparedev.jpg" width="400">
+
 ## Result
 
-Setup completed successfully and the device appeared in Intune with Supervised = Yes.
+- Setup completed successfully and the device appeared in Intune with `Supervised = Yes`.
+- This result disproved the earlier assumption that Apple Business Manager was required for Apple Configurator enrollment.
+- The exact reason for the earlier failure could not be determined. Possible causes include delayed propagation of Intune configuration changes or differences in enrollment configuration.
 
 ## Observation Note
 
@@ -153,10 +171,11 @@ Setup completed successfully and the device appeared in Intune with Supervised =
 
 > This suggests that Apple Configurator enrollment establishes Intune MDM management and supervision first, while Company Portal later completes user association and Entra registration.
   
-
 ---
 
 # Method 2 - Direct Enrollment without User Affinity (Unsuccessful)
+
+Goal: Supervised + No User Affinity + Corporate-owned style enrollment
 
 ## Steps on Intune side
 
@@ -174,7 +193,9 @@ User Affinity = Enroll without user affinity
 
 Go to the profile created above and: 
 
-Export Profile > Download ACME Profile
+Export Profile > Download SCEP Profile
+
+> It is mentioned that ACME profile does not work in the Microsoft article as of July 2026.
 
 ## Steps on Intune side
 
@@ -184,9 +205,7 @@ Then:
 
 Add > Profiles
 
-to select the downloaded .mobileconfig file.
-
-Configurator pushes the enrollment profile directly to the device.
+to select the downloaded .mobileconfig file so that Configurator will push the enrollment profile directly to the device.
 
 ## Result
 
@@ -196,8 +215,20 @@ Adding a profile was attempted using both:
 
 Howerver, both profiles failed during profile installation with: 0xFA1 (4001) although the procedure followed the Microsoft documentation referenced above.
 
+<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/09-ios-configurator-intune/Followup1/07.error_AddProfile.jpg" width="400">
 
+---
 
+# Final Findings
+
+| Scenario | Result |
+|----------|--------|
+| Generic enrollment URL (With user affinity) | Failed |
+| Exported profile URL (With user affinity) | Successful |
+| Supervised device without ABM (With user affinity) | Supported |
+| Intune enrollment without ABM (With user affinity) | Supported |
+| Company Portal requirement (With user affinity) | Required for user affinity enrollment |
+| Direct enrollment without user affinity | Unsuccessful in testing |
 
 
 
