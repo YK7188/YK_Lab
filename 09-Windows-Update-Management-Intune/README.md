@@ -52,7 +52,7 @@ After assigning a Feature Update Policy for 24H2, the test device
 `Pending restart for Windows 11 23H2`
 
 <br>
-<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/10-Lab%3A%20Windows%20Update%20Management%20with%20Intune/04.%2023H2_Downloaded.jpg" width="600">
+<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/%20%20%20%2009-Windows-Update-Management-Intune/04.%2023H2_Downloaded.jpg" width="600">
 
 <br>
 
@@ -91,32 +91,31 @@ Path: `Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\current\devi
 
 ✔ Additional observation
 
-When the setting `"Option to check for Windows updates" = disabled` was applied,
+When the setting `"Option to check for Windows updates" = Disabled` was applied,
 
 the "settings are managed by your organization" message appeared.
 
 <br>
-<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/10-Lab%3A%20Windows%20Update%20Management%20with%20Intune/14.%20managed%20by%20org%20appears.jpg" width="600">
+<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/%20%20%20%2009-Windows-Update-Management-Intune/14.%20managed%20by%20org%20appears.jpg" width="600">
 
 <br>
 
-> Conclusion: The presence of the message depends on UX-impacting restrictions,
-not simply whether policies are applied.
+> Conclusion: The presence of the message depends on UX-impacting restrictions, not simply whether policies are applied.
 
 ---
 
 ## Create Device configuration
 
-Path: `Devices > Windows > Configuration > Create New Policy > Settings catalog > `
+Path: `Devices > Windows > Configuration > Create New Policy > Settings catalog > Windows update for business`
 
 - Allow Auto Update > Auto install the update and then notify the user to schedule a device restart. Updates are downloaded automatically
 - Allow Optional Content > Don't receive optional updates
-- Disable WFfB Safeguards > Disabled (safeguards enabled)
+- Disable WUfB Safeguards > Disabled (safeguards enabled)
 - Manage Preview Builds > Disable Preview builds
 
 
 <br>
-<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/10-Lab%3A%20Windows%20Update%20Management%20with%20Intune/03.%20DevConfig.jpg" width="600">
+<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/%20%20%20%2009-Windows-Update-Management-Intune/03.%20DevConfig.jpg" width="600">
 
 ---
 
