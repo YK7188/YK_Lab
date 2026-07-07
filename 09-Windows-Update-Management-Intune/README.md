@@ -115,7 +115,7 @@ Path: `Devices > Windows > Configuration > Create New Policy > Settings catalog 
 
 
 <br>
-<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/%20%20%20%2009-Windows-Update-Management-Intune/03.%20DevConfig.jpg" width="600">
+<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/%20%20%20%2009-Windows-Update-Management-Intune/03.%20DevConfig.jpg" width="650">
 
 ---
 
@@ -125,7 +125,7 @@ After assigning the device configuration:
 - Devices reported Conflict in check-in status
 
 <br>
-<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/%20%20%20%2009-Windows-Update-Management-Intune/17.%20conflict_deviceconfig.jpg" width="600">
+<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/%20%20%20%2009-Windows-Update-Management-Intune/17.%20conflict_deviceconfig.jpg" width="650">
 
 <br>
 
@@ -143,7 +143,7 @@ The conflict also appeared on the assigned Update Ring:
 - Adjusted settings to remove duplication
 
 <br>
-<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/%20%20%20%2009-Windows-Update-Management-Intune/15.%20conflict%20list.jpg" width="600">
+<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/%20%20%20%2009-Windows-Update-Management-Intune/15.%20conflict%20list.jpg" width="650">
 
 <br>
 
