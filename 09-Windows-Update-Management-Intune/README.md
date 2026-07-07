@@ -21,7 +21,7 @@ Path: `Devices > Windows Updates > Update rings > Create Profile`
   - Grace period: 2 days
 
 <br>
-<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/%20%20%20%2009-Windows-Update-Management-Intune/01.%20updatering.jpg" width="600">
+<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/%20%20%20%2009-Windows-Update-Management-Intune/01.%20updatering.jpg" width="650">
 
 ✔ Windows Update driver delivery may introduce instability depending on hardware and driver quality
 
@@ -38,7 +38,7 @@ Path: `Devices > Windows Updates > Feature updates > Create Profile`
 - Feature update to deploy > Windows 11, version 24H2
 
 <br>
-<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/10-Lab%3A%20Windows%20Update%20Management%20with%20Intune/02.%20featureUD_config.jpg" width="600">
+<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/%20%20%20%2009-Windows-Update-Management-Intune/02.%20featureUD_config.jpg" width="650">
 
 ---
 
