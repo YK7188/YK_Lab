@@ -32,7 +32,7 @@ Therefore, the synchronization wizard displayed:
 
 Continue without matching all UPN suffixes to verified domains
 
-<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/29-Hybrid-Setup/12.NoMatchingUPN.jpg" width="650">
+<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/29-Hybrid-Setup/12.NoMatchingUPN.jpg" width="650">
 
 For this lab:
 
@@ -42,13 +42,13 @@ For this lab:
 
 > Available and verified domains can be reviewed in **Microsoft Entra ID → Domain names**.
 
-<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/29-Hybrid-Setup/05.DomainNames.jpg" width="650">
+<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/29-Hybrid-Setup/05.DomainNames.jpg" width="650">
 
 ### Source Anchor
 
 Since the environment contains a single Active Directory forest, **Users are represented only once across all directories** was selected. This allows Microsoft Entra Connect to uniquely identify each synchronized object without cross-forest matching.
 
-<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/29-Hybrid-Setup/08.Wizard_SourceAnchor.jpg" width="650">
+<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/29-Hybrid-Setup/08.Wizard_SourceAnchor.jpg" width="650">
 
 ### Deployment
 
@@ -64,7 +64,7 @@ Since the environment contains a single Active Directory forest, **Users are rep
 
 After the initial synchronization completes, open miisclient and confirm that tasks appear as success.
 
- <img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/29-Hybrid-Setup/11.Import_Success.jpg" width="650">
+ <img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/29-Hybrid-Setup/11.Import_Success.jpg" width="650">
 
 > Manual synchronization:
 >
@@ -76,7 +76,7 @@ After the initial synchronization completes, open miisclient and confirm that ta
 
 - Synced users appeared in Entra ID successfully.
   
- <img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/29-Hybrid-Setup/13.ApperOnEntra.jpg" width="650">
+ <img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/29-Hybrid-Setup/13.ApperOnEntra.jpg" width="650">
 
 - Confirmed that synchronized users could successfully authenticate to Microsoft 365 using the generated Microsoft Entra sign-in name.
 
