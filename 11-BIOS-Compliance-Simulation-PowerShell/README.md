@@ -5,21 +5,21 @@ Validate how a custom compliance policy is configured and evaluated in Intune us
 
 ## Add script to collect BIOS version
 
-Path: `Devices → Compliance → Scripts > Add > Windows 10 and later`
+Path: `Devices > Compliance > Scripts > Add > Windows 10 and later`
 
 Add the script below. It collects the BIOS version (format: xx.yy.zz) and converts it into a comparable integer (xxyyzz).
 
-<pre>
-$raw = (Get-CimInstance Win32_BIOS).SMBIOSBIOSVersion
+```
+$raw = (Get-CimInstance -ClassName Win32_BIOS).SMBIOSBIOSVersion
 
-if ($raw -match '^\d+(\.\d+)+$') {
-    $version = [version]$raw
+if ($raw -match '(?<!\d)(\d+)\.(\d+)(?:\.(\d+))?') {
+    $major = [int]$Matches[1]
+    $minor = [int]$Matches[2]
+    $build = if ($Matches[3]) { [int]$Matches[3] } else { 0 }
 
-    # Convert to comparable integer: 1.42.0 → 14200
-    $normalized = ($version.Major * 10000) + ($version.Minor * 100) + $version.Build
+    $normalized = ($major * 10000) + ($minor * 100) + $build
 }
 else {
-    # Fallback for non-standard values (e.g. VM)
     $normalized = 0
 }
 
@@ -27,10 +27,8 @@ $result = @{
     BIOSVersion = $normalized
 }
 
-# Important: Explicit output for Intune
 Write-Output ($result | ConvertTo-Json -Compress)
-</pre> 
-
+```
 
 <br>
 <img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/12-custom%20compliance/01.%20add_Bios_script.jpg" width="600">
