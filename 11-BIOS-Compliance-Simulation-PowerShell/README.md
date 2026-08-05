@@ -1,4 +1,5 @@
 ## Objective
+
 Validate how a custom compliance policy is configured and evaluated in Intune using a BIOS version check.
 
 ---
@@ -31,14 +32,14 @@ Write-Output ($result | ConvertTo-Json -Compress)
 ```
 
 <br>
-<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/12-custom%20compliance/01.%20add_Bios_script.jpg" width="600">
+<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/12-custom%20compliance/08.script.jpg" width="600">
 <br>
 
 ---
 
 ## Create compliance policy
 
-Path: `Devices → Compliance > Policies > Create Policy > Windows 10 and later`
+Path: `Devices > Compliance > Policies > Create Policy > Windows 10 and later`
 
 Upload the JSON file below during policy creation.
 
