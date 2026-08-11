@@ -9,7 +9,7 @@
 
 - Although the role assignment appears correct, no devices are displayed in the **Devices** blade.
 
-<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/titbits/01-Device_not_shown_IntuneRole/04.jpg" width="600">
+<img src="https://raw.githubusercontent.com/YK7188/YK_Lab/main/docs/images/titbits/01-Device_not_shown_IntuneRole/04.jpg" width="600">
 
 ---
 
@@ -26,7 +26,7 @@
 
 In this lab environment, enabling **Managed devices > Read** displays the target devices. Disabling the permission removes them from the **Devices** blade.
 
-<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/titbits/01-Device_not_shown_IntuneRole/02.jpg" width="600">
+<img src="https://raw.githubusercontent.com/YK7188/YK_Lab/main/docs/images/titbits/01-Device_not_shown_IntuneRole/02.jpg" width="600">
 
 ---
 
@@ -36,4 +36,4 @@ In this lab environment, enabling **Managed devices > Read** displays the target
   - The device has a matching Scope Tag.
   - The custom Intune role includes **Managed devices > Read**.
 
-<img src="https://github.com/YK7188/YK_Lab1/blob/main/docs/images/titbits/01-Device_not_shown_IntuneRole/03.jpg" width="600">
+<img src="https://raw.githubusercontent.com/YK7188/YK_Lab/main/docs/images/titbits/01-Device_not_shown_IntuneRole/03.jpg" width="600">
