@@ -87,6 +87,12 @@ This repository documents practical lab environments built to develop skills for
 
 ---
 
+## 📁 Endpoint Operations
+
+* [[01-CustomIntuneRone_DeviceNotShown]](https://github.com/YK7188/YK_Lab/tree/main/Titbits/01-CustomIntuneRone_DeviceNotShown)
+
+---
+
 ## 📌 Notes
 
 * All labs were built and tested in a personal lab environment.
