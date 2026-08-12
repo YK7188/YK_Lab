@@ -78,13 +78,13 @@ This repository documents practical lab environments built to develop skills for
 
 * [12 - GPO Simulation (On-Prem)](./12-GPO-Simulation-On-Prem)
 * [17 - Hybrid PKI Simulation](./17-Hybrid-PKI-Simulation)
-
+* [29-Hybrid-Setup_User-Identity](./29-Hybrid-Setup_User-Identity)
 
 ---
 
 ## 📁 Endpoint Operations
 
-* [29-Hybrid-Setup_User-Identity](./29-Hybrid-Setup_User-Identity)
+* [28-Remote-Administration-with-WinRM-and-PsExec](./28-Remote-Administration-with-WinRM-and-PsExec)
 
 ---
 
