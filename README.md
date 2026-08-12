@@ -78,19 +78,19 @@ This repository documents practical lab environments built to develop skills for
 
 * [12 - GPO Simulation (On-Prem)](./12-GPO-Simulation-On-Prem)
 * [17 - Hybrid PKI Simulation](./17-Hybrid-PKI-Simulation)
-* [29-Hybrid-Setup_User-Identity](./29-Hybrid-Setup_User-Identity)
+* [29 - Hybrid-Setup_User-Identity](./29-Hybrid-Setup_User-Identity)
 
 ---
 
 ## 📁 Endpoint Operations
 
-* [28-Remote-Administration-with-WinRM-and-PsExec](./28-Remote-Administration-with-WinRM-and-PsExec)
+* [28 - Remote-Administration-with-WinRM-and-PsExec](./28-Remote-Administration-with-WinRM-and-PsExec)
 
 ---
 
 ## 📁 Titbits
 
-* [01-CustomIntuneRone_DeviceNotShown](https://github.com/YK7188/YK_Lab/tree/main/Titbits/01-CustomIntuneRone_DeviceNotShown)
+* [01 - CustomIntuneRone_DeviceNotShown](https://github.com/YK7188/YK_Lab/tree/main/Titbits/01-CustomIntuneRone_DeviceNotShown)
 
 ---
 
