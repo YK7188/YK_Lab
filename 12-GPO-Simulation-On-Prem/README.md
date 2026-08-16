@@ -24,7 +24,7 @@ Path:
 → Remote Desktop Session Host
 → Security`
 
-<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/13-GPO%20simulation/01.%20NLA_Config.jpg" width="600">
+<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/13-GPO%20simulation/01.%20NLA_Config.jpg" width="700">
 
 <br>
 
@@ -56,7 +56,7 @@ Path:
 → Account Policies
 → Password Policy`
 
-<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/13-GPO%20simulation/02.%20Password_config.jpg" width="600">
+<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/13-GPO%20simulation/02.%20Password_config.jpg" width="700">
 
 <br>
 
@@ -77,7 +77,7 @@ Path:
 - Configure Automatic Updates > Enabled
   - 3 - Auto download and notify for install
 
-<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/13-GPO%20simulation/03.%20windows_update_auto.jpg" width="600">
+<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/13-GPO%20simulation/03.%20windows_update_auto.jpg" width="700">
 
 <br>
 
@@ -93,7 +93,7 @@ Using Group Policy Results in Group Policy Management Console:
 
 The configured GPOs apper under Applied GPOs.
 
-<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/13-GPO%20simulation/04.%20validation%20on%20server.jpg" width="600">
+<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/13-GPO%20simulation/04.%20validation%20on%20server.jpg" width="700">
 
 ### 2. Client-side validation
 
