@@ -45,10 +45,17 @@ Path:
 
 ## Part 2 — Password Policy
 
-Policy: Default Domain Policy (edited)
-> Note: Password policies must be configured at the domain level to apply to domain users.
+Policy: Default Domain Policy
+
+> Note: Password policies for domain accounts must be configured at the domain level.
 > 
-> The domain password policy applies to domain accounts and is configured at the domain level. A password policy in a GPO linked to an OU does not apply to domain users in that OU; if the OU contains member computers, it can instead govern local accounts on those computers.
+> A password policy in a GPO linked to an OU does not apply to domain users in that OU. If the OU contains member computers, it can instead govern the local accounts > on those computers.
+> 
+> Different password policies for specific users or security groups can be configured using Fine-Grained Password Policies (FGPP):
+> 
+> Active Directory Administrative Center → your domain → System → Password Settings Container → New → Password Settings
+
+<br>
 
 Path:
 `Computer Configuration
