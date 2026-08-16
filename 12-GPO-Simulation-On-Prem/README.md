@@ -47,6 +47,8 @@ Path:
 
 Policy: Default Domain Policy (edited)
 > Note: Password policies must be configured at the domain level to apply to domain users.
+> 
+> The domain password policy applies to domain accounts and is configured at the domain level. A password policy in a GPO linked to an OU does not apply to domain users in that OU; if the OU contains member computers, it can instead govern local accounts on those computers.
 
 Path:
 `Computer Configuration
