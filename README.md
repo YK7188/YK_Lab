@@ -79,6 +79,8 @@ This repository documents practical lab environments built to develop skills for
 * [12 - GPO Simulation (On-Prem)](./12-GPO-Simulation-On-Prem)
 * [17 - Hybrid PKI Simulation](./17-Hybrid-PKI-Simulation)
 * [29 - Hybrid-Setup_User-Identity](./29-Hybrid-Setup_User-Identity)
+* [30-Hybrid-Setup_Device-Identity](./30-Hybrid-Setup_Device-Identity)
+* [31-IntuneEnrollment_HybridDevices](./31-IntuneEnrollment_HybridDevices)
 
 ---
 
