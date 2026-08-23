@@ -1,4 +1,4 @@
-﻿> Labbed: Aug 2026
+> Labbed: Aug 2026
 
 # Scenario
 
@@ -16,13 +16,13 @@ This lab simulates the scenario using the synchronized Hybrid Microsoft Entra jo
 
 HBPC1 is currently managed by Configuration Manager for Windows updates. As shown in the image, the device is compliant with a deployed cumulative update.
 
-<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/32-SCCM_to_Intune_Transition/01.jpg" width="600">
+<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/32-CoManagement_Workload_Transition_SCCM_to_Intune/01.jpg" width="600">
 
 ### 2. Prepare the Intune policy
 
 Create an Update Ring for HBPC1 in Intune.
 
-<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/32-SCCM_to_Intune_Transition/02.jpg" width="600">
+<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/32-CoManagement_Workload_Transition_SCCM_to_Intune/02.jpg" width="600">
 
 ### 3. Move Windows Update policies to Pilot Intune
 
@@ -32,11 +32,11 @@ On the SCCM server, open the ConfigMgr console and go to:
 
 Change **Windows Update policies** from **Configuration Manager** to **Pilot Intune**.
 
-<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/32-SCCM_to_Intune_Transition/03.jpg" width="400">
+<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/32-CoManagement_Workload_Transition_SCCM_to_Intune/03.jpg" width="400">
 
 Go to the **Staging** tab and, for **Windows Update policies**, select the collection containing HBPC1.
 
-<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/32-SCCM_to_Intune_Transition/04.jpg" width="400">
+<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/32-CoManagement_Workload_Transition_SCCM_to_Intune/04.jpg" width="400">
 
 ### 4. Stop ConfigMgr Software Updates for HBPC1
 
@@ -50,7 +50,7 @@ Select **Software Updates** and set:
 
 > The Default Client Settings have Enable software updates on clients set to Yes, so the custom Client Settings override this setting for the pilot device.
 
-<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/32-SCCM_to_Intune_Transition/06.jpg" width="600">
+<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/32-CoManagement_Workload_Transition_SCCM_to_Intune/06.jpg" width="600">
 
 Deploy the custom Client Settings to the target device collection.
 
@@ -63,11 +63,11 @@ Under **Actions**, the following actions are no longer available:
 - Software Updates Scan Cycle
 - Software Updates Deployment Evaluation Cycle
 
-<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/32-SCCM_to_Intune_Transition/08.jpg" width="400">
+<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/32-CoManagement_Workload_Transition_SCCM_to_Intune/08.jpg" width="400">
 
 In the Intune admin center, the Update Ring also shows the device check-in status as **Succeeded**.
 
-<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/32-SCCM_to_Intune_Transition/07.jpg" width="600">
+<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/32-CoManagement_Workload_Transition_SCCM_to_Intune/07.jpg" width="600">
 
 > **Note:** A successful policy status in Intune confirms that the policy was processed successfully, but reporting should not be treated as the sole verification of the endpoint's effective configuration. In a production migration, verify the resulting settings on pilot devices before expanding the rollout.
 
@@ -79,13 +79,13 @@ In the Intune admin center, the Update Ring also shows the device check-in statu
 
 HBPC1 is currently managed by Configuration Manager for Endpoint Protection. As shown in the image, the device's **Endpoint Protection Deployment State** appears as **Managed**.
 
-<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/32-SCCM_to_Intune_Transition/09.jpg" width="600">
+<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/32-CoManagement_Workload_Transition_SCCM_to_Intune/09.jpg" width="600">
 
 ### 2. Prepare the Intune policy
 
 Create a Microsoft Defender Antivirus policy for HBPC1 in Intune.
 
-<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/32-SCCM_to_Intune_Transition/11.jpg" width="600">
+<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/32-CoManagement_Workload_Transition_SCCM_to_Intune/11.jpg" width="600">
 
 ### 3. Move Endpoint Protection to Pilot Intune
 
@@ -101,17 +101,17 @@ In the ConfigMgr console, use Client Settings to set:
 
 for HBPC1.
 
-<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/32-SCCM_to_Intune_Transition/10.jpg" width="600">
+<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/32-CoManagement_Workload_Transition_SCCM_to_Intune/10.jpg" width="600">
 
 ### 5. Verification
 
 In the Intune admin center, the Defender Antivirus policy shows the device check-in status as **Succeeded**.
 
-<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/32-SCCM_to_Intune_Transition/12.jpg" width="600">
+<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/32-CoManagement_Workload_Transition_SCCM_to_Intune/12.jpg" width="600">
 
 After the workload transition, the device's **Endpoint Protection Deployment State** changes to **Managed by Microsoft Intune**.
 
-<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/32-SCCM_to_Intune_Transition/16.jpg" width="600">
+<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/32-CoManagement_Workload_Transition_SCCM_to_Intune/16.jpg" width="600">
 
 ---
 
@@ -125,4 +125,5 @@ HBPC1 was used as a pilot device to transition two co-management workloads from 
 | Endpoint protection | Configuration Manager | Pilot Intune |
 
 The migration demonstrates how individual co-management workloads can be moved gradually to Intune while other workloads remain under Configuration Manager control.
+
 
