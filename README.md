@@ -81,6 +81,8 @@ This repository documents practical lab environments built to develop skills for
 * [29 - Hybrid-Setup_User-Identity](./29-Hybrid-Setup_User-Identity)
 * [30-Hybrid-Setup_Device-Identity](./30-Hybrid-Setup_Device-Identity)
 * [31-IntuneEnrollment_HybridDevices](./31-IntuneEnrollment_HybridDevices)
+* [32-CoManagement_Workload_Transition_SCCM_to_Intune](./32-CoManagement_Workload_Transition_SCCM_to_Intune)
+
 
 ---
 
