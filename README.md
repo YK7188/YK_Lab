@@ -82,7 +82,7 @@ This repository documents practical lab environments built to develop skills for
 * [30-Hybrid-Setup_Device-Identity](./30-Hybrid-Setup_Device-Identity)
 * [31-IntuneEnrollment_HybridDevices](./31-IntuneEnrollment_HybridDevices)
 * [32-CoManagement_Workload_Transition_SCCM_to_Intune](./32-CoManagement_Workload_Transition_SCCM_to_Intune)
-
+* [33-ConfigMgr_CloudAttach](https://github.com/YK7188/YK_Lab/tree/main/33-ConfigMgr_CloudAttach)
 
 ---
 
