@@ -47,7 +47,8 @@ This repository documents practical lab environments built to develop skills for
 * [21 - Android App Configuration Simulation](./21-Android-App-Configuration-Simulation)
 * [22 - Intune Initial Setup Troubleshooting](./22-Intune-Initial-Setup-Troubleshooting)
 * [27 - Intune VPN Profiles & Certificate Deployment](./27-Intune-VPN-Profiles-Certificate-Deployment)
-  
+* [34 - USBAccessControl_withIntune](./34-USBAccessControl_withIntune)
+
 ---
 
 ## 📁 Microsoft 365
