@@ -16,7 +16,7 @@ The linked page redirects to the trial option in the Microsoft 365 admin center.
 
 ---
 
-## Assign license to a test user
+## Assign license to a test user (Remote Help support operator)
 
 Assign the Microsoft Intune Remote Help license in the Microsoft 365 admin center.
 
