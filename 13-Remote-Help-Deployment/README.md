@@ -16,7 +16,7 @@ The linked page redirects to the trial option in the Microsoft 365 admin center.
 
 ---
 
-## Assign license to a test user (Remote Help support operator)
+## Assign license to a test user (Remote Help Support Operator)
 
 Assign the Microsoft Intune Remote Help license in the Microsoft 365 admin center.
 
@@ -44,7 +44,7 @@ Path: `Tenant administration > Remote Help > Settings`
 
 ---
 
-## Deploy Remote Help Client
+## Deploy Remote Help Client to End User Devices
 
 ### 1. Download the installer
 Download from: 
