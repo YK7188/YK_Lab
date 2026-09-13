@@ -3,9 +3,9 @@
 ## Objective
 Onboard an existing device (no wipe) using a provisioning package.
 
-Join to Microsoft Entra ID
-Enroll into Microsoft Intune
-Preserve existing apps and user data
+- Join to Microsoft Entra ID
+- Enroll into Microsoft Intune
+- Preserve existing apps and user data
 
 ---
 
@@ -41,7 +41,7 @@ Example:  PC-%SERIAL%
 
 ### 2. Configure Entra ID enrollment and local admin
 
-Path (Entra ID Enrollment):
+Path (Entra ID Enrollment as an example):
 
 Account management > Manage organization/school accounts
 - Select Enroll in Azure AD (Entra ID)
