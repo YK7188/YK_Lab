@@ -126,7 +126,7 @@ When signing in, the following message appeared:
 
 > `Your organization is now protecting its data in this app.`
 
-<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/%20%20%20%2016-Mobile%20app%20configration/08.Initial_notice_protection.jpg" width="400">
+<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/%20%20%20%2016-Mobile%20app%20configration/08.Initial_notice_protection.jpg" width="300">
 
 
 ## 1️⃣ Data Protection Validation
@@ -141,7 +141,7 @@ A test image was shared from managed apps to both managed and unmanaged apps.
 
   - When the configuration was in effect, sharing was blocked with: `Sharing not allowed`
 
-    <img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/%20%20%20%2016-Mobile%20app%20configration/05.Files_blocked.jpg" width="400">
+    <img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/%20%20%20%2016-Mobile%20app%20configration/05.Files_blocked.jpg" width="300">
 
   - When the configuration was removed, sharing succeeded.
 
@@ -173,7 +173,7 @@ Tested:
 #### Key observations
 
 - Sharing restrictions behaved differently depending on the destination app.
-- Some apps (AirDrop, Messages and Mail) were completely removed from the iOS share sheet.
+- Some apps (AirDrop, Messages and Mail) were completely removed from the iOS share sheet (visibly not shown as available option).
 - Some apps displayed explicit blocking messages.
 - Some apps accepted the shared data but could not properly render it.
 
@@ -214,12 +214,12 @@ Observed behavior:
 
 <br>
   
-  <img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/%20%20%20%2016-Mobile%20app%20configration/13.OutlookBlocked_OrgData.jpg" width="300">
+  <img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/%20%20%20%2016-Mobile%20app%20configration/13.Outlook_Blocked_OrgData.jpg" width="300">
 
 
 - OneDrive failed to receive data from Teams with:
 
-- Sign in to Personal OneDrive
+  Sign in to Personal OneDrive error
 
 <br>
 
