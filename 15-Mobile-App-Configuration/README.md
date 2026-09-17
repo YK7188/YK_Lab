@@ -103,6 +103,8 @@ Image from the policy wizard
 |Offline grace period|10080 (7days) > Block access (minutes)|
 |Offline grace period|90 (days) > Wipe data (days)|
 
+> Offline grace period > : Once the configured offline threshold is exceeded, the user must reconnect to the network and reauthenticate. If authentication succeeds, the offline grace-period timer is reset. If authentication fails, the app performs a blocking / wipe of the user's corporate account and data. This does not block / wipe the device or unrelated personal data.
+
 <br>
 
 ### Device conditions
