@@ -1,3 +1,5 @@
+> Labed: April 2026
+
 ## Objective
 
 This lab simulates a real-world endpoint security using:
