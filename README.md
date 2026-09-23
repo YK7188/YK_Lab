@@ -30,7 +30,7 @@ This repository documents practical lab environments built to develop skills for
 * [02 - Conditional Access Troubleshooting](./02-Conditional-access-Troubleshooting)
 * [19 - RDP Troubleshooting Entra ID Joined](./19-RDP-Troubleshooting-EntraID-Joined)
 * [20 - Validate MFA Functions](./20-Validate-MFA-Functions)
-* [35-AccessManagementSimulation_Contractor](./35-AccessManagementSimulation_Contractor)
+* [35 - AccessManagementSimulation_Contractor](./35-AccessManagementSimulation_Contractor)
 
 
 ---
