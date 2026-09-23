@@ -33,7 +33,7 @@ The contractor requires:
 
 Navigate to:
 
-Microsoft Entra admin center 竊・Identity Governance 竊・Entitlement Management
+Microsoft Entra admin center > Identity Governance > Entitlement Management
 
 Create a catalog for the contractor project.
 
@@ -95,7 +95,7 @@ Set the assignment expiration to 90 days and configure the remaining lifecycle s
 
 ---
 
-# Step 3 窶・Test Self-Service Access, Approval and Review
+# Step 3 - Test Self-Service Access, Approval and Review
 
 ### 1. Request access as the contractor
 
@@ -144,14 +144,10 @@ The approved review retains the contractor's existing Access Package assignment.
 ### 5. Resulting workflow
 
 ```
-Contractor requests access
-          竊・
-Manager approval
-          竊・
-Access Package assigned
-          竊・
-Project resources granted
-          竊・
+Contractor requests access >
+Manager approval >
+Access Package assigned >
+Project resources granted >
 Periodic Access Reviews
 ```
 
@@ -180,7 +176,7 @@ Activation settings
 |Custom extensions| No|
 
 <br>
-<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/35-AccessManagementSimulation_Contractor/12.png" width="600">
+<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/35-AccessManagementSimulation_Contractor/12.png" width="400">
 
 > PIM activation settings are configured for the role rather than separately for each eligible user.
 
@@ -206,7 +202,7 @@ PIM > Microsoft Entra roles > Manage > Assignments > Add assignments
 Choose **Eligible** for **Assignment type** and configure the assignment start and end dates to align with the contractor engagement.
 
 <br>
-<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/35-AccessManagementSimulation_Contractor/13.png" width="500">
+<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/35-AccessManagementSimulation_Contractor/13.png" width="400">
 
 ### 4. Verification
 
@@ -217,25 +213,18 @@ When the contractor logs into Entra ID, the role appears as eligible. Once activ
 ### Resulting workflow
 
 ```
-Role configuration and eligible assignment
-                 竊・
-Contractor requests activation
-                 竊・
-       MFA and justification
-                 竊・
-      PIM approver approval
-                 竊・
-Cloud Device Administrator becomes ACTIVE
-                 竊・
- Active for requested duration
-       (up to 8 hours)
-                 竊・
+Role configuration and eligible assignment >
+Contractor requests activation >
+MFA and justification >
+PIM approver approval >
+Cloud Device Administrator becomes ACTIVE >
+Active for requested duration (up to 8 hours) >
 Role automatically deactivates
 ```
 
 ---
 
-# Step 5 窶・End the Contractor Lifecycle
+# Step 5 - End the Contractor Lifecycle
 
 The contractor's normal project access and privileged role eligibility have separate lifecycles.
 
