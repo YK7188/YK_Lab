@@ -31,9 +31,7 @@ This repository documents practical lab environments built to develop skills for
 * [19 - RDP Troubleshooting Entra ID Joined](./19-RDP-Troubleshooting-EntraID-Joined)
 * [20 - Validate MFA Functions](./20-Validate-MFA-Functions)
 * [35 - AccessManagementSimulation_Contractor](./35-AccessManagementSimulation_Contractor)
-
-
----
+* [36 - Entra_JML_PowerShellAutomation](./36-Entra_JML_PowerShellAutomation)---
 
 ## 📁 Intune / Endpoint Management
 
