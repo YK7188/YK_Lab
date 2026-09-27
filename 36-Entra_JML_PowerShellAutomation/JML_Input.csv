@@ -1,0 +1,31 @@
+﻿EmployeeId,FirstName,LastName,Department,JobTitle,ManagerUPN,StartDate,PersonalEmail,UsageLocation,RequestedAccess,Action
+10001,Alex,North,Sales,Account Executive,mapatel@contoso.onmicrosoft.com,2026-10-01,alex.north@example.com,JP,SG_APP_Salesforce;SG_APP_Zoom,Joiner
+10002,Robin,Lake,Sales,Sales Specialist,mapatel@contoso.onmicrosoft.com,2026-10-01,robin.lake@example.com,SG,SG_APP_Salesforce,Joiner
+10003,Jamie,Stone,Sales,Account Executive,mapatel@contoso.onmicrosoft.com,2026-10-05,jamie.stone@example.com,AU,SG_APP_Salesforce,Joiner
+10004,Taylor,Field,Sales,Sales Specialist,mapatel@contoso.onmicrosoft.com,2026-10-08,taylor.field@example.com,NZ,SG_APP_Zoom,Joiner
+10005,Jordan,Brook,Sales,Account Executive,mapatel@contoso.onmicrosoft.com,2026-10-12,jordan.brook@example.com,IN,SG_APP_Salesforce;SG_APP_AdobeAcrobat,Joiner
+10006,Casey,Winter,Sales,Sales Specialist,mapatel@contoso.onmicrosoft.com,2026-10-19,casey.winter@example.com,KR,,Joiner
+10007,Morgan,Reed,CS,Customer Service Representative,luandersen@contoso.onmicrosoft.com,2026-10-01,morgan.reed@example.com,JP,SG_APP_ServiceNow;SG_APP_Zoom,Joiner
+10008,Riley,West,CS,Support Specialist,luandersen@contoso.onmicrosoft.com,2026-10-03,riley.west@example.com,SG,SG_APP_ServiceNow,Joiner
+10009,Cameron,Park,CS,Customer Service Representative,luandersen@contoso.onmicrosoft.com,2026-10-06,cameron.park@example.com,AU,SG_APP_ServiceNow,Joiner
+10010,Avery,Wood,CS,Support Specialist,luandersen@contoso.onmicrosoft.com,2026-10-09,avery.wood@example.com,NZ,SG_APP_Zoom,Joiner
+10011,Quinn,Hill,CS,Customer Service Representative,luandersen@contoso.onmicrosoft.com,2026-10-15,quinn.hill@example.com,IN,SG_APP_ServiceNow;SG_APP_AdobeAcrobat,Joiner
+10012,Drew,River,CS,Support Specialist,luandersen@contoso.onmicrosoft.com,2026-10-22,drew.river@example.com,KR,,Joiner
+10013,Blair,Gray,Eng,Software Engineer,somartinez@contoso.onmicrosoft.com,2026-10-02,blair.gray@example.com,JP,SG_APP_GitHub,Joiner
+10014,Reese,Spring,Eng,Systems Engineer,somartinez@contoso.onmicrosoft.com,2026-10-05,reese.spring@example.com,SG,SG_APP_GitHub;SG_APP_ServiceNow,Joiner
+10015,Parker,Green,Eng,Software Engineer,somartinez@contoso.onmicrosoft.com,2026-10-07,parker.green@example.com,AU,SG_APP_GitHub,Joiner
+10016,Skyler,Bridge,Eng,Systems Engineer,somartinez@contoso.onmicrosoft.com,2026-10-13,skyler.bridge@example.com,NZ,SG_APP_GitHub,Joiner
+10017,Rowan,Cliff,Eng,Software Engineer,somartinez@contoso.onmicrosoft.com,2026-10-20,rowan.cliff@example.com,IN,SG_APP_GitHub;SG_APP_Zoom,Joiner
+10018,Emerson,Shore,Eng,Systems Engineer,somartinez@contoso.onmicrosoft.com,2026-10-27,emerson.shore@example.com,KR,,Joiner
+10019,Hayden,Forest,IT,IT Support Engineer,ketanaka@contoso.onmicrosoft.com,2026-10-01,hayden.forest@example.com,JP,SG_APP_ServiceNow;SG_APP_GitHub,Joiner
+10020,Finley,Ridge,IT,Systems Administrator,ketanaka@contoso.onmicrosoft.com,2026-10-05,finley.ridge@example.com,SG,SG_APP_ServiceNow,Joiner
+10021,Dakota,Cloud,IT,IT Support Engineer,ketanaka@contoso.onmicrosoft.com,2026-10-08,dakota.cloud@example.com,AU,SG_APP_ServiceNow;SG_APP_AdobeAcrobat,Joiner
+10022,Kendall,Ocean,IT,Systems Administrator,ketanaka@contoso.onmicrosoft.com,2026-10-14,kendall.ocean@example.com,NZ,SG_APP_GitHub,Joiner
+10023,Charlie,Glen,IT,IT Support Engineer,ketanaka@contoso.onmicrosoft.com,2026-10-21,charlie.glen@example.com,IN,SG_APP_ServiceNow;SG_APP_Zoom,Joiner
+10024,Sam,Meadow,IT,Systems Administrator,ketanaka@contoso.onmicrosoft.com,2026-10-29,sam.meadow@example.com,KR,,Joiner
+10025,Arden,Frost,GA,Administrative Specialist,amokafor@contoso.onmicrosoft.com,2026-10-02,arden.frost@example.com,JP,SG_APP_AdobeAcrobat;SG_APP_Zoom,Joiner
+10026,Ellis,Pine,GA,Operations Coordinator,amokafor@contoso.onmicrosoft.com,2026-10-06,ellis.pine@example.com,SG,SG_APP_AdobeAcrobat,Joiner
+10027,Remy,Valley,GA,Administrative Specialist,amokafor@contoso.onmicrosoft.com,2026-10-12,remy.valley@example.com,AU,SG_APP_AdobeAcrobat,Joiner
+10028,Sage,Harbor,GA,Operations Coordinator,amokafor@contoso.onmicrosoft.com,2026-10-16,sage.harbor@example.com,NZ,SG_APP_Zoom,Joiner
+10029,Corey,Willow,GA,Administrative Specialist,amokafor@contoso.onmicrosoft.com,2026-10-23,corey.willow@example.com,IN,SG_APP_AdobeAcrobat;SG_APP_ServiceNow,Joiner
+10030,Shawn,Cedar,GA,Operations Coordinator,amokafor@contoso.onmicrosoft.com,2026-10-30,shawn.cedar@example.com,KR,,Joiner
