@@ -71,15 +71,15 @@ Therefore the incoming employee Alex North produces alnorth2.
 
 ```
 Alex North
-        竊・
+        ↓
 alnorth
-        竊・
+        ↓
 Already exists
-        竊・
+        ↓
 alnorth1
-        竊・
+        ↓
 Already exists
-        竊・
+        ↓
 alnorth2
 ```
 
@@ -99,47 +99,47 @@ EmployeeId,FirstName,LastName,Department,JobTitle,ManagerUPN,StartDate,PersonalE
 
 ```
 HR CSV
-        竊・
+        ↓
 BATCH PRE-FLIGHT
 - Microsoft Graph available?
-        竊・
+        ↓
 NO > BATCH ABORTED
      0 users created
 
-        竊・YES
+        ↓YES
 
 RECORD PRE-CHECK
-        竊・
+        ↓
 EmployeeId already exists?
 Manager exists?
 Required department access available?
 Requested security groups exist?
-        竊・
+        ↓
 PROBLEM > ACCOUNT NOT CREATED
           Add record to retry CSV
           Continue to next employee
 
-        竊・PASS
+        ↓PASS
 
 Create Entra account
 - Set employee attributes
 - Assign standard access
 - Assign requested access
-        竊・
+        ↓
 Unexpected failure?
-        竊・
+        ↓
 YES > ROLL BACK NEW ACCOUNT
       Add record to retry CSV
       Continue to next employee
 
-        竊・NO
+        ↓NO
 
 Record result
-        竊・
+        ↓
 Continue to next employee
-        竊・
+        ↓
 Repeat the process for the next user
-        竊・
+        ↓
 Results CSV
 Retry CSV (Contains failed records)
 ```
