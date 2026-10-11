@@ -33,7 +33,8 @@ This repository documents practical lab environments built to develop skills for
 * [35 - AccessManagementSimulation_Contractor](./35-AccessManagementSimulation_Contractor)
 * [36 - Entra_JML_PowerShellAutomation](./36-Entra_JML_PowerShellAutomation)
 * [37 - Entra_EnterpriseApp_SAML_SSO](./37-Entra_EnterpriseApp_SAML_SSO)
-
+* [38 - DelegatingITAdmin_withEntraAU](./38-DelegatingITAdmin_withEntraAU)
+  
 ## 📁 Intune / Endpoint Management
 
 * [03 - Intune Enrollment Troubleshooting (iOS)](./03-Intune-Enrollment-Troubleshooting-iOS)
