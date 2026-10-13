@@ -335,6 +335,7 @@ Path: Devices > Android > Configuration > Create > New Policy > Android Enterpri
 
 The CA certificate appears on the Android. Although PKCS cert is not listed alongside other certificates, it appears in the certificate picker when configuring a VPN connection. 
 
+Device name: AADuser1test_AndroidForWork
 <img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/28-Intune%20VPN%20Profiles%20%26%20Certificate%20Deployment/08.pkcs_shown_sSwan.jpg" width="300">
 
 ## Extending PKCS Deployment to iPhone
