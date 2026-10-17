@@ -367,9 +367,7 @@ The certificates appear on the iPhone. The management profile shows both the Tru
 
 # Lab 18 — Hybrid PKI Simulation (AD CS + Intune PKCS)
 
-**Labbed: May 2026**  
-**Extended: June 2026 — Android and iOS**  
-**Updated: October 2026 — Reorganized procedure and troubleshooting**
+> Labbed: May 2026**  
 
 ## Goal
 
@@ -405,7 +403,8 @@ AADPC1 / Android / iPhone → Intune → Certificate Connector (SRV3)
 
 On SRV1, install **Active Directory Certificate Services > Certification Authority**.
 
-![AD CS role installed](https://github.com/YK7188/YK_Lab/blob/main/docs/images/18-Hybrid%20PKI%20simulation/01.role_installation.jpg)
+<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/18-Hybrid%20PKI%20simulation/01.role_installation.jpg" width="600">
+
 
 ### 2. Configure the CA
 
@@ -421,19 +420,19 @@ Run **Configure Active Directory Certificate Services** with:
 - Validity: 5 years
 - Database locations: Default
 
-![AD CS post-deployment configuration](https://github.com/YK7188/YK_Lab/blob/main/docs/images/18-Hybrid%20PKI%20simulation/02.post_deployment_confg.jpg)
+<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/18-Hybrid%20PKI%20simulation/02.post_deployment_confg.jpg" width="600">
 
 ### 3. Confirm CA status
 
 Open `certsrv.msc` and verify `CORP-ROOT-CA` is running.
 
-![Enterprise CA running](https://github.com/YK7188/YK_Lab/blob/main/docs/images/18-Hybrid%20PKI%20simulation/03.CA_up.jpg)
+<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/18-Hybrid%20PKI%20simulation/03.CA_up.jpg" width="600">
 
 ### 4. Verify domain computer trusts the CA
 
 On ADPC1, open `certlm.msc` and inspect **Trusted Root Certification Authorities > Certificates**. Verify `CORP-ROOT-CA` appears.
 
-![Trusted root certificate](https://github.com/YK7188/YK_Lab/blob/main/docs/images/18-Hybrid%20PKI%20simulation/04.Root_Cert_shown.jpg)
+<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/18-Hybrid%20PKI%20simulation/04.Root_Cert_shown.jpg" width="600">
 
 This is **CA trust**, not the device identity certificate that will be issued next.
 
@@ -443,13 +442,13 @@ This is **CA trust**, not the device identity certificate that will be issued ne
 
 Open `certtmpl.msc`, duplicate the **Computer** template and configure:
 
-- **Compatibility:** Supported CA and client versions for this lab
+- **Compatibility:** CA - Windows Server 2016; Recipient - Windows 10 / Windows Server 2016
 - **General:** Template display name `LabComputerCert`
 - **Security:** `Domain Computers` — **Read, Enroll, Autoenroll**
 
 In `certsrv.msc`, select **Certificate Templates > New > Certificate Template to Issue** and publish `LabComputerCert`.
 
-![Published computer certificate template](https://github.com/YK7188/YK_Lab/blob/main/docs/images/18-Hybrid%20PKI%20simulation/05.cert_template.jpg)
+<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/18-Hybrid%20PKI%20simulation/05.cert_template.jpg" width="600">
 
 ### 6. Enable auto-enrollment via GPO
 
@@ -462,7 +461,7 @@ Set to **Enabled** and select:
 - Renew expired certificates, update pending certificates, and remove revoked certificates
 - Update certificates that use certificate templates
 
-![Computer certificate auto-enrollment GPO](https://github.com/YK7188/YK_Lab/blob/main/docs/images/18-Hybrid%20PKI%20simulation/18.GPO_Enabled.jpg)
+  <img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/18-Hybrid%20PKI%20simulation/18.GPO_Enabled.jpg" width="600">
 
 The GPO enables auto-enrollment; it does **not** select a specific certificate template. Eligible published templates are determined by template settings and permissions.
 
@@ -470,7 +469,7 @@ The GPO enables auto-enrollment; it does **not** select a specific certificate t
 
 On ADPC1, refresh policy if necessary (`gpupdate /force`) and open `certlm.msc` → **Personal > Certificates**. Confirm the issued computer certificate.
 
-![AD-joined computer certificate](https://github.com/YK7188/YK_Lab/blob/main/docs/images/18-Hybrid%20PKI%20simulation/13.Cert_appears.jpg)
+<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/18-Hybrid%20PKI%20simulation/13.Cert_appears.jpg" width="600">
 
 **Result:** ADPC1 obtains a device certificate directly through AD CS auto-enrollment, without Intune.
 
@@ -483,7 +482,7 @@ On SRV1, duplicate `LabComputerCert` in `certtmpl.msc`:
 - **General:** `LabComputerCert-Intune`
 - **Subject Name:** **Supply in the request**
 - **Cryptography:** Key Storage Provider, RSA
-- **Security:** `svc_intunecert` — **Read, Enroll**
+- **Security:** `svc_intunecert` (an AD account created for this test) - **Read, Enroll**
 
 Publish `LabComputerCert-Intune` in `certsrv.msc` under **Certificate Templates > New > Certificate Template to Issue**.
 
@@ -491,15 +490,15 @@ This separate template allows Intune to supply the subject from the PKCS profile
 
 ### 9. Install the Certificate Connector
 
-On SRV3, prepare domain service account `svc_intunecert` and grant **Log on as a service** through `secpol.msc` → **Local Policies > User Rights Assignment**. The right to log on as a service is distinct from the template's Read/Enroll permissions.
+On SRV3, grant svc_intunecert **Log on as a service** through `secpol.msc` → **Local Policies > User Rights Assignment**. The right to log on as a service is distinct from the template's Read/Enroll permissions.
 
 In Intune, navigate to **Tenant administration > Connectors and tokens > Certificate connectors > Add**, download and run `IntuneCertificateConnector.exe`.
 
-![Certificate Connector download](https://github.com/YK7188/YK_Lab/blob/main/docs/images/18-Hybrid%20PKI%20simulation/14.connector_download.jpg)
+<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/18-Hybrid%20PKI%20simulation/14.connector_download.jpg" width="600">
 
 Select the PKCS connector feature and configure the domain service account. SCEP is not required for this lab. Confirm the connector is registered in Intune.
 
-![Connector registered in Intune](https://github.com/YK7188/YK_Lab/blob/main/docs/images/18-Hybrid%20PKI%20simulation/15.connector_appear.jpg)
+<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/18-Hybrid%20PKI%20simulation/18-Hybrid%20PKI%20simulation/15.connector_appear.jpg" width="600">
 
 **Connectivity:** SRV3 needs connectivity to the on-premises CA **and** required Microsoft Intune cloud endpoints.
 
@@ -509,7 +508,7 @@ Select the PKCS connector feature and configure the domain service account. SCEP
 
 On SRV1: `certsrv.msc` → right-click CA → **Properties > View Certificate > Details > Copy to File**. Export as **Base-64 encoded X.509 (.CER)** (public certificate only).
 
-![Export the CA certificate](https://github.com/YK7188/YK_Lab/blob/main/docs/images/18-Hybrid%20PKI%20simulation/25.Cert_Copy_CA.jpg)
+<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/18-Hybrid%20PKI%20simulation/18-Hybrid%20PKI%20simulation/25.Cert_Copy_CA.jpg" width="600">
 
 In Intune: **Devices > Configuration > Create > New policy**:
 
@@ -518,7 +517,7 @@ In Intune: **Devices > Configuration > Create > New policy**:
 - Upload the exported `.cer`
 - Assign to the Windows test device group
 
-![Windows trusted certificate profile](https://github.com/YK7188/YK_Lab/blob/main/docs/images/18-Hybrid%20PKI%20simulation/17.Cert_config_intune.jpg)
+<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/18-Hybrid%20PKI%20simulation/17.Cert_config_intune.jpg" width="600">
 
 ### 11. Create Windows PKCS profile
 
@@ -532,7 +531,7 @@ In Intune, create a **Windows 10 and later > Templates > PKCS certificate** prof
 
 Assign to AADPC1's test group.
 
-![Windows PKCS configuration screenshot from original lab](https://github.com/YK7188/YK_Lab/blob/main/docs/images/18-Hybrid%20PKI%20simulation/26.failed_PKCS_config.jpg)
+<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/18-Hybrid%20PKI%20simulation/26.failed_PKCS_config.jpg" width="600">
 
 ### 12. Verify Windows deployment
 
@@ -561,7 +560,7 @@ Confirm the trusted root and PKCS profiles show **Succeeded** in Intune. The tru
 
 Device: `AADuser1test_AndroidForWork`.
 
-![PKCS client certificate visible in strongSwan](https://github.com/YK7188/YK_Lab/blob/main/docs/images/28-Intune%20VPN%20Profiles%20%26%20Certificate%20Deployment/08.pkcs_shown_sSwan.jpg)
+<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/28-Intune%20VPN%20Profiles%20%26%20Certificate%20Deployment/08.pkcs_shown_sSwan.jpg" width="600">
 
 ## Part 6 — iPhone PKCS
 
@@ -594,27 +593,17 @@ Check the iPhone's management profile for the certificates and verify successful
 
 Initially, the Windows PKCS deployment reported an error.
 
-![Original Windows PKCS deployment error](https://github.com/YK7188/YK_Lab/blob/main/docs/images/18-Hybrid%20PKI%20simulation/20.pkcs_error.jpg)
+<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/18-Hybrid%20PKI%20simulation/20.pkcs_error.jpg" width="600">
 
-The initial computer template was intended for traditional AD auto-enrollment. I created a separate `LabComputerCert-Intune` template with **Supply in the request** and an RSA Key Storage Provider. The problem still persisted until I corrected the connector account permissions.
+The issue was resolved by granting `svc_intunecert` **Read** and **Enroll** on `LabComputerCert-Intune`.
 
-### 2. Connector account lacked template enrollment permissions
-
-On SRV3, Event Viewer under **Applications and Services Logs > Microsoft > Intune > CertificateConnectors** showed `PKCSRequestFailure` and **Denied by Policy Module** for `svc_intunecert`.
-
-![Certificate Connector policy-module denial](https://github.com/YK7188/YK_Lab/blob/main/docs/images/18-Hybrid%20PKI%20simulation/22.Denied_By_Module.jpg)
-
-**Fix:** Grant `svc_intunecert` **Read** and **Enroll** on `LabComputerCert-Intune`. The Windows certificate was then issued successfully.
-
-**Lesson:** **Log on as a service** permits the connector service to run; it does not authorize the account to enroll against an AD CS template.
-
-### 3. Android PKCS error despite successful root CA deployment
+### 2. Android PKCS error despite successful root CA deployment
 
 The Android trusted certificate deployed, but the PKCS profile initially reported an error. The connector server had no internet connection. After restoring connectivity, the PKCS certificate appeared in strongSwan and the Intune profile error subsequently cleared.
 
 **Lesson:** Deploying a root CA certificate and issuing a PKCS identity certificate are separate processes. Check connector cloud connectivity, CA issued certificates, connector events, and Intune reporting.
 
-### 4. Android PKCS certificate not visible in Trusted credentials
+### 3. Android PKCS certificate not visible in Trusted credentials
 
 Android displayed the CA trust certificate but not the PKCS client identity certificate in its normal trust list. strongSwan could still select the client certificate.
 
