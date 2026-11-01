@@ -15,9 +15,10 @@ in modern Microsoft Entra ID MFA onboarding and enforcement.
 - Microsoft 365 Developer tenant
 - Legacy per-user MFA disabled
 - Authentication Methods migration status set to:
+  
+  Migration Complete
 
-Migration Complete
-
+<br>
 <img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/21-MFA%20function/01.Migration_ToModern.jpg" width="700">
 
 # Important Finding Before Testing
