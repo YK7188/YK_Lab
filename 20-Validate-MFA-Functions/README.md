@@ -23,17 +23,9 @@ in modern Microsoft Entra ID MFA onboarding and enforcement.
 
 # Important Finding Before Testing
 
-Before setting:
+Before setting ***Migration Complete***, behavior appeared inconsistent and partially followed legacy MFA behavior.
 
-Migration Complete
-
-behavior appeared inconsistent and partially followed legacy MFA behavior.
-
-After changing the migration status to:
-
-Migration Complete
-
-Authentication Methods Policy behavior became more aligned with the configured settings.
+After changing the migration status to ***Migration Complete***, authentication Methods Policy behavior became more aligned with the configured settings.
 
 # Authentication Methods Policy
 
