@@ -43,6 +43,8 @@ When a method is enabled, it can become available during MFA registration or in 
 
 <img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/21-MFA%20function/12.mysignins.jpg" width="600">
 
+> Although Temporary Access Pass (TAP) and Email OTP are enabled, they do not appear as standard MFA registration options. TAP is an admin-issued temporary credential used for onboarding or recovering access, while Email OTP can be used for self-service password reset (SSPR) by internal users. Neither is a standard user-registered MFA method.
+
 # MFA Registration Policy
 
 <img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/21-MFA%20function/14.reg_policy.jpg" width="700">
