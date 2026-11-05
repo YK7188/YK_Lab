@@ -77,7 +77,7 @@ During testing, the prompt appeared after a user completed MFA using an already 
 
 # Conditional Access
 
-Conditional access was configured for testing.
+Conditional Access was configured for testing without the Registration Campaign or MFA registration policy enabled.
 
 Target resources:
 
@@ -92,29 +92,27 @@ Access controls:
   
 When this policy is enabled:
 
-- A user with no MFA method registered is prompted to register a method just like MFA registration policy.
-- A user with any MFA method registered is prompted for the secondary authentication.
+- A user with no MFA method registered is prompted to register a method, displaying the same "Let's keep your account secure" message seen with the MFA registration policy.
+- A user with an MFA method already registered is required to complete MFA using an available method, unless MFA has already been satisfied by the existing session.
 
 # Final Note
 
-The test confirmed that Conditional Access was the primary and most predictable method for enforcing MFA during sign-in, while MFA Registration Policy and Registration Campaign supported the onboarding process.
+The tests confirmed that Conditional Access was the most reliable method for enforcing MFA during sign-in, while the MFA Registration Policy and Registration Campaign supported MFA registration and onboarding.
 
-During testing, portal.azure.com and intune.microsoft.com triggered MFA-related registration behavior even without a tenant Conditional Access policy or registration policy configured.
+During testing, portal.azure.com and intune.microsoft.com triggered MFA registration prompts even without tenant-configured Conditional Access or registration policies.
 
-Additionally, TAP, Email OTP, and QR Code did not function as primary workforce MFA onboarding methods even when enabled in Authentication Methods Policy.
+TAP, Email OTP, and QR Code were not suitable as standard workforce MFA registration methods, despite being enabled in the Authentication Methods Policy.
 
 ### Realistic MFA configuration example:
 
 1. Conditional access
 
-- Target resources: All resources (formerly 'All cloud apps')
-- Access controls:
-  - Grant access
-  - Require multifactor authentication
+- Target resources: All resources (formerly "All cloud apps")
+- Grant access: Require multifactor authentication
 
 2. Authentication Methods
 
-- Primary: Microsoft Authenticator
-- Secondary: SMS or voice call (fallback methods)
+- Preferred: Microsoft Authenticator
+- Fallback: SMS or voice call
 
 Registration Campaign and MFA Registration Policy are optional.
