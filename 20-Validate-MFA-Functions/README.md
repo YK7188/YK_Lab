@@ -63,11 +63,13 @@ When enabled, a target user with no MFA method registered will experience a Let'
 
 <img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/21-MFA%20function/17.registration_campaign.jpg" width="600">
 
-When enabled, a target user is prompted to add Microsoft Authenticator as an improved MFA method as shown below.
+When enabled, targeted users are prompted to register Microsoft Authenticator as a more secure MFA method.
 
 <img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/21-MFA%20function/16.improve_your_signins.jpg" width="400"> 
 
-During testing, this prompt only appeared when the user already had at least one MFA method registered.
+During testing, the prompt appeared after a user completed MFA using an already registered method.
+
+> For this test, a Conditional Access policy was applied to enforce MFA. The MFA registration policy alone did not trigger the registration campaign.
 
 ### Key Point
 
