@@ -54,7 +54,10 @@ When enabled, a target user with no MFA method registered will experience a Let'
 ### Key Point
 
 - During the test, regardless of whether the policy is enabled, test users with no MFA method registered were prompted to register an MFA method when signing in to portal.azure.com, intune.microsoft.com.
-- Once any MFA method is registered, a user can sign in to Office cloud apps with no second factor authentication prompted. This policy alone is not meant for enforcing MFA.
+  > These admin portals may independently require MFA, so the registration prompts cannot necessarily be attributed to this policy.
+  
+- Once an MFA method was registered, users could access Microsoft 365 cloud apps without an additional MFA prompt during testing.
+  > The MFA registration policy requires users to register authentication methods but does not itself enforce MFA for application sign-ins.
 
 # Registration Campaign
 
