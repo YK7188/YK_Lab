@@ -27,6 +27,10 @@ The failing policy appeared with Error status for the affected device in Intune.
 
 <img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/23-Troubleshoot_Intune_InitialSetupFailure/01.user2_error.jpg" width="500">
 
+The policy initially failed when a user other than the device's assigned primary user signed in.
+
+Signing in as the primary user allowed the policy to apply successfully. Subsequent sign-ins by the other user completed without issues.
+
 # Resolution
 
 After the problematic policy configuration was corrected:
@@ -36,4 +40,5 @@ After the problematic policy configuration was corrected:
 - the policy status changed from Error to Success
 
 <img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/23-Troubleshoot_Intune_InitialSetupFailure/04.user2_nowsuccess.jpg" width="500">
+
 
