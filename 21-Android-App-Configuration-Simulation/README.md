@@ -49,7 +49,7 @@ Configured bookmarks appear in Microsoft Edge.
 
 <br>
 
-# Configure Microsoft Edge for an Intune-enrolled BYOD Android device
+# Configure Microsoft Edge for an Intune-enrolled BYOD Android device (Work profile enrolled through Company Portal)
 
 ## STEP 1 — Add Microsoft Edge
 
