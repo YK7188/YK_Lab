@@ -72,7 +72,7 @@ Verified:
 
 The external user opens the invitation link, authenticates with their home tenant account, and completes the invitation redemption process. Now, the user can switch the tenant where they need to access resources as shown below.
 
-<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/39-EntraGuest_LifecycleManagement/08.png" width="800">
+<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/39-EntraGuest_LifecycleManagement/08.png" width="900">
 
 The guest user could access SharePoint and Teams through shared links, but not Outlook, as no Microsoft 365 license was assigned in either tenant.
 
