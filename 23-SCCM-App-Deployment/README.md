@@ -1,4 +1,5 @@
 > Tested: June 2026
+> Troubleshooting updated: November 2026
 
 # Lab Goal
 
@@ -84,4 +85,16 @@ Go: Monitoring > Deployments > 7-zip > Summary
 
 <img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/24-App%20deployment%20by%20SCCM/08.Install_success.jpg" width="700">
 
+# Troubleshoot Note
 
+During testing, a standard user on one of the client devices encountered an ***Insufficient Permissions for Software Installation*** error when attempting to install the application through Software Center.
+
+<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/24-App%20deployment%20by%20SCCM/09.png" width="350">
+
+The issue was traced to Administration > Client Settings > Default Client Settings > Computer Agent > Install permissions, which was set to Only administrators.
+
+Changing the setting to All users resolved the issue, allowing standard users to install applications through Software Center.
+
+<img src="https://github.com/YK7188/YK_Lab/blob/main/docs/images/24-App%20deployment%20by%20SCCM/10.png" width="500">
+
+This setting controls who can initiate ConfigMgr software installations. It does not grant local administrator privileges or change Windows UAC behavior for manually executed installers.
